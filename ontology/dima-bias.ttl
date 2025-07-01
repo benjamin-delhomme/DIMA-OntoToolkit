@@ -1,0 +1,237 @@
+@prefix dima: <https://m82-project.org/dima/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://m82-project.org/dima/ontology> a owl:Ontology ;
+    rdfs:label "DIMA Bias Ontology – Unified"@en ;
+    rdfs:label "Ontologie des biais DIMA – Unifiée"@fr ;
+    owl:versionIRI <https://m82-project.org/dima/ontology/v1.0.0> .
+
+#######################
+### Core Ontology #####
+#######################
+
+dima:BiasCategory a owl:Class ;
+    rdfs:label "Bias Category"@en ;
+    rdfs:label "Catégorie de biais"@fr .
+
+dima:Technique a owl:Class ;
+    rdfs:label "Cognitive Technique"@en ;
+    rdfs:label "Technique cognitive"@fr .
+
+# Optional: Ensure disjointness
+dima:Technique owl:disjointWith dima:BiasCategory .
+
+##########################
+### Object Properties ####
+##########################
+
+dima:includesTechnique a owl:ObjectProperty ;
+    rdfs:label "includes technique"@en ;
+    rdfs:label "inclut la technique"@fr ;
+    rdfs:domain dima:BiasCategory ;
+    rdfs:range dima:Technique ;
+    rdfs:comment "Links a bias category to one or more cognitive techniques."@en ;
+    rdfs:comment "Relie une catégorie de biais à ses techniques cognitives."@fr .
+
+dima:isTechniqueOf a owl:ObjectProperty ;
+    owl:inverseOf dima:includesTechnique ;
+    rdfs:label "is technique of"@en ;
+    rdfs:label "est une technique de"@fr ;
+    rdfs:domain dima:Technique ;
+    rdfs:range dima:BiasCategory .
+
+############################
+### Annotation Properties ##
+############################
+
+dima:uuid a owl:AnnotationProperty ;
+    rdfs:label "UUID"@en ;
+    rdfs:label "UUID"@fr .
+
+dima:valueCode a owl:AnnotationProperty ;
+    rdfs:label "Value code"@en ;
+    rdfs:label "Code de valeur"@fr ;
+    rdfs:comment "Code from the source taxonomy (e.g., TA0011, TE0111)."@en ;
+    rdfs:comment "Code de la taxonomie source (ex. : TA0011, TE0111)."@fr .
+
+#####################
+### DETECT Pillar ###
+#####################
+
+dima:Detect a owl:Class ;
+    rdfs:subClassOf dima:BiasCategory ;
+    rdfs:label "DETECT"@en ;
+    rdfs:label "DÉTECTER"@fr .
+
+### DETECT Bias Categories (English IRIs)
+
+dima:PreExistingInformation a owl:Class ;
+    rdfs:subClassOf dima:Detect ;
+    rdfs:label "Pre-existing information"@en ;
+    rdfs:label "Information préexistante"@fr ;
+    dima:valueCode "TA0011" ;
+    dima:uuid "f7b94d9e-2e5b-4082-9f96-ab704e6e1d95" .
+
+dima:RepeatedExposureInformation a owl:Class ;
+    rdfs:subClassOf dima:Detect ;
+    rdfs:label "Repeated exposure information"@en ;
+    rdfs:label "Information à exposition répétée"@fr ;
+    dima:valueCode "TA0012" ;
+    dima:uuid "a2d9c63d-f4d6-4183-b0f7-2169b8c2d8d4" .
+
+dima:DivisiveInformation a owl:Class ;
+    rdfs:subClassOf dima:Detect ;
+    rdfs:label "Divisive information"@en ;
+    rdfs:label "Information clivante"@fr ;
+    dima:valueCode "TA0013" ;
+    dima:uuid "d8f6b6c4-e9b1-4c16-9d8c-2b3ce6d2f332" .
+
+dima:DeviationFromNorm a owl:Class ;
+    rdfs:subClassOf dima:Detect ;
+    rdfs:label "Deviation from the norm"@en ;
+    rdfs:label "Écart à la norme"@fr ;
+    dima:valueCode "TA0014" ;
+    dima:uuid "b7f72b4a-d8a9-4613-9d1d-f11e01e6527c" .
+
+dima:SignificantDetail a owl:Class ;
+    rdfs:subClassOf dima:Detect ;
+    rdfs:label "Significant detail"@en ;
+    rdfs:label "Détail signifiant"@fr ;
+    dima:valueCode "TA0015" ;
+    dima:uuid "e8d27437-6c1d-4e07-9f33-d8e164bb9d2e" .
+
+
+#####################
+### INFORM Pillar ###
+#####################
+
+dima:Inform a owl:Class ;
+    rdfs:subClassOf dima:BiasCategory ;
+    rdfs:label "INFORM"@en ;
+    rdfs:label "INFORMER"@fr .
+
+### INFORM Bias Categories
+
+dima:PatternCreation a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Pattern creation"@en ;
+    rdfs:label "Création d'un motif"@fr ;
+    dima:valueCode "TA0021" ;
+    rdfs:comment "A tactic that places incoming information into a pre-existing narrative."@en ;
+    rdfs:comment "Tactique qui permet de mettre en récit une information reçue, de l'intégrer dans un contexte préexistant."@fr .
+
+dima:GeneralizationAndStereotypes a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Generalization and reinforcement of stereotypes"@en ;
+    rdfs:label "Généralisation et renforcement de stéréotypes"@fr ;
+    dima:valueCode "TA0022" ;
+    rdfs:comment "A tactic that simplifies perceived information to make it acceptable and/or intelligible for the target audience."@en ;
+    rdfs:comment "Tactique qui vise à simplifier des informations perçues pour les rendre acceptables et/ou intelligibles par la cible."@fr .
+
+dima:FamiliaritySuperiority a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Familiarity superiority"@en ;
+    rdfs:label "Supériorité familière"@fr ;
+    dima:valueCode "TA0023" ;
+    rdfs:comment "A tactic that enhances the value of information for the audience by leveraging proximity or familiarity."@en ;
+    rdfs:comment "Tactique qui permet de valoriser une information aux yeux de la cible par exploitation des proximités."@fr .
+
+dima:Simplification a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Simplification"@en ;
+    rdfs:label "Simplication"@fr ;
+    dima:valueCode "TA0024" ;
+    rdfs:comment "A tactic that simplifies concepts and emphasizes magnitudes to aid information acceptability."@en ;
+    rdfs:comment "Tactique qui simplifie les concepts pour faciliter l'acceptabilité d'une information."@fr .
+
+dima:SelfReference a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Self-reference"@en ;
+    rdfs:label "Auto-référence"@fr ;
+    dima:valueCode "TA0025" ;
+    rdfs:comment "A tactic exploiting the assumption that the speaker and listener share the same knowledge or references."@en ;
+    rdfs:comment "Tactique qui exploite le fait que la cible pense que ses interlocuteurs partagent ses références."@fr .
+
+dima:TemporalProjection a owl:Class ;
+    rdfs:subClassOf dima:Inform ;
+    rdfs:label "Temporal projection"@en ;
+    rdfs:label "Projection temporelle"@fr ;
+    dima:valueCode "TA0026" ;
+    rdfs:comment "A tactic using (real or fabricated) memories to support or validate a narrative."@en ;
+    rdfs:comment "Tactique qui s'appuie sur les souvenirs (réels ou forgés) pour crédibiliser une information."@fr .
+
+### INFORM Techniques
+
+dima:IllusoryCorrelationBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "illusory correlation bias"@en ;
+    rdfs:label "biais de corrélation illusoire"@fr ;
+    dima:valueCode "TE0211" ;
+    rdfs:comment "Perceiving a relationship between variables when none exists."@en ;
+    rdfs:comment "Percevoir une relation entre deux événements alors qu'il n'y en a pas."@fr .
+
+dima:AnecdotalEvidenceBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "anecdotal evidence bias"@en ;
+    rdfs:label "Biais de la preuve anecdotique"@fr ;
+    dima:valueCode "TE0212" ;
+    rdfs:comment "Using vivid, personal anecdotes as if they were representative data."@en ;
+    rdfs:comment "Utiliser des témoignages personnels ou des exemples isolés comme preuve générale."@fr .
+
+dima:GamblersFallacy a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "gambler's fallacy"@en ;
+    rdfs:label "Illusion des séries"@fr ;
+    dima:valueCode "TE0213" ;
+    rdfs:comment "Believing that random events are influenced by previous outcomes."@en ;
+    rdfs:comment "Croire à tort que des événements aléatoires sont influencés par des occurrences antérieures."@fr .
+
+dima:HomogeneityBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "homogeneity bias"@en ;
+    rdfs:label "Biais d'homogénéité"@fr ;
+    dima:valueCode "TE0231" ;
+    rdfs:comment "Assuming members of an out-group are more similar than they really are."@en ;
+    rdfs:comment "Tendance à percevoir l'autre groupe comme uniforme."@fr .
+
+dima:WellTraveledRoadBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "well-traveled road bias"@en ;
+    rdfs:label "Biais de la route connue"@fr ;
+    dima:valueCode "TE0232" ;
+    rdfs:comment "Preferring familiar paths or explanations even when suboptimal."@en ;
+    rdfs:comment "Préférer ce qui est familier, même si ce n'est pas optimal."@fr .
+
+dima:ZeroSumBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "zero-sum bias"@en ;
+    rdfs:label "Biais de la somme nulle"@fr ;
+    dima:valueCode "TE0241" ;
+    rdfs:comment "Perceiving situations as win-lose even when mutual gain is possible."@en ;
+    rdfs:comment "Croire que si quelqu’un gagne, l’autre doit perdre."@fr .
+
+dima:NormalcyBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "normalcy bias"@en ;
+    rdfs:label "Biais de normalité"@fr ;
+    dima:valueCode "TE0242" ;
+    rdfs:comment "Underestimating the likelihood or impact of a disaster."@en ;
+    rdfs:comment "Tendance à croire que les choses continueront normalement malgré des signes de crise."@fr .
+
+dima:FalseConsensusEffect a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "false consensus effect"@en ;
+    rdfs:label "Effet de faux consensus"@fr ;
+    dima:valueCode "TE00251" ;
+    rdfs:comment "Overestimating how much others agree with our beliefs or behaviors."@en ;
+    rdfs:comment "Surestimer à quel point les autres partagent nos croyances ou comportements."@fr .
+
+dima:HindsightBias a owl:Class ;
+    rdfs:subClassOf dima:Technique ;
+    rdfs:label "hindsight bias"@en ;
+    rdfs:label "Biais rétrospectif"@fr ;
+    dima:valueCode "TE0261" ;
+    rdfs:comment "Believing an event was predictable after it has already happened."@en ;
+    rdfs:comment "Penser qu’un événement était prévisible une fois qu’il s’est produit."@fr .

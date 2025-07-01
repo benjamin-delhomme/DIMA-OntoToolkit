@@ -1,0 +1,11 @@
+# Virtual environments
+venv/
+.env
+
+# Ignore output artifacts
+output/*
+!output/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
