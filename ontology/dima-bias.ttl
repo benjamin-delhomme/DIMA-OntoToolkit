@@ -2,6 +2,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://m82-project.org/dima/ontology> a owl:Ontology ;
     rdfs:label "DIMA Bias Ontology – Unified"@en ;
@@ -65,7 +66,7 @@ dima:belongsToPhase a owl:ObjectProperty ;
     rdfs:range dima:Phase ;
     rdfs:comment "Associates a tactic with a DIMA phase (Detect, Inform, etc.)."@en ;
     rdfs:comment "Associe une tactique à une phase DIMA (Détecter, Informer, etc.)."@fr .
-	
+
 dima:hasTactic a owl:ObjectProperty ;
     owl:inverseOf dima:belongsToPhase ;
     rdfs:label "has tactic"@en ;
@@ -74,7 +75,7 @@ dima:hasTactic a owl:ObjectProperty ;
     rdfs:range dima:Tactic ;
     rdfs:comment "Inverse property linking a DIMA phase to its narrative tactics."@en ;
     rdfs:comment "Propriété inverse associant une phase DIMA à ses tactiques narratives."@fr .
-	
+
 dima:usesTechnique a owl:ObjectProperty ;
     rdfs:label "uses technique"@en ;
     rdfs:label "utilise la technique"@fr ;
