@@ -1,5 +1,3 @@
-# dima_otk/utils/cache.py
-
 # Copyright 2025 Benjamin Delhomme, NATO Strategic Communications Centre of Excellence
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
