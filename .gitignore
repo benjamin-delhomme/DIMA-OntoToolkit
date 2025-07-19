@@ -6,6 +6,13 @@ venv/
 output/*
 !output/.gitkeep
 
+# Ignore articles:
+articles/*
+!output/.articles
+
+# Ignore protege file
+ontologies/*.xml
+
 # Python cache
 __pycache__/
 *.pyc
