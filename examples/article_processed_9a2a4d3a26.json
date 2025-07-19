@@ -1,0 +1,301 @@
+{
+  "article_id": "9a2a4d3a26",
+  "headline": "Norlund Stands Tall Against Aggressive Zarnian Provocations",
+  "motifs": [
+    {
+      "motif_id": "motif_0",
+      "text": "In a bold display of leadership, Norlund has once again demonstrated its unwavering commitment to peace and regional stability. Despite repeated provocations from Zarnia, Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation. Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.",
+      "arguments": [
+        {
+          "premises": [
+            {
+              "text": "Norlund has once again demonstrated its unwavering commitment to peace and regional stability.",
+              "id": "premise_0"
+            },
+            {
+              "text": "There have been repeated provocations from Zarnia.",
+              "id": "premise_1"
+            },
+            {
+              "text": "Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation.",
+              "id": "premise_2"
+            }
+          ],
+          "developments": [
+            {
+              "text": "Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.",
+              "id": "development_0"
+            }
+          ],
+          "conclusions": [
+            {
+              "text": "Norlund is showing bold leadership by maintaining peace and stability despite provocations.",
+              "id": "conclusion_0"
+            }
+          ],
+          "argument_id": "argument_0"
+        }
+      ]
+    },
+    {
+      "motif_id": "motif_1",
+      "text": "Zarnia, on the other hand, has continued its pattern of aggressive posturing. Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. While Zarnian leaders claim these drills are routine, satellite imagery and intelligence reports suggest otherwise. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.",
+      "arguments": [
+        {
+          "premises": [
+            {
+              "text": "Last week's unauthorized military exercises near the Norlund border marked the third such incident this month.",
+              "id": "premise_3"
+            },
+            {
+              "text": "Zarnian leaders claim these drills are routine.",
+              "id": "premise_4"
+            },
+            {
+              "text": "Satellite imagery and intelligence reports suggest otherwise.",
+              "id": "premise_5"
+            }
+          ],
+          "developments": [
+            {
+              "text": "Zarnia has continued its pattern of aggressive posturing.",
+              "id": "development_1"
+            }
+          ],
+          "conclusions": [
+            {
+              "text": "Zarnia's behavior reflects a deliberate attempt to destabilize the region.",
+              "id": "conclusion_1"
+            }
+          ],
+          "argument_id": "argument_1"
+        }
+      ]
+    },
+    {
+      "motif_id": "motif_2",
+      "text": "Local communities in Norlund have voiced strong support for their government's handling of the crisis. \"We trust our leaders to protect us without fueling unnecessary conflict,\" said Lira Vanholm, a Norlundian resident. Meanwhile, international voices have begun to echo concern over Zarnia's intentions, with some diplomats calling for sanctions if the pattern continues.",
+      "arguments": [
+        {
+          "premises": [
+            {
+              "text": "Local communities in Norlund have voiced strong support for their government's handling of the crisis.",
+              "id": "premise_6"
+            },
+            {
+              "text": "\"We trust our leaders to protect us without fueling unnecessary conflict,\" said Lira Vanholm, a Norlundian resident.",
+              "id": "premise_7"
+            }
+          ],
+          "developments": [],
+          "conclusions": [
+            {
+              "text": "The Norlund government is managing the crisis responsibly and maintaining public trust.",
+              "id": "conclusion_2"
+            }
+          ],
+          "argument_id": "argument_2"
+        },
+        {
+          "premises": [
+            {
+              "text": "International voices have begun to echo concern over Zarnia's intentions.",
+              "id": "premise_8"
+            },
+            {
+              "text": "Some diplomats are calling for sanctions if the pattern continues.",
+              "id": "premise_9"
+            }
+          ],
+          "developments": [],
+          "conclusions": [
+            {
+              "text": "Zarnia's actions are viewed negatively by the international community and may lead to sanctions.",
+              "id": "conclusion_3"
+            }
+          ],
+          "argument_id": "argument_3"
+        }
+      ]
+    }
+  ],
+  "narrative_agents": [
+    {
+      "agent_id": "agent_0",
+      "name": "Norlund",
+      "type": "NarratedState"
+    },
+    {
+      "agent_id": "agent_1",
+      "name": "Norlund officials",
+      "type": "NarratedPolitician"
+    },
+    {
+      "agent_id": "agent_2",
+      "name": "Norlund's government",
+      "type": "NarratedGovernment"
+    },
+    {
+      "agent_id": "agent_3",
+      "name": "Zarnia",
+      "type": "NarratedState"
+    },
+    {
+      "agent_id": "agent_4",
+      "name": "Zarnian leaders",
+      "type": "NarratedPolitician"
+    },
+    {
+      "agent_id": "agent_5",
+      "name": "Local communities in Norlund",
+      "type": "NarratedGeneralPublic"
+    },
+    {
+      "agent_id": "agent_6",
+      "name": "Lira Vanholm",
+      "type": "NarratedPerson"
+    },
+    {
+      "agent_id": "agent_7",
+      "name": "international voices",
+      "type": "NarratedUndecidedEntity"
+    },
+    {
+      "agent_id": "agent_8",
+      "name": "some diplomats",
+      "type": "NarratedPolitician"
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Norlund has once again demonstrated its unwavering commitment to peace and regional stability.",
+      "type": "ParaphrasedQuote",
+      "status": "OfficialPosition",
+      "attributed_to": [],
+      "mentions": [
+        "agent_0"
+      ],
+      "expresses_components": [
+        "premise_0"
+      ],
+      "quote_id": "quote_0",
+      "motif_id": "motif_0"
+    },
+    {
+      "text": "Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation.",
+      "type": "ParaphrasedQuote",
+      "status": "OfficialPosition",
+      "attributed_to": [],
+      "mentions": [
+        "agent_1"
+      ],
+      "expresses_components": [
+        "premise_2"
+      ],
+      "quote_id": "quote_1",
+      "motif_id": "motif_0"
+    },
+    {
+      "text": "Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.",
+      "type": "ParaphrasedQuote",
+      "status": "InterpretiveStatement",
+      "attributed_to": [],
+      "mentions": [
+        "agent_2"
+      ],
+      "expresses_components": [
+        "development_0"
+      ],
+      "quote_id": "quote_2",
+      "motif_id": "motif_0"
+    },
+    {
+      "text": "Zarnian leaders claim these drills are routine.",
+      "type": "IndirectQuote",
+      "status": "OfficialPosition",
+      "attributed_to": [
+        "agent_4"
+      ],
+      "mentions": [],
+      "expresses_components": [
+        "premise_4"
+      ],
+      "quote_id": "quote_3",
+      "motif_id": "motif_1"
+    },
+    {
+      "text": "Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.",
+      "type": "IndirectQuote",
+      "status": "InterpretiveStatement",
+      "attributed_to": [],
+      "mentions": [
+        "agent_3"
+      ],
+      "expresses_components": [
+        "conclusion_1"
+      ],
+      "quote_id": "quote_4",
+      "motif_id": "motif_1"
+    },
+    {
+      "text": "Local communities in Norlund have voiced strong support for their government's handling of the crisis.",
+      "type": "ParaphrasedQuote",
+      "status": "ReportedStatement",
+      "attributed_to": [
+        "agent_5"
+      ],
+      "mentions": [
+        "agent_2"
+      ],
+      "expresses_components": [
+        "premise_6"
+      ],
+      "quote_id": "quote_5",
+      "motif_id": "motif_2"
+    },
+    {
+      "text": "We trust our leaders to protect us without fueling unnecessary conflict.",
+      "type": "DirectQuote",
+      "status": "PersonalOpinion",
+      "attributed_to": [
+        "agent_6"
+      ],
+      "mentions": [],
+      "expresses_components": [
+        "premise_7"
+      ],
+      "quote_id": "quote_6",
+      "motif_id": "motif_2"
+    },
+    {
+      "text": "International voices have begun to echo concern over Zarnia's intentions.",
+      "type": "ParaphrasedQuote",
+      "status": "InterpretiveStatement",
+      "attributed_to": [
+        "agent_7"
+      ],
+      "mentions": [
+        "agent_3"
+      ],
+      "expresses_components": [
+        "premise_8"
+      ],
+      "quote_id": "quote_7",
+      "motif_id": "motif_2"
+    },
+    {
+      "text": "Some diplomats are calling for sanctions if the pattern continues.",
+      "type": "IndirectQuote",
+      "status": "CallToAction",
+      "attributed_to": [
+        "agent_8"
+      ],
+      "mentions": [],
+      "expresses_components": [
+        "premise_9"
+      ],
+      "quote_id": "quote_8",
+      "motif_id": "motif_2"
+    }
+  ]
+}

@@ -1,15 +1,81 @@
 # DIMA-OntoToolkit
 
-**DIMA-OntoToolkit** is a semantic toolset for detecting and formalizing biases in natural language content using an OWL ontology. It uses a language model (e.g., GPT) to interpret the input and generates OWL individuals that conform to the bias model defined in the DIMA ontology.
+**DIMA-OntoToolkit** is a research-oriented Python pipeline for extracting narrative biases, semantic structures, and arguments from text articles. It maps these features to individuals in a formal OWL ontology.
 
 ---
 
-## What It Does
+## 🚀 What It Does
 
-Given a text input (e.g., an article, comment, or narrative), the tool:
-1. Analyzes the text to identify bias elements using GPT.
-2. Maps the results to structured instances (individuals) in the ontology.
-3. Outputs an OWL file representing those individuals in RDF/OWL (ABox).
+- Parses raw text or multiple articles from a folder
+- Identifies semantic motifs (e.g. paragraphs)
+- Extracts arguments, narrative agents, and quotes
+- Generates an OWL file structured according to the DIMA ontology
+
+## 🧠 Feature Extraction Pipeline
+
+Once input text is provided, **DIMA-OntoToolkit** extracts key semantic structures before generating the final OWL file. These intermediary outputs are useful for debugging, visualization, or integration with other systems.
+
+### 🔍 Steps in the Feature Extraction Process
+
+1. **Headline Detection**
+
+   - The tool attempts to identify a headline (either explicitly present or inferred via GPT).
+   - If found at the top of the article, it's removed from the content for separate processing.
+
+2. **Motif Segmentation**
+
+   - The article content is split into **semantic motifs**, which typically correspond to paragraphs.
+   - Each motif is treated as a standalone narrative segment.
+
+3. **Argument Extraction**
+
+   - Within each motif, the tool extracts structured **arguments** composed of:
+     - `premises` (supporting facts or claims)
+     - `developments` (reasoning or inference)
+     - `conclusions` (final judgments)
+
+4. **Narrative Agent Detection**
+
+   - Entities involved in the story (e.g., nations, officials, citizens) are identified and classified into agent types like:
+     - `NarratedState`
+     - `NarratedPolitician`
+     - `NarratedGeneralPublic`
+     - `NarratedPerson`
+
+5. **Quote Extraction**
+
+   - Quotes are categorized by type (e.g., direct, paraphrased, interpretive).
+   - Each quote is linked to the motif and argument component it supports.
+
+#### 📄 Example: Intermediate Output
+
+After analyzing `ex1.txt`, the following JSON was produced:
+
+```json
+{
+  "article_id": "9a2a4d3a26",
+  "headline": "Norlund Stands Tall Against Aggressive Zarnian Provocations",
+  "motifs": [ ... ],
+  "narrative_agents": [ ... ],
+  "quotes": [ ... ]
+}
+```
+
+This file lives under: `output/articles_processed/article_processed_<article_id>.json`
+
+### 🔍 Create an Ontology ...
+
+to fill
+
+### 📦 Final Output
+
+After all features are extracted, the structured data is mapped to OWL individuals and serialized as an RDF/OWL file in:
+
+```
+output/result.owl
+```
+
+This file conforms to the **DIMA ontology** and can be opened in Protégé or used in downstream reasoning tasks.
 
 ---
 
@@ -73,10 +139,10 @@ The application will automatically load the key from `.env`.
 ### 2. Run the tool with your own input text
 
 ```bash
-./run-docker.sh -t "This article unfairly blames a specific group for the economic crisis."
+./run-docker.sh -t "You article text goes here."
 ```
 
-OWL output will be saved to: bias_extractor/output/
+OWL output will be saved to: output/
 
 ---
 
@@ -96,6 +162,7 @@ docker build -t dima-otk .
 docker run --rm \
   -v "$(pwd)/output:/app/output" \
   -v "$(pwd)/.env:/app/.env" \
+  -v "$(pwd)/articles:/app/articles" \
   dima-otk \
   python -m dima_otk.dima_otk -t "Your input text goes here."
 ```
@@ -112,4 +179,3 @@ We have extended the original work to:
 - Enable semantic analysis and knowledge graph generation
 
 The full license text is provided in the `LICENSE` file.
-

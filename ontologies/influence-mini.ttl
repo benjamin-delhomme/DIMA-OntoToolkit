@@ -1,0 +1,370 @@
+# Copyright 2025 Benjamin Delhomme, NATO Strategic Communications Centre of Excellence
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+@prefix : <https://stratcomcoe.org/influence-mini/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://stratcomcoe.org/influence-mini/ontology> a owl:Ontology ;
+    rdfs:label "NATO StratCom COE Influence-Mini Ontology"@en ;
+    owl:versionIRI <https://stratcomcoe.org/influence-mini/ontology/v1.0.0> ;
+    dcterms:source <https://github.com/benjamin-delhomme/DIMA-OntoToolkit/blob/main/ontologies/influence-mini.ttl> .
+
+###################################
+### Core Mini Ontology (Demo) #####
+###################################
+
+:Article rdf:type owl:Class ;
+    rdfs:label "Article"@en ;
+    rdfs:comment "A published piece of writing, including research papers, blog posts, and news articles."@en .
+
+:Motif rdf:type owl:Class ;
+    rdfs:label "Motif"@en ;
+    rdfs:comment "In the context of a text, it is the equivalent of a paragraph, representing a recurring theme or idea."@en .
+
+:Argument rdf:type owl:Class ;
+    rdfs:label "Argument"@en ;
+    rdfs:comment "A structured claim supported by premises, developments, and conclusions."@en .
+
+:Premise rdf:type owl:Class ;
+    rdfs:label "Premise"@en ;
+    rdfs:comment "A fundamental assumption or basis that supports an argument."@en .
+
+:Development rdf:type owl:Class ;
+    rdfs:label "Development"@en ;
+    rdfs:comment "The explanation or elaboration of an argument leading to its conclusion."@en .
+
+:Conclusion rdf:type owl:Class ;
+    rdfs:label "Conclusion"@en ;
+    rdfs:comment "The final judgment or result of an argument."@en .
+
+:NarratedAgent rdf:type owl:Class ;
+    rdfs:label "Narrated Agent"@en ;
+    rdfs:comment "An agent as it is narrated in a specific medium, such as a news article. This class allows representation of agents before their identity or factual grounding is verified."@en .
+
+:NarratedAgentUndecided rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedAgent ;
+    rdfs:label "Narrated Person"@en ;
+    rdfs:comment "A statement whose agent cannot yet be determined (e.g., insufficient context)."@en .
+
+:NarratedPerson rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedAgent ;
+    rdfs:label "Narrated Person"@en .
+
+:NarratedPolitician rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Politician"@en .
+
+:NarratedJournalist rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Journalist"@en .
+
+:NarratedActivist rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Activist"@en .
+
+:NarratedBusinessLeader rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Business Leader"@en .
+
+:NarratedAcademic rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Academic"@en .
+
+:NarratedMilitaryFigure rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Military Figure"@en .
+
+:NarratedGeneralPublic rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated General Public"@en .
+
+:NarratedBystander rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedGeneralPublic ;
+    rdfs:label "Narrated Bystander"@en .
+
+:NarratedGeneralWorker rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedGeneralPublic ;
+    rdfs:label "Narrated General Worker"@en .
+
+:NarratedCriminal rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Criminal"@en .
+
+:NarratedCelebrity rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedPerson ;
+    rdfs:label "Narrated Celebrity"@en .
+
+:NarratedOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedAgent ;
+    rdfs:label "Narrated Organization"@en .
+
+:NarratedCorporation rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Corporation"@en .
+
+:NarratedMediaOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Media Organization"@en .
+
+:NarratedGovernment rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Government"@en .
+
+:NarratedInstitution rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Institution"@en .
+
+:NarratedNGO rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated NGO"@en .
+
+:NarratedMilitary rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Military"@en .
+
+:NarratedCriminalOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Criminal Organization"@en .
+
+:NarratedTerroristOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated Terrorist Organization"@en .
+
+:NarratedInternationalOrganization rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated International Organization"@en .
+
+:NarratedState rdf:type owl:Class ;
+    rdfs:subClassOf :NarratedOrganization ;
+    rdfs:label "Narrated State"@en .
+
+:Quote rdf:type owl:Class ;
+    rdfs:label "Quote"@en ;
+    rdfs:comment "A segment of text that is referenced or cited within another text."@en .
+
+:DirectQuote rdf:type owl:Class ;
+    rdfs:label "Direct Quote"@en ;
+    rdfs:subClassOf :Quote ;
+    rdfs:comment "A quote that is copied verbatim from the source."@en .
+
+:IndirectQuote rdf:type owl:Class ;
+    rdfs:label "Indirect Quote"@en ;
+    rdfs:subClassOf :Quote ;
+    rdfs:comment "A quote that is paraphrased or indirectly referenced from the source."@en .
+
+:ParaphrasedQuote rdf:type owl:Class ;
+    rdfs:subClassOf :Quote ;
+    rdfs:label "Paraphrased Quote"@en ;
+    rdfs:comment "A quote that rephrases or reinterprets a source's statement without being a direct or strictly indirect quote."@en .
+
+:QuoteStatus rdf:type owl:Class ;
+    rdfs:label "Quote Status"@en ;
+    rdfs:comment "Describes the role and function of a quote within a narrative."@en .
+
+:UndecidedStatement
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Undecided Statement"@en ;
+        rdfs:comment "A quote whose status cannot yet be determined (e.g., insufficient context)."@en .
+
+:ReportedStatement
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Reported Statement"@en ;
+        rdfs:comment "A direct statement of fact attributed to a source."@en .
+
+:OfficialPosition
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Official Position"@en ;
+        rdfs:comment "A quote that reflects an official stance from a government, organization, or spokesperson."@en .
+
+:PersonalOpinion
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Personal Opinion"@en ;
+        rdfs:comment "A subjective viewpoint or belief expressed by a person."@en .
+
+:InterpretiveStatement
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Interpretive Statement"@en ;
+        rdfs:comment "A paraphrased or summarized quote that retains the original meaning."@en .
+
+:HypotheticalStatement
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Hypothetical or Speculative Quote"@en ;
+        rdfs:comment "A statement exploring hypothetical or speculative scenarios."@en .
+
+:Contradiction
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Contradiction or Dispute"@en ;
+        rdfs:comment "A quote that challenges or contradicts another claim."@en .
+
+:CallToAction
+        a owl:Class , owl:NamedIndividual ;
+        rdf:type :QuoteStatus ;
+        rdfs:subClassOf :QuoteStatus ;
+        rdfs:label "Call to Action"@en ;
+        rdfs:comment "A statement urging action or response."@en .
+
+
+############################
+### Chain Axiom Properties##
+############################
+
+
+
+
+############################
+### Object Properties ##
+############################
+
+:hasArgument rdf:type owl:ObjectProperty ;
+    rdfs:domain :Motif ;
+    rdfs:range :Argument ;
+    rdfs:label "has argument"@en ;
+    rdfs:comment "Relates a motif to the arguments it contains or develops."@en .
+
+:isArgumentOf a owl:ObjectProperty ;
+    owl:inverseOf :hasArgument .
+
+:hasPremise rdf:type owl:ObjectProperty ;
+    rdfs:domain :Argument ;
+    rdfs:range :Premise ;
+    rdfs:label "has premise"@en ;
+    rdfs:comment "Relates an argument to one of its supporting premises."@en .
+
+:isPremiseOf a owl:ObjectProperty ;
+    owl:inverseOf :hasPremise .
+
+:hasDevelopment rdf:type owl:ObjectProperty ;
+    rdfs:domain :Argument ;
+    rdfs:range :Development ;
+    rdfs:label "has development"@en ;
+    rdfs:comment "Relates an argument to one of its developments or elaborations."@en .
+
+:isDevelopmentOf a owl:ObjectProperty ;
+    owl:inverseOf :hasDevelopment .
+
+:hasConclusion rdf:type owl:ObjectProperty ;
+    rdfs:domain :Argument ;
+    rdfs:range :Conclusion ;
+    rdfs:label "has conclusion"@en ;
+    rdfs:comment "Relates an argument to its conclusion."@en .
+
+:isConclusionOf a owl:ObjectProperty ;
+    owl:inverseOf :hasConclusion .
+
+:containsQuote
+    a       owl:ObjectProperty ;
+    rdfs:range   :Quote ;
+    owl:inverseOf :isContainedIn ;
+    rdfs:label   "contains quote"@en ;
+    rdfs:comment "Inferred link from a Motif or an Argument to any Quote it contains."@en ;
+
+    ### all six chains, comma‑separated
+    owl:propertyChainAxiom
+        ( :hasArgument :hasPremise    :hasQuote ),
+        ( :hasArgument :hasDevelopment :hasQuote ),
+        ( :hasArgument :hasConclusion  :hasQuote ),
+        ( :hasPremise    :hasQuote ),
+        ( :hasDevelopment :hasQuote ),
+        ( :hasConclusion  :hasQuote ) .
+
+:isContainedIn  a owl:ObjectProperty ;
+    owl:inverseOf :containsQuote ;
+    rdfs:label "is contained in (motif or argument)"@en .
+
+:hasQuote a owl:ObjectProperty ;
+    rdfs:label "has quote"@en ;
+    rdfs:domain [ owl:unionOf ( :Premise :Development :Conclusion ) ;
+                  rdf:type owl:Class ] ;
+    rdfs:range  :Quote ;
+    rdfs:comment "Links a premise, development, or conclusion to a quote it contains or references."@en .
+
+:isQuoteOf a owl:ObjectProperty ;
+    owl:inverseOf :hasQuote .
+
+:isAttributedTo rdf:type owl:ObjectProperty ;
+    rdfs:label "is attributed to"@en ;
+    rdfs:domain :Quote ;
+    rdfs:range :NarratedAgent ;
+    rdfs:comment "Links a quote to the narrated agent to whom it is attributed in the narrative."@en .
+
+:hasAttributedQuote a owl:ObjectProperty ;
+    owl:inverseOf :isAttributedTo .
+
+:hasQuoteStatus rdf:type owl:ObjectProperty ;
+    rdfs:label "has quote status"@en ;
+    rdfs:domain :Quote ;
+    rdfs:range :QuoteStatus ;
+    rdfs:comment "Associates a quote with a specific status, such as announcement, interview, opinion, or claim."@en .
+
+:isQuoteStatusOf a owl:ObjectProperty ;
+    owl:inverseOf :hasQuoteStatus .
+
+:mentionsInQuote rdf:type owl:ObjectProperty ;
+    rdfs:label "mentions agent in quote"@en ;
+    rdfs:domain :Quote ;
+    rdfs:range :NarratedAgent ;
+    rdfs:comment "Indicates that a narrated agent is mentioned or referred to within the content of a quote."@en .
+
+:isMentionedInQuote a owl:ObjectProperty ;
+    owl:inverseOf :mentionsInQuote .
+
+############################
+### Data Properties ##
+############################
+
+:hasHeadline rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Article ;
+    rdfs:range xsd:string ;
+    rdfs:label "has headline"@en ;
+    rdfs:comment "The headline or title of the article."@en .
+
+:hasContent rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Article ;
+    rdfs:range xsd:string ;
+    rdfs:label "has content"@en ;
+    rdfs:comment "The full textual content of the article."@en .
+
+:hasText rdf:type owl:DatatypeProperty ;
+    rdfs:domain [
+        rdf:type owl:Class ;
+        owl:unionOf ( :Motif :Quote :Premise :Development :Conclusion )
+    ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "has text"@en ;
+    rdfs:comment "The textual content of the motif, premise, development, or conclusion."@en .
+
+:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :NarratedAgent ;
+    rdfs:range xsd:string ;
+    rdfs:label "has name"@en ;
+    rdfs:comment "The textual name or label used for the narrated agent in the article or discourse."@en .
