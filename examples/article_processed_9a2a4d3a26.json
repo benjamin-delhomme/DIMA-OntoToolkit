@@ -58,13 +58,13 @@
           ],
           "developments": [
             {
-              "text": "Zarnia has continued its pattern of aggressive posturing.",
+              "text": "Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.",
               "id": "development_1"
             }
           ],
           "conclusions": [
             {
-              "text": "Zarnia's behavior reflects a deliberate attempt to destabilize the region.",
+              "text": "Zarnia has continued its pattern of aggressive posturing.",
               "id": "conclusion_1"
             }
           ],
@@ -90,7 +90,7 @@
           "developments": [],
           "conclusions": [
             {
-              "text": "The Norlund government is managing the crisis responsibly and maintaining public trust.",
+              "text": "The local population supports the government's approach as responsible and protective.",
               "id": "conclusion_2"
             }
           ],
@@ -110,7 +110,7 @@
           "developments": [],
           "conclusions": [
             {
-              "text": "Zarnia's actions are viewed negatively by the international community and may lead to sanctions.",
+              "text": "There is growing international pressure on Zarnia due to perceived threatening behavior.",
               "id": "conclusion_3"
             }
           ],
@@ -119,7 +119,7 @@
       ]
     }
   ],
-  "narrative_agents": [
+  "narrated_agents": [
     {
       "agent_id": "agent_0",
       "name": "Norlund",
@@ -128,7 +128,7 @@
     {
       "agent_id": "agent_1",
       "name": "Norlund officials",
-      "type": "NarratedPolitician"
+      "type": "NarratedAgentUndecided"
     },
     {
       "agent_id": "agent_2",
@@ -143,7 +143,7 @@
     {
       "agent_id": "agent_4",
       "name": "Zarnian leaders",
-      "type": "NarratedPolitician"
+      "type": "NarratedAgentUndecided"
     },
     {
       "agent_id": "agent_5",
@@ -157,13 +157,8 @@
     },
     {
       "agent_id": "agent_7",
-      "name": "international voices",
-      "type": "NarratedUndecidedEntity"
-    },
-    {
-      "agent_id": "agent_8",
       "name": "some diplomats",
-      "type": "NarratedPolitician"
+      "type": "NarratedAgentUndecided"
     }
   ],
   "quotes": [
@@ -175,7 +170,7 @@
       "mentions": [
         "agent_0"
       ],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_0"
       ],
       "quote_id": "quote_0",
@@ -187,9 +182,10 @@
       "status": "OfficialPosition",
       "attributed_to": [],
       "mentions": [
-        "agent_1"
+        "agent_1",
+        "agent_3"
       ],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_2"
       ],
       "quote_id": "quote_1",
@@ -203,11 +199,25 @@
       "mentions": [
         "agent_2"
       ],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "development_0"
       ],
       "quote_id": "quote_2",
       "motif_id": "motif_0"
+    },
+    {
+      "text": "Zarnia has continued its pattern of aggressive posturing.",
+      "type": "ParaphrasedQuote",
+      "status": "InterpretiveStatement",
+      "attributed_to": [],
+      "mentions": [
+        "agent_3"
+      ],
+      "maps_to_arg_components": [
+        "conclusion_1"
+      ],
+      "quote_id": "quote_3",
+      "motif_id": "motif_1"
     },
     {
       "text": "Zarnian leaders claim these drills are routine.",
@@ -217,10 +227,10 @@
         "agent_4"
       ],
       "mentions": [],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_4"
       ],
-      "quote_id": "quote_3",
+      "quote_id": "quote_4",
       "motif_id": "motif_1"
     },
     {
@@ -231,70 +241,67 @@
       "mentions": [
         "agent_3"
       ],
-      "expresses_components": [
-        "conclusion_1"
+      "maps_to_arg_components": [
+        "development_1"
       ],
-      "quote_id": "quote_4",
+      "quote_id": "quote_5",
       "motif_id": "motif_1"
     },
     {
       "text": "Local communities in Norlund have voiced strong support for their government's handling of the crisis.",
       "type": "ParaphrasedQuote",
       "status": "ReportedStatement",
-      "attributed_to": [
-        "agent_5"
-      ],
+      "attributed_to": [],
       "mentions": [
+        "agent_5",
         "agent_2"
       ],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_6"
       ],
-      "quote_id": "quote_5",
+      "quote_id": "quote_6",
       "motif_id": "motif_2"
     },
     {
-      "text": "We trust our leaders to protect us without fueling unnecessary conflict.",
+      "text": "\"We trust our leaders to protect us without fueling unnecessary conflict,\" said Lira Vanholm, a Norlundian resident.",
       "type": "DirectQuote",
       "status": "PersonalOpinion",
       "attributed_to": [
         "agent_6"
       ],
       "mentions": [],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_7"
       ],
-      "quote_id": "quote_6",
+      "quote_id": "quote_7",
       "motif_id": "motif_2"
     },
     {
       "text": "International voices have begun to echo concern over Zarnia's intentions.",
       "type": "ParaphrasedQuote",
       "status": "InterpretiveStatement",
-      "attributed_to": [
-        "agent_7"
-      ],
+      "attributed_to": [],
       "mentions": [
         "agent_3"
       ],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_8"
       ],
-      "quote_id": "quote_7",
+      "quote_id": "quote_8",
       "motif_id": "motif_2"
     },
     {
       "text": "Some diplomats are calling for sanctions if the pattern continues.",
       "type": "IndirectQuote",
       "status": "CallToAction",
-      "attributed_to": [
-        "agent_8"
+      "attributed_to": [],
+      "mentions": [
+        "agent_7"
       ],
-      "mentions": [],
-      "expresses_components": [
+      "maps_to_arg_components": [
         "premise_9"
       ],
-      "quote_id": "quote_8",
+      "quote_id": "quote_9",
       "motif_id": "motif_2"
     }
   ]
