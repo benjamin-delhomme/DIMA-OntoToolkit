@@ -64,7 +64,7 @@ def get_quotes_for_article(motifs: list[dict], agents: list[dict], article: dict
                     })
 
         cache_result = load_or_compute_cache(
-            cache_key=f"article_{article_id}-motif_{motif_id}_quotes",
+            cache_key=f"article_{article_id}-motif_{motif_id}-quotes",
             cache_type="quotes_cache",
             compute_fn=lambda: {"quotes": process_quotes(motif_text, motif_id, agents, components)},
             verbose_label=f"quotes in {motif_id}"
