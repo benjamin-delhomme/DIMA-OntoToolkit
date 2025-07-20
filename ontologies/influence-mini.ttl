@@ -235,21 +235,27 @@
 
 
 ############################
-### Chain Axiom Properties##
-############################
-
-
-
-
-############################
 ### Object Properties ##
 ############################
 
-:hasArgument rdf:type owl:ObjectProperty ;
-    rdfs:domain :Motif ;
-    rdfs:range :Argument ;
-    rdfs:label "has argument"@en ;
-    rdfs:comment "Relates a motif to the arguments it contains or develops."@en .
+:hasMotif
+    a               owl:ObjectProperty ;
+    rdfs:label      "has motif"@en ;
+    rdfs:comment    "Links an Article to one of its Motifs"@en ;
+    rdfs:domain     :Article ;
+    rdfs:range      :Motif ;
+    owl:inverseOf   :isMotifOf .
+
+:isMotifOf a owl:ObjectProperty ;
+    owl:inverseOf :hasMotif .
+
+:hasArgument
+    a             owl:ObjectProperty ;
+    rdfs:domain   [ owl:unionOf ( :Motif :Article ) ; rdf:type owl:Class ] ;
+    rdfs:range    :Argument ;
+    rdfs:label    "has argument"@en ;
+    rdfs:comment  "Relates a motif or an article to the arguments it contains or develops."@en ;
+    owl:propertyChainAxiom ( :hasMotif :hasArgument ) .
 
 :isArgumentOf a owl:ObjectProperty ;
     owl:inverseOf :hasArgument .
@@ -295,7 +301,8 @@
         ( :hasArgument :hasConclusion  :hasQuote ),
         ( :hasPremise    :hasQuote ),
         ( :hasDevelopment :hasQuote ),
-        ( :hasConclusion  :hasQuote ) .
+        ( :hasConclusion  :hasQuote ),
+        ( :hasMotif  :hasQuote ) .
 
 :isContainedIn  a owl:ObjectProperty ;
     owl:inverseOf :containsQuote ;
@@ -368,3 +375,10 @@
     rdfs:range xsd:string ;
     rdfs:label "has name"@en ;
     rdfs:comment "The textual name or label used for the narrated agent in the article or discourse."@en .
+
+:hasId
+    a               owl:DatatypeProperty ;
+    rdfs:label      "has id"@en ;
+    rdfs:comment    "The extractor‑level identifier for an individual"@en ;
+    rdfs:domain     owl:Thing ;
+    rdfs:range      xsd:string .
