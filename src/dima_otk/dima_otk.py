@@ -27,6 +27,8 @@ from dima_otk.semantic_analysis.quote_logic import get_quotes_for_article
 
 from dima_otk.bias_analysis.biases_logic import get_biases_from_article
 
+from dima_otk.owl.owl_influencemini_converter import influencemini_initialize_tbox, convert_semantic_analysis_article
+
 def save_json(data, output_dir, filename_prefix, article_id, step_description):
     output_path = Path(output_dir) / f"{filename_prefix}_{article_id}.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -41,7 +43,7 @@ class DimaOTK:
     def __init__(self, rebuild_cache: bool = False):
         self.rebuild_cache = rebuild_cache
         print(f"[INIT] DimaOTK initialized (rebuild_cache={self.rebuild_cache})")
-        # Optional: Initialize cache, ontology, or any shared resource here
+        influencemini_initialize_tbox()
 
     def run(self, input_text: str):
         """
@@ -104,3 +106,9 @@ class DimaOTK:
         biases = get_biases_from_article(processed_article)
 
         save_json(biases, "output/bias_analysis", "article_biases", article_id, "STEP 6")
+
+        # Step 7  :  Convert semantic‑analysis JSON ➜ OWL ABox
+        print("[STEP 7] Converting semantic analysis to OWL ABox…")
+
+        influence_mini_abox_file = convert_semantic_analysis_article(article_id)
+        print("[STEP 7] ABox written to", influence_mini_abox_file)
