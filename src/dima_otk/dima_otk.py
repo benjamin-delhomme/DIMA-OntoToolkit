@@ -18,11 +18,24 @@ import json
 from pathlib import Path
 
 from dima_otk.utils.article import get_article_id, print_article_summary
+
 from dima_otk.semantic_analysis.headline_logic import get_article_headline
 from dima_otk.semantic_analysis.motif_logic import get_motifs_from_article
 from dima_otk.semantic_analysis.argument_logic import get_arguments_from_motifs
 from dima_otk.semantic_analysis.narrated_agent_logic import get_narrated_agents
 from dima_otk.semantic_analysis.quote_logic import get_quotes_for_article
+
+from dima_otk.bias_analysis.biases_logic import get_biases_from_article
+
+def save_json(data, output_dir, filename_prefix, article_id, step_description):
+    output_path = Path(output_dir) / f"{filename_prefix}_{article_id}.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with output_path.open("w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print(f"[{step_description}] JSON saved to: {output_path}")
+    return output_path
 
 class DimaOTK:
     def __init__(self, rebuild_cache: bool = False):
@@ -30,7 +43,7 @@ class DimaOTK:
         print(f"[INIT] DimaOTK initialized (rebuild_cache={self.rebuild_cache})")
         # Optional: Initialize cache, ontology, or any shared resource here
 
-    def run(self, input_text: str) -> str:
+    def run(self, input_text: str):
         """
         Orchestrates the bias extraction and OWL generation pipeline.
 
@@ -74,8 +87,9 @@ class DimaOTK:
         quotes = get_quotes_for_article(motif_argument_data, agents, article)
         print(f"[STEP 4] Found {len(quotes)} quotes.")
 
+        print("[STEP 5] Merging Semantic Analysis Results...")
         # Step 5: Save structured result
-        output_data = {
+        processed_article = {
             "article_id": article_id,
             "headline": headline,
             "motifs": motif_argument_data,
@@ -83,10 +97,10 @@ class DimaOTK:
             "quotes": quotes
         }
 
-        output_path = Path("output/semantic_analysis") / f"article_processed_{article_id}.json"
-        output_path.parent.mkdir(parents=True, exist_ok=True)
+        save_json(processed_article, "output/semantic_analysis", "article_processed", article_id, "STEP 5")
 
-        with output_path.open("w", encoding="utf-8") as f:
-            json.dump(output_data, f, indent=2, ensure_ascii=False)
+        # Step 6: Extract biases
+        print("[STEP 6] Extracting DIMA Biases...")
+        biases = get_biases_from_article(processed_article)
 
-        print(f"[INFO] Structured motif-argument-agent JSON saved to: {output_path}\n")
+        save_json(biases, "output/bias_analysis", "article_biases", article_id, "STEP 6")
