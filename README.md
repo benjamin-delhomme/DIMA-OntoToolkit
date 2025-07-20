@@ -189,3 +189,12 @@ This project uses the following third-party libraries:
 - [requests](https://github.com/psf/requests) – Apache License 2.0
 
 You can find copies of the relevant licenses in the respective repositories or license documentation.
+
+## Third‑Party Components
+
+This project uses the following third-party components:
+
+- [HermiT OWL 2 Reasoner](http://www.hermit-reasoner.com/)
+  Copyright © 2008–2025 University of Oxford & contributors
+  License: GNU Lesser General Public License v3.0 or later
+  Source code: https://hermit-reasoner.com
