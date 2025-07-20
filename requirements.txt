@@ -1,2 +1,3 @@
-ftfy>=6.1.1
-requests[socks]
+ftfy
+requests
+owlready2
