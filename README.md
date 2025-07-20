@@ -179,3 +179,13 @@ We have extended the original work to:
 - Enable semantic analysis and knowledge graph generation
 
 The full license text is provided in the `LICENSE` file.
+
+## Third-Party Libraries
+
+This project uses the following third-party libraries:
+
+- [Owlready2](https://github.com/pwin/OWLReady2) – GNU LGPL v3
+- [ftfy](https://github.com/rspeer/python-ftfy) – MIT License
+- [requests](https://github.com/psf/requests) – Apache License 2.0
+
+You can find copies of the relevant licenses in the respective repositories or license documentation.
