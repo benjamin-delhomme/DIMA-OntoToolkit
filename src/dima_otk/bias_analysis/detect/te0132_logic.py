@@ -48,7 +48,7 @@ def get_technique_te0132(article: Dict) -> List[Dict]:
         motif_rows = cache_result.get("rows", [])
 
         for row in cache_result.get("rows", []):
-            # Accept either field name ('bias' from new prompt, or older 'bias_detected')
+            # Only push the result that are detected as bias (the explanation for non bias can be found in the cache)
             if row.get("bias") is True:
                 row["motif_id"] = motif_id
                 results.append(row)
