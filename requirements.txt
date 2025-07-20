@@ -1,3 +1,4 @@
 ftfy
 requests
+rdflib
 owlready2
