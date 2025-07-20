@@ -13,101 +13,86 @@
 # limitations under the License.
 
 import json
-from textwrap import dedent
 from dima_otk.utils.gpt_client import call_gpt
 
-def extract_arguments(text: str, model="gpt-4.1-mini") -> list[dict]:
+def extract_technique_te0132(argument_text: str, model: str = "gpt-4.1") -> dict:
     """
-    Uses GPT-4o to extract all argument structures from a given text.
-
-    Each argument can have:
-    - one or more premises (supporting claims)
-    - zero or more developments (reasoning, interpretation)
-    - zero or more conclusions (final judgments)
-
-    The result is a list of dictionaries with:
-    - 'premises': list of strings
-    - 'developments': list of strings
-    - 'conclusions': list of strings
+    Detects TE0132 – Negativity Bias.
+    Returns a JSON verdict with bias_detected / confidence / excerpts / explanation.
     """
-
 
     messages = [
         {
             "role": "system",
             "content": """
-                You are a narrative reasoning assistant.
+                You are an influence‑operations analyst.
+                Your single mission: **detect Technique TE0132 – Negativity Bias** in each argument provided.
 
-                Your task is to identify all distinct arguments present in a news article.
+                ========  WHAT TO DETECT  ================================================
+                Technique TE0132 – Negativity Bias
+                → Communicators exploit our tendency to focus more on negative information
+                  (threats, failures, dangers, losses) than on neutral or positive aspects.
 
-                An **argument** is any cluster of narrative claims that form a line of reasoning, judgment, or persuasion.
-                Each argument may include:
-                - **Premises** — factual claims, assumptions, or context-setting statements that support reasoning
-                - **Developments** — interpretive or inferential steps that expand on premises or bridge to conclusions
-                - **Conclusions** — final judgments, stances, or main claims the narrative wants to convey
+                ========  KEY ELEMENTS  ====================================================
+                • Motif — In a text, the equivalent of a paragraph: a recurring theme or idea
+                          that groups one or more arguments.
+                • Argument — A cluster of narrative claims forming a line of reasoning,
+                             judgment, or persuasion.  An argument may include:
+                    – Premises      : factual claims, assumptions, or context‑setting
+                                      statements that support reasoning.
+                    – Developments  : interpretive or inferential steps bridging premises to
+                                      conclusions.
+                    – Conclusions   : final judgments, stances, or main claims the narrative
+                                      wishes to convey.
 
-                ---
+                ========  REASONING GUIDANCE  ==============================================
+                • Judge each argument independently; multiple arguments in the same motif may
+                  or may not exploit negativity bias.
+                • Indicators of negativity bias include:
+                    – Repeated negative framing (danger, outrage, catastrophe, loss, etc.).
+                    – Little or no neutral / positive balance on the same topic.
+                    – Tone aimed at provoking fear, anger, condemnation, despair.
+                • An argument *without* these indicators should be marked as **no‑bias** even
+                  if neighbouring arguments are biased.
 
-                Reasoning Guidance:
-                - A single article may contain multiple arguments — even if they refer to similar facts.
-                - Some arguments may share the same premise or conclusion — that’s okay.
-                - An argument can be as small as a premise and a conclusion, or span many developments.
-                - If a sentence clearly plays a double role (e.g. it's both a development and a conclusion), include it in both arguments where relevant.
+                ========  TASK  ============================================================
+                1. The user will supply one *motif* whose arguments are already grouped
+                   (each with its own Premises, Developments, Conclusions).
+                2. For **every argument**:
+                      • Decide whether it exploits negativity bias.
+                      • Identify exactly which Premises / Developments / Conclusions do so.
+                      • Provide a concise justification and a couple of trigger excerpts.
 
-                ---
+                ========  OUTPUT  ==========================================================
+                Return one JSON array — *no code‑fence* — where each element follows:
 
-                For each argument, return a dictionary with exactly:
-                - `"premises"`: a list of { "text": ... }
-                - `"developments"`: a list of { "text": ... }
-                - `"conclusions"`: a list of { "text": ... }
+                {
+                  "argument_id": "<id or index>",
+                  "bias": true | false,
+                  "premise_ids":      ["premise_3", ...],   # empty if none biased
+                  "development_ids":  ["development_0", ...],
+                  "conclusion_ids":   ["conclusion_1", ...],
+                  "excerpts": ["...", "..."],               # very short quotes
+                  "explanation": "one‑sentence rationale"
+                }
 
-                Do **not** flatten components across arguments.
-                Group them into distinct argument objects — one per line of reasoning.
-
-                ---
-
-                Example Output:
-
-                ```json
-                [
-                  {
-                    "premises": [
-                      { "text": "The protest was held in response to a police shooting." }
-                    ],
-                    "developments": [
-                      { "text": "Activists claimed the police had used excessive force." }
-                    ],
-                    "conclusions": [
-                      { "text": "The shooting was unjustified and reform is needed." }
-                    ]
-                  },
-                  {
-                    "premises": [
-                      { "text": "The mayor refused to comment on the investigation." }
-                    ],
-                    "developments": [],
-                    "conclusions": [
-                      { "text": "The administration is avoiding accountability." }
-                    ]
-                  }
-                ]
-                """
+                • Omit any ID list that would be empty.
+                • Do **not** output a top‑level “bias_detected” field.
+                • Do **not** add any keys or narrative outside the JSON array.
+            """
         },
         {
             "role": "user",
-            "content": f"Extract the argument structure from the following article:\n\n{text}"
+            "content": f"Argument text:\n```\n{argument_text}\n```"
         }
     ]
 
-
     try:
-        response = call_gpt(messages, temperature=0.3, model=model)
-        if response.strip().startswith("```json"):
-            response = response.strip().removeprefix("```json").removesuffix("```").strip()
-        elif response.strip().startswith("```"):
-            response = response.strip().removeprefix("```").removesuffix("```").strip()
-
-        return json.loads(response)
+        response = call_gpt(messages, temperature=0.0, model=model)
+        cleaned = response.strip()
+        if cleaned.startswith("```"):
+            cleaned = cleaned.lstrip("`").rstrip("`").strip()
+        return json.loads(cleaned)
     except Exception as e:
-        print(f"[ERROR] Failed to extract arguments: {e}")
-        return []
+        print(f"[ERROR] Negativity‑bias detection failed: {e}")
+        return {}
