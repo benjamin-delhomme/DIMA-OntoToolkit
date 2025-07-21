@@ -243,7 +243,7 @@ After processing the text or articles, you can run a **SPARQL query** to query t
 ./run-docker.sh -q "PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
 PREFIX dima: <https://m82-project.org/dima-bias/ontology#>
 
-SELECT ?argument ?technique
+SELECT DISTINCT ?argument ?technique
 WHERE {
   ?argument a scim:Argument ;
             dima:usesTechnique ?technique .
