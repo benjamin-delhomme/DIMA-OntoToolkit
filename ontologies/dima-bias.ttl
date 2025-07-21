@@ -100,6 +100,16 @@ dima:Phase owl:disjointWith dima:Tactic .
 dima:Phase owl:disjointWith dima:Technique .
 
 ##########################
+### Data Properties ####
+##########################
+
+:hasExplanation rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Argument ;
+    rdfs:range xsd:string ;
+    rdfs:label "has explanation"@en ;
+    rdfs:comment "Explanation of why the technique has been identified"@en .
+
+##########################
 ### Object Properties ####
 ##########################
 
