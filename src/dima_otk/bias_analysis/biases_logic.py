@@ -21,16 +21,9 @@ from dima_otk.bias_analysis.act.act_logic import get_act_techniques
 
 def get_biases_from_article(processed_article: dict) -> dict:
 
-    detect_biases = get_detect_techniques(processed_article)
-    inform_biases = get_inform_techniques(processed_article)
-    memorise_biases = get_memorise_techniques(processed_article)
-    act_biases = get_act_techniques(processed_article)
-
-    biases = {
-        "Detect": detect_biases,
-        "Inform": inform_biases,
-        "Memorise": memorise_biases,
-        "Act": act_biases
+    return {
+        "Detect": get_detect_techniques(processed_article),
+        "Inform": get_inform_techniques(processed_article),
+        "Memorise": get_memorise_techniques(processed_article),
+        "Act": get_act_techniques(processed_article),
     }
-
-    return biases
