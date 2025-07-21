@@ -150,3 +150,5 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
         output_file     = Path("output/owl_influence-mini/influence-mini_full.owl"),
         format          = "xml"
     )
+
+    return temp_abox_file
