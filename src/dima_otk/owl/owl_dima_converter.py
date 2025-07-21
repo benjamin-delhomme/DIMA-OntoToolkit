@@ -15,11 +15,11 @@
 from pathlib import Path
 import json, types
 from rdflib import Graph, OWL
-from owlready2 import World, PREDEFINED_ONTOLOGIES, Thing
+from owlready2 import World, PREDEFINED_ONTOLOGIES
 
 
 INFL_IRI = "https://stratcomcoe.org/influence-mini/ontology"
-DIMA_IRI = "https://stratcomcoe.org/dima-bias/ontology"
+DIMA_IRI = "https://m82-project.org/dima-bias/ontology"
 
 DIMA_TBOX = Path("output/owl_dima/tbox.owl")
 DIMA_DIR  = DIMA_TBOX.parent
@@ -50,59 +50,90 @@ def _append_flat(src: Path, dest: Path, fmt: str = "xml"):
     g_dest.remove((None, OWL.imports, None))
     g_dest.serialize(dest, format=fmt)
 
+def get_or_create_tech_usage(world, dima, tech_id: str,
+                             technique_class_name: str,
+                             explanation: str):
+    """
+    Create or fetch a TechniqueUsage individual,
+    and link it to the punning class/individual of the technique.
+    """
+    full_iri = f"{dima.base_iri}{tech_id}"
+    usage_ind = world.get(full_iri)
+    if usage_ind:
+        return usage_ind
+
+    with dima:
+        usage_ind = dima.TechniqueUsage(tech_id)  # Create the TechniqueUsage individual
+
+        # Link to the *existing punning individual/class* (e.g., dima.NegativityBias)
+        technique = dima[technique_class_name]
+        usage_ind.instantiatesTechnique = [technique]
+
+        if explanation:
+            usage_ind.hasExplanation.append(explanation)
+
+    return usage_ind
+
 def convert_dima_analysis_article(article_id: str) -> Path:
     """Link Influence‑Mini components to techniques via usesTechnique."""
-    # 1. map IRIs to article‑specific Influence‑Mini file + DIMA TBox
+    # map IRIs to article‑specific Influence‑Mini file + DIMA TBox
     infl_tmp = Path(f"output/owl_influence-mini/tmp/{article_id}_abox_temp.owl")
     PREDEFINED_ONTOLOGIES[INFL_IRI] = str(infl_tmp.resolve())
     PREDEFINED_ONTOLOGIES[DIMA_IRI] = str(DIMA_TBOX.resolve())
 
-    # 2. load ontologies
+    # load ontologies
     world = World()
     infl  = world.get_ontology(INFL_IRI).load()
     dima  = world.get_ontology(DIMA_IRI).load()
 
     usesTechnique = dima.usesTechnique
 
-    # 3. read bias JSON (new structure)
+    # read bias JSON (new structure)
     path = Path(f"output/bias_analysis/article_biases_{article_id}.json")
     data = json.loads(path.read_text())
     pref = f"{article_id}_"
 
-    # 4. process techniques
+
+    # process techniques
     with dima:
         for _phase, tech_dict in data.items():
             if not isinstance(tech_dict, dict):
-                continue  # skip empty lists        # Detect / Inform / ...
-            for tech_code, item_list in tech_dict.items():
-                # ensure the technique individual exists
-                tech_ind = dima.__dict__.get(tech_code)
-                if tech_ind is None:
-                    tech_ind = dima.Technique(tech_code)
+                continue
+
+            for tech_name, item_list in tech_dict.items():
+                tech_lc = tech_name.lower()
 
                 for item in item_list:
-                    # argument explanation
-                    arg_iri = f"{INFL_IRI}#{pref}{item['argument_id']}"
-                    arg_ind = infl.world.get(arg_iri)
-                    if arg_ind:
-                        usesTechnique[arg_ind].append(tech_ind)
-                        if "explanation" in item:
-                            arg_ind.hasExplanation.append(item["explanation"])
+                    arg_num  = item["argument_id"].split("_")[-1]
+                    tech_id  = f"{article_id}_{tech_lc}_{arg_num}"  # New TechniqueUsage individual
 
-                    # other components
-                    for cid in item.get("premise_ids", []) + \
-                               item.get("development_ids", []) + \
-                               item.get("conclusion_ids", []):
+                    # Create a TechniqueUsage instance linked to the punned Technique class/individual
+                    tech_usage = get_or_create_tech_usage(
+                        world, dima,
+                        tech_id,
+                        tech_name,  # Must match the class/individual name (e.g., "NegativityBias")
+                        item.get("explanation", "")
+                    )
+
+                    # ARGUMENT
+                    arg_ind = infl.world.get(f"{INFL_IRI}#{pref}{item['argument_id']}")
+                    if arg_ind:
+                        usesTechnique[arg_ind].append(tech_usage)
+
+                    # OTHER COMPONENTS
+                    for cid in (item.get("premise_ids", []) +
+                                item.get("development_ids", []) +
+                                item.get("conclusion_ids", [])):
                         comp = infl.world.get(f"{INFL_IRI}#{pref}{cid}")
                         if comp:
-                            usesTechnique[comp].append(tech_ind)
+                            usesTechnique[comp].append(tech_usage)
 
-    # 5. save DIMA temp ABox (TBox + new links)
+    # save DIMA temp ABox (TBox + new links)
     tmp = Path(f"output/owl_dima/tmp/{article_id}_abox_temp.owl")
     tmp.parent.mkdir(parents=True, exist_ok=True)
     dima.save(file=str(tmp))
 
-    # 6. merge into cumulative flat files
+    # merge into cumulative flat files
     _append_flat(tmp, DIMA_FULL)
     _append_flat(tmp, INFL_OUT)
     return tmp

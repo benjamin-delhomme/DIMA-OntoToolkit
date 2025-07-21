@@ -18,5 +18,6 @@ from dima_otk.bias_analysis.detect.te0132_logic import get_technique_te0132
 
 def get_detect_techniques(processed_article: dict) -> dict:
     return {
-        "te0132": get_technique_te0132(processed_article),
+        "NegativityBias": get_technique_te0132(processed_article),
         # Add more techniques as needed
+    }
