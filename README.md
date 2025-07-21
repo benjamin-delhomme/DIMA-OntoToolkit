@@ -63,9 +63,66 @@ After analyzing `ex1.txt`, the following JSON was produced:
 
 This file lives under: `output/articles_processed/article_processed_<article_id>.json`
 
-### 🔍 Create an Ontology ...
+### 🧠 Create an Ontology from the Article
 
-to fill
+Once the semantic content is extracted from an article, the tool maps this information to a formal **OWL ontology**, allowing structured reasoning and advanced query capabilities.
+
+This is done in two stages:
+
+1. **TBox loading (ontology structure)**
+   The Influence-mini ontology defines the key concepts (`Motif`, `Quote`, `NarratedAgent`, etc.) and their relationships — this is known as the **TBox**. It is imported and loaded into memory.
+
+2. **ABox generation (individual instances)**
+   For each article, instances of those classes are created — for example, `Quote_7` is declared as an instance of `ParaphrasedQuote`, which is a subclass of `Quote`.
+
+---
+
+### 🧠 Semantic Reasoning (Using HermiT)
+
+After the ABox is generated, we run the [HermiT OWL reasoner](http://www.hermit-reasoner.com/) to **infer additional knowledge** using formal logic.
+
+This step does **not use black-box AI** — it uses strictly defined ontological rules. For instance:
+
+- If `ParaphrasedQuote` is defined as a subclass of `Quote`, and `X` is an instance of `ParaphrasedQuote`,
+  then HermiT infers that `X` is also a `Quote`.
+- If two concepts are marked as inverses, like `hasQuote` and `isMentionedIn`,
+  and one direction is asserted, the other is inferred automatically.
+
+These inferred facts are not always stored in the OWL file, but they are made available during query time.
+
+---
+
+### 🔎 Example: Query the Ontology with Inferences
+
+Once reasoning is complete, you can run SPARQL queries to explore the structured knowledge.
+
+Here’s an example SPARQL query that retrieves all quotes (including subclass instances like `DirectQuote` or `ParaphrasedQuote`), their type, and optional text and ID:
+
+```sparql
+PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
+
+SELECT ?individual ?type ?text ?id
+WHERE {
+  ?type rdfs:subClassOf* scim:Quote .
+  ?individual a ?type .
+  OPTIONAL { ?individual scim:hasText ?text . }
+  OPTIONAL { ?individual scim:hasId ?id . }
+}
+````
+
+This query leverages OWL subclass relationships to include all forms of quotes — even if their types differ — and returns human-readable information in a terminal-friendly table:
+
+```
++----------------------+-----------------------+----------------------------------------+----------------------+
+| individual           | type                  | text                                   | id                   |
++======================+=======================+========================================+======================+
+| scim:quote_7         | scim:DirectQuote      | "We trust our leaders..."              | 9a2a4d3a26_quote_7   |
+| scim:quote_3         | scim:ParaphrasedQuote | Zarnia has continued its posturing...  | 9a2a4d3a26_quote_3   |
+| ...                  | ...                   | ...                                    | ...                  |
++----------------------+-----------------------+----------------------------------------+----------------------+
+```
+
+> ⚠️ You don’t need to manually declare every fact — the reasoner infers and exposes new facts based on ontology logic, enabling richer queries and insights.
 
 ### 📦 Final Output
 
