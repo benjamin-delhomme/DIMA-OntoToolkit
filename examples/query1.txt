@@ -1,0 +1,104 @@
+#This SPARQL query retrieves all individuals that are instances of Quote or any of its subclasses, along with their type, optional text (hasText), and optional identifier (hasId).
+
+SELECT ?individual ?type ?text ?id
+WHERE {
+  ?type rdfs:subClassOf* scim:Quote .
+  ?individual a ?type .
+  OPTIONAL { ?individual scim:hasText ?text . }
+  OPTIONAL { ?individual scim:hasId ?id . }
+}"
+[DEBUG] GPT_API_KEY loaded
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| col0                     | col1                  | col2                                     | col3                |
++==========================+=======================+==========================================+=====================+
+| scim:c9ce7d9bb7_quote_9  | scim:DirectQuote      | Velmora wants a reaction, but we won't   | c9ce7d9bb7_quote_9  |
+|                          |                       | give them the satisfaction.              |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_6  | scim:DirectQuote      | This is a textbook case of strategic     | c9ce7d9bb7_quote_6  |
+|                          |                       | patience in the face of deliberate       |                     |
+|                          |                       | intimidation.                            |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_8  | scim:DirectQuote      | We're proud of how our leaders are       | c9ce7d9bb7_quote_8  |
+|                          |                       | handling this.                           |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_7  | scim:DirectQuote      | "We trust our leaders to protect us      | 9a2a4d3a26_quote_7  |
+|                          |                       | without fueling unnecessary conflict,"   |                     |
+|                          |                       | said Lira Vanholm, a Norlundian          |                     |
+|                          |                       | resident.                                |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_5  | scim:DirectQuote      | Caldria has every right to defend its    | c9ce7d9bb7_quote_5  |
+|                          |                       | interests, yet it has chosen the high    |                     |
+|                          |                       | road.                                    |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_6  | scim:ParaphrasedQuote | Local communities in Norlund have voiced | 9a2a4d3a26_quote_6  |
+|                          |                       | strong support for their government's    |                     |
+|                          |                       | handling of the crisis.                  |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_1  | scim:ParaphrasedQuote | Caldria's administration has responded   | c9ce7d9bb7_quote_1  |
+|                          |                       | with composure and clarity, earning      |                     |
+|                          |                       | international commendation for its       |                     |
+|                          |                       | steadfast commitment to peace.           |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_10 | scim:ParaphrasedQuote | Several regional powers have issued      | c9ce7d9bb7_quote_10 |
+|                          |                       | joint statements urging Velmora to cease |                     |
+|                          |                       | its disruptive tactics.                  |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_12 | scim:ParaphrasedQuote | Caldria continues to emphasize dialogue  | c9ce7d9bb7_quote_12 |
+|                          |                       | and de-escalation.                       |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_0  | scim:ParaphrasedQuote | Caldria has reinforced its position as a | c9ce7d9bb7_quote_0  |
+|                          |                       | stabilizing force in a volatile          |                     |
+|                          |                       | geopolitical climate.                    |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_13 | scim:ParaphrasedQuote | Caldria is standing firm without         | c9ce7d9bb7_quote_13 |
+|                          |                       | wavering from its principles.            |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_3  | scim:ParaphrasedQuote | Zarnia has continued its pattern of      | 9a2a4d3a26_quote_3  |
+|                          |                       | aggressive posturing.                    |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_11 | scim:ParaphrasedQuote | The Global Security Council has called   | c9ce7d9bb7_quote_11 |
+|                          |                       | an emergency session to address the      |                     |
+|                          |                       | mounting tensions.                       |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_7  | scim:ParaphrasedQuote | Public sentiment within Caldria remains  | c9ce7d9bb7_quote_7  |
+|                          |                       | firmly aligned with the government's     |                     |
+|                          |                       | response.                                |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_2  | scim:ParaphrasedQuote | Velmora has escalated its antagonistic   | c9ce7d9bb7_quote_2  |
+|                          |                       | behavior over the past month, most       |                     |
+|                          |                       | notably through a string of cyber        |                     |
+|                          |                       | intrusions targeting Caldria's           |                     |
+|                          |                       | infrastructure and a surprise naval      |                     |
+|                          |                       | deployment near disputed maritime zones. |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_1  | scim:ParaphrasedQuote | Norlund officials maintained a calm and  | 9a2a4d3a26_quote_1  |
+|                          |                       | measured stance, refusing to be drawn    |                     |
+|                          |                       | into unnecessary escalation.             |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_0  | scim:ParaphrasedQuote | Norlund has once again demonstrated its  | 9a2a4d3a26_quote_0  |
+|                          |                       | unwavering commitment to peace and       |                     |
+|                          |                       | regional stability.                      |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_2  | scim:ParaphrasedQuote | Analysts praise Norlund's government for | 9a2a4d3a26_quote_2  |
+|                          |                       | exercising restraint in the face of      |                     |
+|                          |                       | increasing hostility.                    |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_8  | scim:ParaphrasedQuote | International voices have begun to echo  | 9a2a4d3a26_quote_8  |
+|                          |                       | concern over Zarnia's intentions.        |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_4  | scim:IndirectQuote    | Independent experts warn of a calculated | c9ce7d9bb7_quote_4  |
+|                          |                       | effort to provoke confrontation.         |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_9  | scim:IndirectQuote    | Some diplomats are calling for sanctions | 9a2a4d3a26_quote_9  |
+|                          |                       | if the pattern continues.                |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:c9ce7d9bb7_quote_3  | scim:IndirectQuote    | Velmoran officials insist these actions  | c9ce7d9bb7_quote_3  |
+|                          |                       | fall within their sovereign rights.      |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_5  | scim:IndirectQuote    | Observers argue that Zarnia's behavior   | 9a2a4d3a26_quote_5  |
+|                          |                       | reflects a deliberate attempt to         |                     |
+|                          |                       | destabilize the region.                  |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+
+| scim:9a2a4d3a26_quote_4  | scim:IndirectQuote    | Zarnian leaders claim these drills are   | 9a2a4d3a26_quote_4  |
+|                          |                       | routine.                                 |                     |
++--------------------------+-----------------------+------------------------------------------+---------------------+

@@ -187,6 +187,7 @@ This project uses the following third-party libraries:
 - [Owlready2](https://github.com/pwin/OWLReady2) – GNU LGPL v3
 - [ftfy](https://github.com/rspeer/python-ftfy) – MIT License
 - [requests](https://github.com/psf/requests) – Apache License 2.0
+- [tabulate](https://github.com/astanin/python-tabulate) – MIT License
 
 You can find copies of the relevant licenses in the respective repositories or license documentation.
 
