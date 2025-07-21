@@ -21,6 +21,7 @@
 @prefix dima: <https://m82-project.org/dima-bias/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
@@ -103,8 +104,8 @@ dima:Phase owl:disjointWith dima:Technique .
 ### Data Properties ####
 ##########################
 
-:hasExplanation rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Argument ;
+dima:hasExplanation rdf:type owl:DatatypeProperty ;
+    rdfs:domain scim:Argument ;
     rdfs:range xsd:string ;
     rdfs:label "has explanation"@en ;
     rdfs:comment "Explanation of why the technique has been identified"@en .
