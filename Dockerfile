@@ -26,6 +26,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+RUN pip install --upgrade owlready2
+
 #Display print when called
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 

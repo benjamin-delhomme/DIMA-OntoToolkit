@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:ns1="https://stratcomcoe.org/influence-mini/ontology#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_article">
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_1"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_4"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_5"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_0"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_3"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_2"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasHeadline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria Holds Firm Amid Rising Tensions with Velmora</ns1:hasHeadline>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_article</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N19e98886f50644f881487ab0b713552b">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfeda31586dd2439e95e084890c5252db">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#containsQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#isContainedIn"/>
+    <rdfs:label xml:lang="en">contains quote</rdfs:label>
+    <rdfs:comment xml:lang="en">Inferred link from a Motif or an Argument to any Quote it contains.</rdfs:comment>
+    <owl:propertyChainAxiom rdf:nodeID="Na4eff3a8f149401cb7ca16687d84eb3b"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nf805be87337a4ca3b1e815941bb216b1"/>
+    <owl:propertyChainAxiom rdf:nodeID="N2e84b0aa708c4b44ac38df00d1b54d4b"/>
+    <owl:propertyChainAxiom rdf:nodeID="Ndb9d5b3a93b745538e081cf05e76df64"/>
+    <owl:propertyChainAxiom rdf:nodeID="Ne47c21ddabed47cd85d1d382a2dd0fdc"/>
+    <owl:propertyChainAxiom rdf:nodeID="N51420602705d47c2b32e7ed8232ac92c"/>
+    <owl:propertyChainAxiom rdf:nodeID="N87fc38aabc3849feacdc626c052e32b4"/>
+    <owl:propertyChainAxiom rdf:nodeID="N025aba41fffa4df3950df3ada2920086"/>
+    <owl:propertyChainAxiom rdf:nodeID="N83ef55d1a87a45c393ae1c9d7ae489de"/>
+    <owl:propertyChainAxiom rdf:nodeID="N41b6b18db2ba4b3a9b7ac54452b3df9a"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nf10304e932a549739780e4f918032d01"/>
+    <owl:propertyChainAxiom rdf:nodeID="N0a4a8833a81b4ba7a36df085ad1623c7"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nf4f6fddcf1014754af0745488de64eba"/>
+    <owl:propertyChainAxiom rdf:nodeID="Ncb26e48b34584e10b825bbd96d55ff2f"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nf364d27af3734f4ca0008c66a8919f5d"/>
+    <owl:propertyChainAxiom rdf:nodeID="Ncdd3513810ca425898990fe07fba607f"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nfd717436980240eebd7d64b0a3bc2542"/>
+    <owl:propertyChainAxiom rdf:nodeID="N2d129061c56245dc9d3cb1fef58929c7"/>
+    <owl:propertyChainAxiom rdf:nodeID="N711ecf6b14e748968d47e25905948ffb"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nb464c89c42ce4686b089eb9925add211"/>
+    <owl:propertyChainAxiom rdf:nodeID="Nb9c327bf72f84ec4a8cd03c2005e5113"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_5">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As the situation unfolds, Caldria continues to emphasize dialogue and de-escalation — standing firm without wavering from its principles.</ns1:hasText>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_5"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_5</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_3">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_5"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_6"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_3</ns1:hasId>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_2"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_1">
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_3"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_conclusion_1</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zarnia has continued its pattern of aggressive posturing.</ns1:hasText>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_9">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The situation is unfolding.</ns1:hasText>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_9</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedTerroristOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Terrorist Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:label xml:lang="en">Paraphrased Quote</rdfs:label>
+    <rdfs:comment xml:lang="en">A quote that rephrases or reinterprets a source's statement without being a direct or strictly indirect quote.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6286ae283efd44d59ed180caa987c5c4">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_4</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Independent experts warn of a calculated effort to provoke confrontation.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_3</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Last week's unauthorized military exercises near the Norlund border marked the third such incident this month.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_conclusion_3</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_13"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria is standing firm without wavering from its principles.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has quote</rdfs:label>
+    <rdfs:domain rdf:nodeID="Nf891cfe1da924e7098fabab059ab3fd1"/>
+    <rdfs:domain rdf:nodeID="N89a0de035192466b889a3e8c666579ab"/>
+    <rdfs:domain rdf:nodeID="N4339ac585e4943a791b675cca6188ae5"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:comment xml:lang="en">Links a premise, development, or conclusion to a quote it contains or references.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_1">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_4"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_3"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_5"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_development_1"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_1"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_argument_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_3">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_3</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This escalation includes a string of cyber intrusions targeting Caldria's infrastructure and a surprise naval deployment near disputed maritime zones.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_4">
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_4"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_4</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zarnian leaders claim these drills are routine.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_2">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_2</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation.</ns1:hasText>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isConclusionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_6">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_6</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Local communities in Norlund have voiced strong support for their government's handling of the crisis.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncccc154323c14052990970fd9f7b33d9">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N00a26881fe5147f6b4ffc69700aaac06">
+    <rdf:rest rdf:nodeID="N2f943662a7034bc2adffda8c69017941"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund has once again demonstrated its unwavering commitment to peace and regional stability.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_0</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Conclusion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Conclusion</rdfs:label>
+    <rdfs:comment xml:lang="en">The final judgment or result of an argument.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Motif">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Motif</rdfs:label>
+    <rdfs:comment xml:lang="en">In the context of a text, it is the equivalent of a paragraph, representing a recurring theme or idea.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbabeafa5fa8347f7898c2392a7060c54">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:rest rdf:nodeID="Nfa9718c6be4b479bbd709b682c0eba8d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf5124899a87e491a8edd3a7ee89d4650">
+    <rdf:rest rdf:nodeID="N7c8d18cfb31844abbb512af561dd1518"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_2">
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_2"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_2</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmora has escalated its antagonistic behavior over the past month.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N03946898e92d4ef9af88d40d8e638684">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <rdf:rest rdf:nodeID="Na6d811d53a0643d682cbd50c1f4c9e6a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5f62305c855248989d37d97cace1f8a6">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public sentiment within Caldria remains firmly aligned with the government's response.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_7</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7673bbee4e3441f19f234f6db1da908b">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_0">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_0</ns1:hasId>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_0"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In a resolute affirmation of diplomatic integrity, Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate. Despite a series of inflammatory gestures from neighboring Velmora, Caldria's administration has responded with composure and clarity, earning international commendation for its steadfast commitment to peace.</ns1:hasText>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_2">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The local population supports the government's approach as responsible and protective.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_conclusion_2</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_3">
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_8"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_3"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_argument_3</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_development_1">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_development_1</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_5"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#InterpretiveStatement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Interpretive Statement</rdfs:label>
+    <rdfs:comment xml:lang="en">A paraphrased or summarized quote that retains the original meaning.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_7">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Several regional powers have issued joint statements urging Velmora to cease its disruptive tactics.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_10"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_7</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has name</rdfs:label>
+    <rdfs:comment xml:lang="en">The textual name or label used for the narrated agent in the article or discourse.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#ReportedStatement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Reported Statement</rdfs:label>
+    <rdfs:comment xml:lang="en">A direct statement of fact attributed to a source.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedMediaOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Media Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_2"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_6"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_7"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_argument_2</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedGeneralWorker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedGeneralPublic"/>
+    <rdfs:label xml:lang="en">Narrated General Worker</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfd717436980240eebd7d64b0a3bc2542">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+    <rdf:rest rdf:nodeID="N5f62305c855248989d37d97cace1f8a6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87fc38aabc3849feacdc626c052e32b4">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+    <rdf:rest rdf:nodeID="N6286ae283efd44d59ed180caa987c5c4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ec7f4c30ef242ceb83d1165104d5a9f">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdf:rest rdf:nodeID="N0be7cfc247ee4c2fb4fe96fb525f82ce"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_1">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a textbook case of strategic patience in the face of deliberate intimidation.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_6"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_conclusion_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_4">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The international community has begun taking notice. Several regional powers have issued joint statements urging Velmora to cease its disruptive tactics, while the Global Security Council has called an emergency session to address the mounting tensions.</ns1:hasText>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_4"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_4</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_8">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_8</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_8"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">International voices have begun to echo concern over Zarnia's intentions.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf4f6fddcf1014754af0745488de64eba">
+    <rdf:rest rdf:nodeID="Naedc82d285854d11ac01c340ea8c77ff"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasQuoteStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has quote status</rdfs:label>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:comment xml:lang="en">Associates a quote with a specific status, such as announcement, interview, opinion, or claim.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_5">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_5</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_9"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Velmora wants a reaction, but we won't give them the satisfaction."</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naaed5de00a764c26ad3b9aad75e49a59">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_2">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_3"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmoran officials insist these actions fall within their sovereign rights.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_2</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#UndecidedStatement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Undecided Statement</rdfs:label>
+    <rdfs:comment xml:lang="en">A quote whose status cannot yet be determined (e.g., insufficient context).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Premise">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Premise</rdfs:label>
+    <rdfs:comment xml:lang="en">A fundamental assumption or basis that supports an argument.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e84b0aa708c4b44ac38df00d1b54d4b">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="N4a195f5ec12d48c0ae8a6bdb7efb8da5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_2">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmora has escalated its antagonistic behavior over the past month, most notably through a string of cyber intrusions targeting Caldria's infrastructure and a surprise naval deployment near disputed maritime zones.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_2</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_1</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There have been a series of inflammatory gestures from neighboring Velmora.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_1">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zarnia, on the other hand, has continued its pattern of aggressive posturing. Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. While Zarnian leaders claim these drills are routine, satellite imagery and intelligence reports suggest otherwise. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.</ns1:hasText>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_1"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_motif_1</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_6</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"We're proud of how our leaders are handling this," said Tomas Erel, a teacher from the coastal town of Fenwick.</ns1:hasText>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:label xml:lang="en">Narrated Person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_5"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has chosen the high road.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_4</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_2">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_conclusion_2</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria's public supports the government's stance and refuses to react to Velmora's provocations.</ns1:hasText>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some diplomats are calling for sanctions if the pattern continues.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_9</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated State</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_development_0">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_2"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_development_0</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_0">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_0</ns1:hasId>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_0"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_1"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_0"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_0"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_3</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public sentiment within Caldria remains firmly aligned with the government's response. "We're proud of how our leaders are handling this," said Tomas Erel, a teacher from the coastal town of Fenwick. "Velmora wants a reaction, but we won't give them the satisfaction."</ns1:hasText>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasConclusion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdfs:label xml:lang="en">has conclusion</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an argument to its conclusion.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_1">
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_2"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_3"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_2"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_5">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_5</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb464c89c42ce4686b089eb9925add211">
+    <rdf:rest rdf:nodeID="N4319d781d62b46198c2046db5fc3968f"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasHeadline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has headline</rdfs:label>
+    <rdfs:comment xml:lang="en">The headline or title of the article.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#CallToAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Call to Action</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement urging action or response.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2e5d122856b402c9b7109f3ce832a1c">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:rest rdf:nodeID="N655510cedc1846c693bca5128d8b6438"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_0</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ebd178f818c49c88d083326703fc4de">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:rest rdf:nodeID="Nbf9afb92ace343d3a617a29686dff088"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedCriminalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Criminal Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52ca7e0b7e474d6b9dc8dcc2c319f295">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_2">
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_3"/>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_2"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_motif_2</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Local communities in Norlund have voiced strong support for their government's handling of the crisis. "We trust our leaders to protect us without fueling unnecessary conflict," said Lira Vanholm, a Norlundian resident. Meanwhile, international voices have begun to echo concern over Zarnia's intentions, with some diplomats calling for sanctions if the pattern continues.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_7">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"We trust our leaders to protect us without fueling unnecessary conflict," said Lira Vanholm, a Norlundian resident.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_7</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#DirectQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d129061c56245dc9d3cb1fef58929c7">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+    <rdf:rest rdf:nodeID="Nfeda31586dd2439e95e084890c5252db"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Contradiction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Contradiction or Dispute</rdfs:label>
+    <rdfs:comment xml:lang="en">A quote that challenges or contradicts another claim.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Development">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Development</rdfs:label>
+    <rdfs:comment xml:lang="en">The explanation or elaboration of an argument leading to its conclusion.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_5">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Public sentiment within Caldria remains firmly aligned with the government's response.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_5</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmoran officials insist these actions fall within their sovereign rights.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_3</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22ebe203eae2405c859d74763b21e2eb">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Quote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Quote</rdfs:label>
+    <rdfs:comment xml:lang="en">A segment of text that is referenced or cited within another text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_1">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_1</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria's administration has responded with composure and clarity, earning international commendation for its steadfast commitment to peace.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncb26e48b34584e10b825bbd96d55ff2f">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+    <rdf:rest rdf:nodeID="Nc6a5ea1686744dcab488f69528c66147"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na6d811d53a0643d682cbd50c1f4c9e6a">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdf:rest rdf:nodeID="Nc2e5d122856b402c9b7109f3ce832a1c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_6">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_6</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The international community has begun taking notice.</ns1:hasText>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_5</ns1:hasId>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_9"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_3"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_8"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_7"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_6"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_4</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neeb97833e6ab44ba8ff45394d6af318a">
+    <rdf:rest rdf:nodeID="N52ca7e0b7e474d6b9dc8dcc2c319f295"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Independent experts warn of a calculated effort to provoke confrontation.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_3</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7c8d18cfb31844abbb512af561dd1518">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedAcademic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Academic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_6">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a textbook case of strategic patience in the face of deliberate intimidation.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#DirectQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_6</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6a5ea1686744dcab488f69528c66147">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4eff3a8f149401cb7ca16687d84eb3b">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="N08cb8434cd574d7fa206d87e280e81fb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund is showing bold leadership by maintaining peace and stability despite provocations.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_conclusion_0</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb302938bb2d04f21a4e861b3033c92ee">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_argument_0</ns1:hasId>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_2"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_0"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_1"/>
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_development_0"/>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_2">
+    <ns1:hasDevelopment rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_4"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_argument_2</ns1:hasId>
+    <ns1:hasConclusion rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_1"/>
+    <ns1:hasPremise rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_4"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedCelebrity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Celebrity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N86a02c2f9bf94272b8c688135932023d">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_3">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zarnia has continued its pattern of aggressive posturing.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_3</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3e72a5fb68146f48bcfc55570be8371">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N39c2231a69134e33b6116cb93dd507b9">
+    <rdf:rest rdf:nodeID="N2217c8fc2ba84417ba388156db194ee2"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">NATO StratCom COE Influence-Mini Ontology</rdfs:label>
+    <owl:versionIRI rdf:resource="https://stratcomcoe.org/influence-mini/ontology/v1.0.0"/>
+    <dcterms:source rdf:resource="https://github.com/benjamin-delhomme/DIMA-OntoToolkit/blob/main/ontologies/influence-mini.ttl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There have been repeated provocations from Zarnia.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_11">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Global Security Council has called an emergency session to address the mounting tensions.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_11</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1eee7e936e594b46b27b57fe2a6fb240">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf805be87337a4ca3b1e815941bb216b1">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="Nede5dd43fbbb4fcdb9e38924d019c06d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedCorporation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Corporation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has id</rdfs:label>
+    <rdfs:comment xml:lang="en">The extractor‑level identifier for an individual</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8f1c6888d6949e38cb48926ee215add">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+    <rdf:rest rdf:nodeID="N668e4b3604544d5d99f82e20b7e327f8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_6">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Local communities in Norlund have voiced strong support for their government's handling of the crisis.</ns1:hasText>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_6"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_6</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee7a4ea942944aceb3c0729e6de89e0b">
+    <rdf:rest rdf:nodeID="N00a26881fe5147f6b4ffc69700aaac06"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfc9403ae9e0e45c680a8161b4e551335">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N83ef55d1a87a45c393ae1c9d7ae489de">
+    <rdf:rest rdf:nodeID="Na9178ae64f724cadbf5c1c77813dd62c"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6bf9e864c2a14286a24ba8ccf3066aee">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdf:rest rdf:nodeID="N944a46f0400540feaf688e51a5db51aa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N458531ffe64f471db2586092ba20bdd1">
+    <rdf:rest rdf:nodeID="Nb7a401e3fcc94f25885a5be18d31a1cf"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#mentionsInQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">mentions agent in quote</rdfs:label>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:comment xml:lang="en">Indicates that a narrated agent is mentioned or referred to within the content of a quote.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N51420602705d47c2b32e7ed8232ac92c">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+    <rdf:rest rdf:nodeID="Nfc9403ae9e0e45c680a8161b4e551335"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_9">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#DirectQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_9</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmora wants a reaction, but we won't give them the satisfaction.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasArgument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Ndd2bce6c68474829841320638061d281"/>
+    <rdfs:domain rdf:nodeID="N5e47fe99243c42a9923f494edeb2e75d"/>
+    <rdfs:domain rdf:nodeID="Nbd5d0aaaabc147f884a4182a683d935a"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdfs:label xml:lang="en">has argument</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates a motif or an article to the arguments it contains or develops.</rdfs:comment>
+    <owl:propertyChainAxiom rdf:nodeID="Nf278284603ed44c09d768d5f83590d2b"/>
+    <owl:propertyChainAxiom rdf:nodeID="N39c2231a69134e33b6116cb93dd507b9"/>
+    <owl:propertyChainAxiom rdf:nodeID="N4c755662a0ff4ca4a33f35670daa17b6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_13">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_13</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria is standing firm without wavering from its principles.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee5acfeb0d0f4d1fa3f6d11208a329b8">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <rdf:rest rdf:nodeID="Nb302938bb2d04f21a4e861b3033c92ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbf9afb92ace343d3a617a29686dff088">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:rest rdf:nodeID="Nf27b250c1a124c0386d9e2c790a39c68"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_conclusion_0">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_conclusion_0</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria is affirming its diplomatic integrity.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_2">
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_2"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Caldria has every right to defend its interests, yet it has chosen the high road," remarked Dr. Tenley Marris, a political analyst at the Central Alliance Institute. "This is a textbook case of strategic patience in the face of deliberate intimidation."</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_2</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has content</rdfs:label>
+    <rdfs:comment xml:lang="en">The full textual content of the article.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b94b5b47184466f8527795f8263a391">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N03946898e92d4ef9af88d40d8e638684"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N025aba41fffa4df3950df3ada2920086">
+    <rdf:rest rdf:nodeID="Nb7974790ecaf4e9ea1f09dbdcce3fe86"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_12">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_12</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria continues to emphasize dialogue and de-escalation.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedInternationalOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated International Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf10304e932a549739780e4f918032d01">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="N0edd51a3539244b487a4adc66ef231d4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedGeneralPublic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated General Public</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_4">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has every right to defend its interests.</ns1:hasText>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_5"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_4</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_0">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_0</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_0"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasPremise">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdfs:label xml:lang="en">has premise</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an argument to one of its supporting premises.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Narrated Agent</rdfs:label>
+    <rdfs:comment xml:lang="en">An agent as it is narrated in a specific medium, such as a news article. This class allows representation of agents before their identity or factual grounding is verified.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isAttributedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is attributed to</rdfs:label>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:comment xml:lang="en">Links a quote to the narrated agent to whom it is attributed in the narrative.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedNGO">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated NGO</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#OfficialPosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Official Position</rdfs:label>
+    <rdfs:comment xml:lang="en">A quote that reflects an official stance from a government, organization, or spokesperson.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Argument"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdfs:label xml:lang="en">has development</rdfs:label>
+    <rdfs:comment xml:lang="en">Relates an argument to one of its developments or elaborations.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#PersonalOpinion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Personal Opinion</rdfs:label>
+    <rdfs:comment xml:lang="en">A subjective viewpoint or belief expressed by a person.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_0">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In a bold display of leadership, Norlund has once again demonstrated its unwavering commitment to peace and regional stability. Despite repeated provocations from Zarnia, Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation. Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.</ns1:hasText>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_argument_0"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_motif_0</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isQuoteStatusOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuoteStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb0497e9d1642412e8de877597919d3df">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_2</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Analysts praise Norlund's government for exercising restraint in the face of increasing hostility.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne47c21ddabed47cd85d1d382a2dd0fdc">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+    <rdf:rest rdf:nodeID="N7673bbee4e3441f19f234f6db1da908b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedPolitician">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Politician</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedGovernment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Government</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d234e96bb5d4b279e11f8a9908dde20">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f943662a7034bc2adffda8c69017941">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7974790ecaf4e9ea1f09dbdcce3fe86">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedActivist">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Activist</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_article">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_2"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_1"/>
+    <ns1:hasMotif rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_motif_0"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_article</ns1:hasId>
+    <ns1:hasHeadline rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund Stands Tall Against Aggressive Zarnian Provocations</ns1:hasHeadline>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d346f243a534d2cb7e499ca0ca5b836">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria continues to emphasize dialogue and de-escalation.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_7</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_8">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_8</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#DirectQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We're proud of how our leaders are handling this.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Quote Status</rdfs:label>
+    <rdfs:comment xml:lang="en">Describes the role and function of a quote within a narrative.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#DirectQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Direct Quote</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:comment xml:lang="en">A quote that is copied verbatim from the source.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedBusinessLeader">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Business Leader</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N655510cedc1846c693bca5128d8b6438">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:rest rdf:nodeID="Ne3e72a5fb68146f48bcfc55570be8371"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_premise_8">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_premise_8</ns1:hasId>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_11"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Global Security Council has called an emergency session to address the mounting tensions.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isContainedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#containsQuote"/>
+    <rdfs:label xml:lang="en">is contained in (motif or argument)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isMotifOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Argument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Argument</rdfs:label>
+    <rdfs:comment xml:lang="en">A structured claim supported by premises, developments, and conclusions.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N89a0de035192466b889a3e8c666579ab">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nee7a4ea942944aceb3c0729e6de89e0b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4c755662a0ff4ca4a33f35670daa17b6">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+    <rdf:rest rdf:nodeID="N1eee7e936e594b46b27b57fe2a6fb240"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb9d5b3a93b745538e081cf05e76df64">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+    <rdf:rest rdf:nodeID="N22ebe203eae2405c859d74763b21e2eb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has earned international commendation for its steadfast commitment to peace.</ns1:hasText>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_1"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_7">
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_7"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_7</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"We trust our leaders to protect us without fueling unnecessary conflict," said Lira Vanholm, a Norlundian resident.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2b80597ed1ad4ee7baebd5809d1d2186">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:rest rdf:nodeID="N6d457bdb1c1e4066866c46be68f85be8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_5">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_5</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Satellite imagery and intelligence reports suggest otherwise.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7c2f9a5d673454ca2b0aa6e7b64440c">
+    <rdf:rest rdf:nodeID="N7330e02a6ca04f0faa70bc879bcefe98"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedAgentUndecided">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:label xml:lang="en">Narrated Person</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement whose agent cannot yet be determined (e.g., insufficient context).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedBystander">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedGeneralPublic"/>
+    <rdfs:label xml:lang="en">Narrated Bystander</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_motif_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Velmora has escalated its antagonistic behavior over the past month, most notably through a string of cyber intrusions targeting Caldria's infrastructure and a surprise naval deployment near disputed maritime zones. Velmoran officials insist these actions fall within their sovereign rights, but independent experts warn of a calculated effort to provoke confrontation.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_motif_1</ns1:hasId>
+    <ns1:hasArgument rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_argument_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_conclusion_3">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_conclusion_3</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is growing international pressure on Zarnia due to perceived threatening behavior.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasMotif">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has motif</rdfs:label>
+    <rdfs:comment xml:lang="en">Links an Article to one of its Motifs</rdfs:comment>
+    <rdfs:domain rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+    <rdfs:range rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#isMotifOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0edd51a3539244b487a4adc66ef231d4">
+    <rdf:rest rdf:nodeID="Naaed5de00a764c26ad3b9aad75e49a59"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_4</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zarnian leaders claim these drills are routine.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:nodeID="N6b94b5b47184466f8527795f8263a391"/>
+    <rdfs:domain rdf:nodeID="Nd705ef6524e240abae24b0ebe658a6ee"/>
+    <rdfs:domain rdf:nodeID="N7febb8b984fc46498796b5bb1e9a13a8"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">has text</rdfs:label>
+    <rdfs:comment xml:lang="en">The textual content of the motif, premise, development, or conclusion.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#HypotheticalStatement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#QuoteStatus"/>
+    <rdfs:label xml:lang="en">Hypothetical or Speculative Quote</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement exploring hypothetical or speculative scenarios.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf278284603ed44c09d768d5f83590d2b">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasMotif"/>
+    <rdf:rest rdf:nodeID="N854f740d33974a3ebc5dcf59e06eeb9f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naedc82d285854d11ac01c340ea8c77ff">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncdd3513810ca425898990fe07fba607f">
+    <rdf:rest rdf:nodeID="N1d234e96bb5d4b279e11f8a9908dde20"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbd5d0aaaabc147f884a4182a683d935a">
+    <owl:unionOf rdf:nodeID="N458531ffe64f471db2586092ba20bdd1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Several regional powers have issued joint statements urging Velmora to cease its disruptive tactics.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_10</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_8">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">International voices have begun to echo concern over Zarnia's intentions.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_8</ns1:hasId>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd2bce6c68474829841320638061d281">
+    <owl:unionOf rdf:nodeID="Nee5acfeb0d0f4d1fa3f6d11208a329b8"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N944a46f0400540feaf688e51a5db51aa">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:rest rdf:nodeID="N2862d5d665ca44eca7a4694d90fcfd29"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isPremiseOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee6089bb62ee4563a6a2289257a8ec12">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <rdf:rest rdf:nodeID="N6bf9e864c2a14286a24ba8ccf3066aee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N711ecf6b14e748968d47e25905948ffb">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="Nb7c2f9a5d673454ca2b0aa6e7b64440c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedAgent"/>
+    <rdfs:label xml:lang="en">Narrated Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedMilitaryFigure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Military Figure</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_5">
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria has every right to defend its interests, yet it has chosen the high road.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_quote_5</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#DirectQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_premise_9">
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_9"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some diplomats are calling for sanctions if the pattern continues.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_premise_9</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf364d27af3734f4ca0008c66a8919f5d">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+    <rdf:rest rdf:nodeID="N8d346f243a534d2cb7e499ca0ca5b836"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nebb9063729874e8bb85796160def78d0">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0be7cfc247ee4c2fb4fe96fb525f82ce">
+    <rdf:rest rdf:nodeID="Nbabeafa5fa8347f7898c2392a7060c54"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Premise"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedJournalist">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Journalist</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#IndirectQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Indirect Quote</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Quote"/>
+    <rdfs:comment xml:lang="en">A quote that is paraphrased or indirectly referenced from the source.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N668e4b3604544d5d99f82e20b7e327f8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isDevelopmentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9c327bf72f84ec4a8cd03c2005e5113">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="Na8f1c6888d6949e38cb48926ee215add"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N450d3917cfa249a88d71adae641bbef9">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+    <rdf:rest rdf:nodeID="Ncccc154323c14052990970fd9f7b33d9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7a401e3fcc94f25885a5be18d31a1cf">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Article"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2862d5d665ca44eca7a4694d90fcfd29">
+    <rdf:rest rdf:nodeID="Nebb9063729874e8bb85796160def78d0"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_development_0">
+    <ns1:hasQuote rdf:resource="https://stratcomcoe.org/influence-mini/ontology#c9ce7d9bb7_quote_1"/>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9ce7d9bb7_development_0</ns1:hasId>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caldria's administration has responded with composure and clarity.</ns1:hasText>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7330e02a6ca04f0faa70bc879bcefe98">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4339ac585e4943a791b675cca6188ae5">
+    <owl:unionOf rdf:nodeID="N2b80597ed1ad4ee7baebd5809d1d2186"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3485a38ca65b4a6f96cea3a6c50582a1">
+    <rdf:rest rdf:nodeID="N5ec7f4c30ef242ceb83d1165104d5a9f"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Motif"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncae0539e4ed64407ae1c156ca3fa1e44">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41b6b18db2ba4b3a9b7ac54452b3df9a">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="Nf5124899a87e491a8edd3a7ee89d4650"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_0">
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_0</ns1:hasId>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund has once again demonstrated its unwavering commitment to peace and regional stability.</ns1:hasText>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#9a2a4d3a26_quote_1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="https://stratcomcoe.org/influence-mini/ontology#ParaphrasedQuote"/>
+    <ns1:hasText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norlund officials maintained a calm and measured stance, refusing to be drawn into unnecessary escalation.</ns1:hasText>
+    <ns1:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9a2a4d3a26_quote_1</ns1:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4319d781d62b46198c2046db5fc3968f">
+    <rdf:rest rdf:nodeID="N19e98886f50644f881487ab0b713552b"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5e47fe99243c42a9923f494edeb2e75d">
+    <owl:unionOf rdf:nodeID="N450d3917cfa249a88d71adae641bbef9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#hasAttributedQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#isAttributedTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4a195f5ec12d48c0ae8a6bdb7efb8da5">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasConclusion"/>
+    <rdf:rest rdf:nodeID="N3dfacac7ea1742bdbbaefeaa7ea34553"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isArgumentOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N854f740d33974a3ebc5dcf59e06eeb9f">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isMentionedInQuote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#mentionsInQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0a4a8833a81b4ba7a36df085ad1623c7">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:nodeID="Neeb97833e6ab44ba8ff45394d6af318a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedInstitution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Institution</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf27b250c1a124c0386d9e2c790a39c68">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedCriminal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedPerson"/>
+    <rdfs:label xml:lang="en">Narrated Criminal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfa9718c6be4b479bbd709b682c0eba8d">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Conclusion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3dfacac7ea1742bdbbaefeaa7ea34553">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#NarratedMilitary">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#NarratedOrganization"/>
+    <rdfs:label xml:lang="en">Narrated Military</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd705ef6524e240abae24b0ebe658a6ee">
+    <owl:unionOf rdf:nodeID="Nee6089bb62ee4563a6a2289257a8ec12"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na9178ae64f724cadbf5c1c77813dd62c">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#isQuoteOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasQuote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nede5dd43fbbb4fcdb9e38924d019c06d">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasDevelopment"/>
+    <rdf:rest rdf:nodeID="Ncae0539e4ed64407ae1c156ca3fa1e44"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf891cfe1da924e7098fabab059ab3fd1">
+    <owl:unionOf rdf:nodeID="N8ebd178f818c49c88d083326703fc4de"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7febb8b984fc46498796b5bb1e9a13a8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N3485a38ca65b4a6f96cea3a6c50582a1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://stratcomcoe.org/influence-mini/ontology#Article">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Article</rdfs:label>
+    <rdfs:comment xml:lang="en">A published piece of writing, including research papers, blog posts, and news articles.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6d457bdb1c1e4066866c46be68f85be8">
+    <rdf:rest rdf:nodeID="N86a02c2f9bf94272b8c688135932023d"/>
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#Development"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2217c8fc2ba84417ba388156db194ee2">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasArgument"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N08cb8434cd574d7fa206d87e280e81fb">
+    <rdf:first rdf:resource="https://stratcomcoe.org/influence-mini/ontology#hasPremise"/>
+    <rdf:rest rdf:nodeID="Nb0497e9d1642412e8de877597919d3df"/>
+  </rdf:Description>
+</rdf:RDF>

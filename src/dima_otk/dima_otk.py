@@ -28,7 +28,6 @@ from dima_otk.semantic_analysis.quote_logic import get_quotes_for_article
 from dima_otk.bias_analysis.biases_logic import get_biases_from_article
 
 from dima_otk.owl.owl_influencemini_converter import influencemini_initialize_tbox, convert_semantic_analysis_article
-from dima_otk.owl.owl_influencemini_reasoner import influencemini_initialize_inferred_tbox, generate_inferred_links
 
 def save_json(data, output_dir, filename_prefix, article_id, step_description):
     output_path = Path(output_dir) / f"{filename_prefix}_{article_id}.json"

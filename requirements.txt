@@ -2,3 +2,4 @@ ftfy
 requests
 rdflib
 owlready2
+tabulate
