@@ -1,5 +1,3 @@
-# dima_otk/extractor.py
-
 # Copyright 2025 Benjamin Delhomme, NATO Strategic Communications Centre of Excellence
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,6 +27,8 @@ from dima_otk.bias_analysis.biases_logic import get_biases_from_article
 
 from dima_otk.owl.owl_influencemini_converter import influencemini_initialize_tbox, convert_semantic_analysis_article
 
+from dima_otk.owl.owl_dima_converter import dima_initialize_tbox, convert_dima_analysis_article
+
 def save_json(data, output_dir, filename_prefix, article_id, step_description):
     output_path = Path(output_dir) / f"{filename_prefix}_{article_id}.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -44,7 +44,7 @@ class DimaOTK:
         self.rebuild_cache = rebuild_cache
         print(f"[INIT] DimaOTK initialized (rebuild_cache={self.rebuild_cache})")
         influencemini_initialize_tbox()
-        #influencemini_initialize_inferred_tbox()
+        dima_initialize_tbox()
 
     def run(self, input_text: str):
         """
@@ -108,7 +108,12 @@ class DimaOTK:
 
         save_json(biases, "output/bias_analysis", "article_biases", article_id, "STEP 6")
 
-        # Step 7  :  Convert semantic‑analysis JSON ➜ OWL ABox
+        # Step 7  :  Convert semantic‑analysis JSON ➜ OWL Influence Mini ABox
         print("[STEP 7] Converting semantic analysis to OWL ABox…")
         influence_mini_abox_file = convert_semantic_analysis_article(article_id)
-        print("[STEP 7] ABox written to", influence_mini_abox_file)
+        print(f"[STEP 7] Article {article_id} ABox written to {influence_mini_abox_file}")
+
+        # Step 8  :  Convert dima JSON ➜ OWL Dima ABox + OWL Influence Mini ABox
+        print("[STEP 8] Converting semantic analysis to OWL ABox and merging with the InfluenceMini OWL…")
+        dima_abox_file = convert_dima_analysis_article(article_id)
+        print("[STEP 8] Article {article_id} ABox written to {dima_abox_file}")
