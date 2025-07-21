@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import json
-from rdflib import Graph
+from rdflib import Graph, OWL
 from pathlib import Path
 from owlready2 import PREDEFINED_ONTOLOGIES, get_ontology, World
 
@@ -22,40 +22,67 @@ def influencemini_initialize_tbox():
     g.parse("ontologies/influence-mini.ttl", format="turtle")
     xml_out_file = Path("output/owl_influence-mini/tbox.owl")
     xml_out_file.parent.mkdir(parents=True, exist_ok=True)
+    full_file = Path("output/owl_influence-mini/influence-mini_full.owl")
+    full_file.parent.mkdir(parents=True, exist_ok=True)
     g.serialize(destination=str(xml_out_file), format="xml")
+    g.serialize(destination=str(full_file), format="xml")
     IRI = "https://stratcomcoe.org/influence-mini/ontology"
     PREDEFINED_ONTOLOGIES[IRI] = str(xml_out_file.resolve())
 
+def append_to_rdf_file(rdf_fragment_path: Path,
+                       output_file: Path,
+                       format: str = "xml"):
+    """
+    Merge `rdf_fragment_path` into `output_file`, then strip any owl:imports
+    so the resulting file is self‑contained.
+    """
+    from rdflib import Graph
+
+    g_main = Graph()
+    if output_file.exists():
+        g_main.parse(output_file, format=format)
+
+    g_new = Graph()
+    g_new.parse(rdf_fragment_path, format=format)
+
+    g_main += g_new
+
+    #remove *all* owl:imports triples
+    g_main.remove((None, OWL.imports, None))
+
+    g_main.serialize(destination=str(output_file), format=format)
+
+
 def convert_semantic_analysis_article(article_id: str) -> Path:
+    """Create ABox individuals for one article and merge them into the
+    flat ontology file `output/owl_influence-mini/influence-mini_full.owl`."""
     IRI = "https://stratcomcoe.org/influence-mini/ontology"
 
-    # load world and TBox
+    # Load the TBox once; we will add individuals directly to it
     world = World()
-    tbox = world.get_ontology(IRI).load()
+    tbox   = world.get_ontology(IRI).load()
 
-    # create ABox ontology that imports the TBox
-    abox_iri = f"http://example.org/influence-mini/abox/{article_id}"
-    abox = world.get_ontology(abox_iri)
-    abox.imported_ontologies.append(tbox)
-
-    # load JSON
-    data = json.loads(Path(f"output/semantic_analysis/article_processed_{article_id}.json").read_text())
+    # Read the JSON produced by your semantic analysis
+    data = json.loads(
+        Path(f"output/semantic_analysis/article_processed_{article_id}.json")
+        .read_text()
+    )
     art_id = data["article_id"]
-    pref = f"{art_id}_"
+    pref   = f"{art_id}_"
 
-    with abox:
-        # create Article
+    # Create individuals *inside the TBox ontology*  ← NEW
+    with tbox:
+        # ARTICLE
         article = tbox.Article(f"{art_id}_article")
         article.hasId.append(f"{art_id}_article")
         article.hasHeadline.append(data["headline"])
 
-        # init caches
-        comp_index = {}
+        comp_index  = {}
         motif_index = {}
         agent_index = {}
         quote_index = {}
 
-        # create Motifs and Arguments
+        # MOTIFS + ARGUMENTS
         for m in data["motifs"]:
             m_ind = tbox.Motif(pref + m["motif_id"])
             m_ind.hasId.append(pref + m["motif_id"])
@@ -89,17 +116,9 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
                     a_ind.hasConclusion.append(c_ind)
                     comp_index[c["id"]] = c_ind
 
-        # create Narrated Agents
-        for ag in data["narrated_agents"]:
-            cls = tbox.__dict__.get(ag["type"], tbox.NarratedAgent)
-            ag_ind = cls(pref + ag["agent_id"])
-            ag_ind.hasId.append(pref + ag["agent_id"])
-            ag_ind.hasName.append(ag["name"])
-            agent_index[ag["agent_id"]] = ag_ind
-
-        # create Quotes
+        # QUOTES
         for q in data["quotes"]:
-            q_cls = tbox.__dict__.get(q["type"], tbox.Quote)
+            q_cls = getattr(tbox, q["type"], tbox.Quote)
             q_ind = q_cls(pref + q["quote_id"])
             q_ind.hasText.append(q["text"])
             q_ind.hasId.append(pref + q["quote_id"])
@@ -120,8 +139,14 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
                 if mid in agent_index:
                     q_ind.mentionsInQuote.append(agent_index[mid])
 
-    # save ABox
-    out_file = Path(f"output/owl_influence-mini/{art_id}_abox.owl")
-    out_file.parent.mkdir(parents=True, exist_ok=True)
-    abox.save(file=str(out_file))
-    return out_file
+    # Save *only* the new triples to a temporary file  ← NEW
+    temp_abox_file = Path(f"output/owl_influence-mini/tmp/{art_id}_abox_temp.owl")
+    temp_abox_file.parent.mkdir(parents=True, exist_ok=True)
+    tbox.save(file=str(temp_abox_file))          # includes TBox + new individuals
+
+    # Merge into the master flat file and wipe owl:imports
+    append_to_rdf_file(
+        rdf_fragment_path=temp_abox_file,
+        output_file     = Path("output/owl_influence-mini/influence-mini_full.owl"),
+        format          = "xml"
+    )
