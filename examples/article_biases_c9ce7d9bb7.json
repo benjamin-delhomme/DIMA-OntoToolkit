@@ -1,0 +1,54 @@
+{
+  "Detect": {
+    "te0132": [
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_2",
+          "premise_3"
+        ],
+        "development_ids": [
+          "development_3"
+        ],
+        "excerpts": [
+          "escalated its antagonistic behavior",
+          "cyber intrusions targeting Caldria's infrastructure",
+          "warn of a calculated effort to provoke confrontation"
+        ],
+        "explanation": "The argument repeatedly frames Velmora's actions as aggressive and threatening, emphasizing escalation, attacks, and provocation without neutral or positive context.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "deliberate intimidation",
+          "in the face of"
+        ],
+        "explanation": "The conclusion frames the situation as one where Caldria is subjected to intentional negative actions ('deliberate intimidation'), emphasizing threat and provoking concern, thus exploiting negativity bias.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_4",
+        "bias": true,
+        "premise_ids": [
+          "premise_7",
+          "premise_8"
+        ],
+        "excerpts": [
+          "disruptive tactics",
+          "mounting tensions"
+        ],
+        "explanation": "Both premises frame the situation in negative terms (disruption, tension) without neutral or positive balance, emphasizing threat and instability to exploit negativity bias.",
+        "motif_id": "motif_4"
+      }
+    ]
+  },
+  "Inform": {},
+  "Memorise": {},
+  "Act": {}
+}
