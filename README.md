@@ -65,25 +65,20 @@ This file lives under: `output/articles_processed/article_processed_<article_id>
 
 ### 🧠 Ontology-Based Semantic Representation
 
-To support formal reasoning and advanced queries, DIMA-OTK maps processed articles to a structured **OWL ontology**. This approach allows us to connect and infer semantic relationships beyond what is explicitly stated in the text — **without relying on black-box AI**.
+To support formal reasoning and advanced queries, DIMA-OTK maps processed articles to a structured **OWL ontology**. This approach allows us to connect and infer semantic relationships beyond what is explicitly stated in the text - **without relying on opaque machine learning models**.
 
 #### 1. 🧱 The Influence-Mini Ontology: Core Concepts
 
-The ontology used to structure the semantic content of articles is called **Influence-Mini**. It defines all key concepts — such as:
+The ontology used to structure the semantic content of articles is called **Influence-Mini**. It defines all key concepts - such as:
 
-- `Motif`, `Argument`, `Quote`, `ParaphrasedQuote`, `NarratedAgent`, etc.
-- Semantic properties like `hasText`, `hasPremise`, `hasQuote`, `mentionsInQuote`, etc.
-- Class hierarchies (e.g., `ParaphrasedQuote` is a subclass of `Quote`)
-- Logical relations and restrictions
+* `Motif`, `Argument`, `Quote`, `ParaphrasedQuote`, `NarratedAgent`, etc.
+* Semantic properties like `hasText`, `hasPremise`, `hasQuote`, `mentionsInQuote`, etc.
+* Class hierarchies (e.g., `ParaphrasedQuote` is a subclass of `Quote`)
+* Logical relations and restrictions
 
 This ontology is used to **semantically annotate and represent** each article’s content in a machine-readable form.
 
-📄 The merged ontology file (TBox + individuals from articles), **without inference**, is saved to:
-```
-
-output/owl\_influence-mini/influence-mini\_full.owl
-
-```
+📄 The merged ontology file (TBox + individuals from articles) is saved to: `output/owl_influence-mini/influence-mini_full.owl`. Please note that reasoning is applied in-memory using the HermiT reasoner, but inferred facts may not be written to disk.
 
 ---
 
@@ -91,63 +86,77 @@ output/owl\_influence-mini/influence-mini\_full.owl
 
 On top of the Influence-Mini ontology, the **DIMA ontology** is applied to identify and annotate **bias, rhetorical patterns, and manipulation techniques**.
 
-It builds upon the semantic structure from Influence-Mini to label concepts with rhetorical indicators, bias types, or stance — enabling deeper analysis of persuasion strategies.
+It builds upon the semantic structure from Influence-Mini to label concepts with rhetorical indicators, bias types, or stance - enabling deeper analysis of persuasion strategies.
 
 > ⚠️ Integration of the DIMA ontology and reasoning over it is under development and will be merged into:
+
+```
+output/owl_dima/dima_full.owl
 ```
 
-output/owl\_dima/dima\_full.owl
+Once integrated, this enables rich inferences - for example:
 
-````
+> **If an argument uses the technique *Negativity Bias*, and that technique is known to be part of the *Divisive Information* tactic, the tool automatically infers that the argument promotes divisive narratives.**
 
----
-
-### 🔎 Logical Reasoning (HermiT Inference Engine)
-
-After the initial semantic annotations (called the ABox), the [HermiT OWL reasoner](http://www.hermit-reasoner.com/) is used to infer additional facts using **formal logic**:
-
-- If `ParaphrasedQuote ⊆ Quote` and `X a ParaphrasedQuote`, then → `X a Quote`
-- If `hasQuote ≡ inverse(isMentionedIn)` and `A hasQuote B`, then → `B isMentionedIn A`
-
-These inferred facts are **not always written to disk**, but they are available **in memory** during SPARQL querying.
-
----
-
-### 📊 Querying the Inferred Knowledge
-
-With the ontology loaded and reasoning applied, users can issue SPARQL queries to retrieve and analyze structured information.
-
-Here's a query that finds all quote instances (including subclassed types), their type, text, and ID:
+You can then issue SPARQL queries like the following to retrieve a full reasoning path:
 
 ```sparql
 PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
+PREFIX dima: <https://m82-project.org/dima-bias/ontology#>
 
-SELECT ?individual ?type ?text ?id
+SELECT DISTINCT ?argument ?tech_usage ?technique ?explanation ?tactic
+       (CONCAT(
+          COALESCE(?premise_text, ""), " ",
+          COALESCE(?dev_text, ""), " ",
+          COALESCE(?conc_text, "")
+        ) AS ?combined_text)
 WHERE {
-  ?type rdfs:subClassOf* scim:Quote .
-  ?individual a ?type .
-  OPTIONAL { ?individual scim:hasText ?text . }
-  OPTIONAL { ?individual scim:hasId ?id . }
+  ?argument a scim:Argument ;
+            dima:usesTechnique ?tech_usage ;
+            dima:usesTactic ?tactic .
+
+  ?tech_usage a dima:TechniqueUsage ;
+              dima:instantiatesTechnique ?technique ;
+              dima:hasExplanation ?explanation .
+
+  OPTIONAL {
+    ?premise a scim:Premise ;
+             dima:usesTechnique ?tech_usage ;
+             scim:hasText ?premise_text .
+  }
+  OPTIONAL {
+    ?dev a scim:Development ;
+         dima:usesTechnique ?tech_usage ;
+         scim:hasText ?dev_text .
+  }
+  OPTIONAL {
+    ?conc a scim:Conclusion ;
+          dima:usesTechnique ?tech_usage ;
+          scim:hasText ?conc_text .
+  }
 }
-````
-
-This query retrieves every instance of `Quote` and its subclasses (e.g. `DirectQuote`, `ParaphrasedQuote`, `IndirectQuote`) along with any available text and identifier.
-
-🖥️ Sample output:
-
+ORDER BY ?argument
 ```
-+----------------------+-----------------------+----------------------------------------+----------------------+
-| individual           | type                  | text                                   | id                   |
-+======================+=======================+========================================+======================+
-| scim:quote_7         | scim:DirectQuote      | "We trust our leaders..."              | 9a2a4d3a26_quote_7   |
-| scim:quote_3         | scim:ParaphrasedQuote | Zarnia has continued its posturing...  | 9a2a4d3a26_quote_3   |
-| ...                  | ...                   | ...                                    | ...                  |
-+----------------------+-----------------------+----------------------------------------+----------------------+
-```
+### 📊 Query Result: Combined Text from Argument, Technique, and Explanation
 
-🧠 This logic-driven querying enables structured discovery of persuasive narratives, agent references, and potential bias — all without requiring opaque machine learning models.
+| **Argument ID**             | **Technique Usage**               | **Technique**        | **Explanation**                                                                                             | **Tactic**              | **Combined Text (Premise + Development + Conclusion)**                                                                                                                                                                  |
+|-----------------------------|------------------------------------|----------------------|-------------------------------------------------------------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `scim:9a2a4d3a26_argument_1` | `dima:9a2a4d3a26_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing, emphasizing threat and negative intent without balancing neutral or positive aspects. | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region. Zarnia has continued its pattern of aggressive posturing. |
+| `scim:9a2a4d3a26_argument_3` | `dima:9a2a4d3a26_negativitybias_3` | `dima:NegativityBias` | This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences. | `dima:DivisiveInformation` | International voices have begun to echo concern over Zarnia's intentions. There is growing international pressure on Zarnia due to perceived threatening behavior.                                                                 |
+| `scim:c9ce7d9bb7_argument_1` | `dima:c9ce7d9bb7_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Velmora's actions as threats and provocations, emphasizing negative consequences and expert warnings without neutral or positive balance. | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region. Zarnia has continued its pattern of aggressive posturing. |
+| `scim:c9ce7d9bb7_argument_2` | `dima:c9ce7d9bb7_negativitybias_2` | `dima:NegativityBias` | The conclusion frames the situation as one where Caldria is subjected to 'deliberate intimidation,' emphasizing threat and negative intent, thus exploiting negativity bias. | `dima:DivisiveInformation` | The situation has been framed with clear indicators of tension and threat, notably highlighting deliberate intimidation as a means of establishing a negative narrative. |
+| `scim:c9ce7d9bb7_argument_4` | `dima:c9ce7d9bb7_negativitybias_4` | `dima:NegativityBias` | Both premises frame the situation in negative terms (disruption, tension) without neutral or positive balance, emphasizing threat and instability to exploit negativity bias. | `dima:DivisiveInformation` | The combination of premises focuses on fear-based rhetoric, emphasizing instability and potential threat without counterbalancing positive or neutral views. |
 
 ---
+
+### 🧠 Explanation of Results
+
+- **Argument ID**: The unique identifier for each argument.
+- **Technique Usage**: The individual representing the specific use of a cognitive technique (e.g., `Negativity Bias`).
+- **Technique**: The actual technique used (e.g., `NegativityBias`).
+- **Explanation**: The natural language explanation associated with the technique usage.
+- **Tactic**: The inferred higher-level narrative tactic (e.g., `DivisiveInformation`).
+- **Combined Text**: A concatenation of the text from any premises, developments, or conclusions linked to the argument using the technique. This is automatically generated from the relevant components.
 
 ## API Key Configuration
 
