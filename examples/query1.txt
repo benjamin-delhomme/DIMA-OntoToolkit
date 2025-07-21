@@ -1,5 +1,7 @@
 #This SPARQL query retrieves all individuals that are instances of Quote or any of its subclasses, along with their type, optional text (hasText), and optional identifier (hasId).
 
+
+"PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
 SELECT ?individual ?type ?text ?id
 WHERE {
   ?type rdfs:subClassOf* scim:Quote .

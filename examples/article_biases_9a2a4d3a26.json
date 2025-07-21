@@ -1,6 +1,6 @@
 {
   "Detect": {
-    "te0132": [
+    "NegativityBias": [
       {
         "argument_id": "argument_1",
         "bias": true,
@@ -15,10 +15,9 @@
         ],
         "excerpts": [
           "unauthorized military exercises",
-          "deliberate attempt to destabilize the region",
-          "pattern of aggressive posturing"
+          "deliberate attempt to destabilize the region"
         ],
-        "explanation": "The argument repeatedly frames Zarnia's actions as threatening and destabilizing, emphasizing negative consequences without neutral or positive balance.",
+        "explanation": "The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing, emphasizing threat and negative intent without balancing neutral or positive aspects.",
         "motif_id": "motif_1"
       },
       {
@@ -36,7 +35,7 @@
           "calling for sanctions",
           "perceived threatening behavior"
         ],
-        "explanation": "This argument repeatedly frames Zarnia in a negative light by emphasizing international concern, threats, and punitive measures, exploiting negativity bias.",
+        "explanation": "This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences.",
         "motif_id": "motif_2"
       }
     ]
