@@ -10,6 +10,8 @@
 - Identifies semantic motifs (e.g. paragraphs)
 - Extracts arguments, narrative agents, and quotes
 - Generates an OWL file structured according to the DIMA ontology
+- Use Hermit Reasoner and runs SPARQL queries on the extracted data.
+---
 
 ## 🧠 Feature Extraction Pipeline
 
@@ -137,15 +139,13 @@ WHERE {
 }
 ORDER BY ?argument
 ```
+
 ### 📊 Query Result: Combined Text from Argument, Technique, and Explanation
 
 | **Argument ID**             | **Technique Usage**               | **Technique**        | **Explanation**                                                                                             | **Tactic**              | **Combined Text (Premise + Development + Conclusion)**                                                                                                                                                                  |
 |-----------------------------|------------------------------------|----------------------|-------------------------------------------------------------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `scim:9a2a4d3a26_argument_1` | `dima:9a2a4d3a26_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing, emphasizing threat and negative intent without balancing neutral or positive aspects. | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region. Zarnia has continued its pattern of aggressive posturing. |
-| `scim:9a2a4d3a26_argument_3` | `dima:9a2a4d3a26_negativitybias_3` | `dima:NegativityBias` | This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences. | `dima:DivisiveInformation` | International voices have begun to echo concern over Zarnia's intentions. There is growing international pressure on Zarnia due to perceived threatening behavior.                                                                 |
-| `scim:c9ce7d9bb7_argument_1` | `dima:c9ce7d9bb7_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Velmora's actions as threats and provocations, emphasizing negative consequences and expert warnings without neutral or positive balance. | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident this month. Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region. Zarnia has continued its pattern of aggressive posturing. |
-| `scim:c9ce7d9bb7_argument_2` | `dima:c9ce7d9bb7_negativitybias_2` | `dima:NegativityBias` | The conclusion frames the situation as one where Caldria is subjected to 'deliberate intimidation,' emphasizing threat and negative intent, thus exploiting negativity bias. | `dima:DivisiveInformation` | The situation has been framed with clear indicators of tension and threat, notably highlighting deliberate intimidation as a means of establishing a negative narrative. |
-| `scim:c9ce7d9bb7_argument_4` | `dima:c9ce7d9bb7_negativitybias_4` | `dima:NegativityBias` | Both premises frame the situation in negative terms (disruption, tension) without neutral or positive balance, emphasizing threat and instability to exploit negativity bias. | `dima:DivisiveInformation` | The combination of premises focuses on fear-based rhetoric, emphasizing instability and potential threat without counterbalancing positive or neutral views. |
+| `scim:9a2a4d3a26_argument_1` | `dima:9a2a4d3a26_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing...            | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident...                                                                                                                  |
+| `scim:9a2a4d3a26_argument_3` | `dima:9a2a4d3a26_negativitybias_3` | `dima:NegativityBias` | This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat... | `dima:DivisiveInformation` | International voices have begun to echo concern over Zarnia's intentions. There is growing international pressure...                                                                 |
 
 ---
 
@@ -154,11 +154,16 @@ ORDER BY ?argument
 - **Argument ID**: The unique identifier for each argument.
 - **Technique Usage**: The individual representing the specific use of a cognitive technique (e.g., `Negativity Bias`).
 - **Technique**: The actual technique used (e.g., `NegativityBias`).
-- **Explanation**: The natural language explanation associated with the technique usage.
+- **Explanation**: The natural language explanation associated with the technique usage (truncated for brevity).
 - **Tactic**: The inferred higher-level narrative tactic (e.g., `DivisiveInformation`).
-- **Combined Text**: A concatenation of the text from any premises, developments, or conclusions linked to the argument using the technique. This is automatically generated from the relevant components.
+- **Combined Text**: A concatenation of the text from any premises, developments, or conclusions linked to the argument using the technique (truncated for brevity).
 
-## API Key Configuration
+
+---
+
+## 🧠 How to Use DIMA-OntoToolkit
+
+### API Key Configuration
 
 The bias extraction tool uses the OpenAI API. To run it, you need an API key.
 
@@ -180,50 +185,70 @@ The application will automatically load the key from `.env`.
 
 ---
 
-## Quick Start (Using Docker)
+### Quick Start (Using Docker)
 
-### Prerequisites
-- [Docker](https://www.docker.com/) installed
-- `.env` file with your OpenAI API key (see above)
+#### Prerequisites
+- [Docker](https://www.docker.com/) must be installed.
+- An `.env` file with your OpenAI API key (see **API Key Configuration** section above).
 
-### 1. Build the Docker image
+#### 1. Build the Docker image
+
+To build the Docker image for DIMA-OntoToolkit, run the following command:
 
 ```bash
 ./build-docker.sh
-```
+````
 
-### 2. Run the tool with your own input text
-
-```bash
-./run-docker.sh -t "You article text goes here."
-```
-
-OWL output will be saved to: output/
-
----
-
-## Manual Docker Usage (No Scripts)
-
-If you'd rather not use the helper scripts, you can build and run the container manually using Docker:
-
-### 1. Build the Docker image
+> **Note**: If you encounter a "Permission Denied" error when trying to run the scripts, you may need to make the script executable first by running:
 
 ```bash
-docker build -t dima-otk .
+chmod +x build-docker.sh
 ```
 
-### 2. Run the tool with a text input
+> **Note**: If you get a permission error while running the Docker command, you might need to use `sudo` to execute Docker commands:
 
 ```bash
-docker run --rm \
-  -v "$(pwd)/output:/app/output" \
-  -v "$(pwd)/.env:/app/.env" \
-  -v "$(pwd)/articles:/app/articles" \
-  dima-otk \
-  python -m dima_otk.dima_otk -t "Your input text goes here."
+sudo ./build-docker.sh
 ```
 
----
+#### 2. Run the tool with your input text
+
+Once the image is built, you can run the tool with your own input text by using the `-t` option:
+
+```bash
+./run-docker.sh -t "Your article text goes here."
+```
+
+> **Note**: Similarly, if you get a "Permission Denied" error while running the script, make it executable by running:
+
+```bash
+chmod +x run-docker.sh
+```
+
+> **Note**: If you encounter permission issues when running the Docker command, you may need to prepend `sudo`:
+
+```bash
+sudo ./run-docker.sh -t "Your article text goes here."
+```
+
+The **OWL output** file will be saved in the `output/` directory. You can review the processed data there.
+
+#### 3. Run a SPARQL query on the extracted data
+
+After processing the text or articles, you can run a **SPARQL query** to query the merged ontology with the `-q` option:
+
+```bash
+./run-docker.sh -q "PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
+PREFIX dima: <https://m82-project.org/dima-bias/ontology#>
+
+SELECT ?argument ?technique
+WHERE {
+  ?argument a scim:Argument ;
+            dima:usesTechnique ?technique .
+}"
+```
+
+This query will **retrieve all arguments** along with the **techniques** they use.
 
 ## Origin and Attribution
 
