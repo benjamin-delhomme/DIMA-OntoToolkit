@@ -55,6 +55,10 @@ dima:Technique a owl:Class ;
     rdfs:comment "A cognitive bias or psychological mechanism leveraged by a tactic."@en ;
     rdfs:comment "Un biais cognitif ou mécanisme psychologique utilisé dans une tactique."@fr .
 
+dima:TechniqueUsage   rdf:type  owl:Class ;
+                      rdfs:label "Technique Usage"@en ;
+                      rdfs:comment "A concrete occurrence of a technique inside an argument."@en .
+
 dima:Detect
     a owl:Class , owl:NamedIndividual , dima:Phase ;
     rdfs:subClassOf dima:Phase ;
@@ -104,15 +108,50 @@ dima:Phase owl:disjointWith dima:Technique .
 ### Data Properties ####
 ##########################
 
-dima:hasExplanation rdf:type owl:DatatypeProperty ;
-    rdfs:domain scim:Argument ;
-    rdfs:range xsd:string ;
-    rdfs:label "has explanation"@en ;
-    rdfs:comment "Explanation of why the technique has been identified"@en .
+dima:hasExplanation  rdf:type  owl:DatatypeProperty ;
+    rdfs:label   "has explanation"@en ;
+    rdfs:comment "Natural‑language explanation attached to a TechniqueUsage node."@en ;
+    rdfs:domain  dima:TechniqueUsage ;
+    rdfs:range   xsd:string .
 
 ##########################
 ### Object Properties ####
 ##########################
+
+
+dima:usesTechnique a owl:ObjectProperty ;
+    rdfs:label "uses technique"@en ;
+    rdfs:label "utilise une technique"@fr ;
+    rdfs:comment "Links an argument to a TechniqueUsage node that represents a concrete use of a technique."@en ;
+    rdfs:comment "Associe un argument à un nœud TechniqueUsage qui représente un usage concret d’une technique."@fr ;
+    rdfs:domain scim:Argument ;
+    rdfs:range dima:TechniqueUsage ;
+    owl:inverseOf dima:isTechniqueUsedBy .
+
+dima:isTechniqueUsedBy a owl:ObjectProperty ;
+    rdfs:label "is used in argument"@en ;
+    rdfs:label "est utilisée dans un argument"@fr ;
+    rdfs:comment "Inverse property linking a TechniqueUsage node to the argument that contains it."@en ;
+    rdfs:comment "Propriété inverse reliant un nœud TechniqueUsage à l’argument qui le contient."@fr ;
+    rdfs:domain dima:TechniqueUsage ;
+    rdfs:range scim:Argument .
+
+dima:instantiatesTechnique a owl:ObjectProperty ;
+    rdfs:label "instantiates technique"@en ;
+    rdfs:label "instancie la technique"@fr ;
+    rdfs:comment "Connects a TechniqueUsage node to the abstract cognitive technique it instantiates."@en ;
+    rdfs:comment "Relie un nœud TechniqueUsage à la technique cognitive qu’il instancie."@fr ;
+    rdfs:domain dima:TechniqueUsage ;
+    rdfs:range dima:Technique ;
+    owl:inverseOf dima:isInstantiatedByTechniqueUsage .
+
+dima:isInstantiatedByTechniqueUsage a owl:ObjectProperty ;
+    rdfs:label "has concrete usage"@en ;
+    rdfs:label "a un usage concret"@fr ;
+    rdfs:comment "Inverse linking a technique to its concrete TechniqueUsage nodes."@en ;
+    rdfs:comment "Propriété inverse reliant une technique à ses nœuds TechniqueUsage concrets."@fr ;
+    rdfs:domain dima:Technique ;
+    rdfs:range dima:TechniqueUsage .
 
 dima:hasTactic a owl:ObjectProperty ;
     rdfs:label "has tactic"@en ;
@@ -147,23 +186,6 @@ dima:isTechniqueOf a owl:ObjectProperty ;
     rdfs:range dima:Tactic ;
     rdfs:comment "Inverse property linking a technique to its associated tactic(s)."@en ;
     rdfs:comment "Propriété inverse reliant une technique aux tactiques auxquelles elle est associée."@fr .
-
-dima:usesTechnique a owl:ObjectProperty ;
-    rdfs:label "uses technique"@en ;
-    rdfs:label "utilise une technique"@fr ;
-    rdfs:domain scim:Argument ;
-    rdfs:range dima:Technique ;
-    rdfs:comment "Links an argument to the cognitive technique it uses."@en ;
-    rdfs:comment "Associe un argument à la technique cognitive qu'il mobilise."@fr .
-
-dima:isTechniqueUsedBy a owl:ObjectProperty ;
-    owl:inverseOf dima:usesTechnique ;
-    rdfs:label "is used in argument"@en ;
-    rdfs:label "est utilisée dans un argument"@fr ;
-    rdfs:domain dima:Technique ;
-    rdfs:range scim:Argument ;
-    rdfs:comment "Inverse property linking a technique to the arguments that use it."@en ;
-    rdfs:comment "Propriété inverse reliant une technique aux arguments qui l’utilisent."@fr .
 
 dima:usesTactic a owl:ObjectProperty ;
     rdfs:label "uses tactic"@en ;
@@ -204,17 +226,21 @@ dima:isPhaseUsedBy a owl:ObjectProperty ;
 ### Chain Axioms Properties ##
 ##############################
 
+# Chain for usesTactic:
 [ a owl:ObjectProperty ;
   owl:propertyChainAxiom (
     dima:usesTechnique
+    dima:instantiatesTechnique
     dima:isTechniqueOf
   ) ;
   owl:equivalentProperty dima:usesTactic
 ] .
 
+# Chain for usesPhase:
 [ a owl:ObjectProperty ;
   owl:propertyChainAxiom (
     dima:usesTechnique
+    dima:instantiatesTechnique
     dima:isTechniqueOf
     dima:isTacticOf
   ) ;
