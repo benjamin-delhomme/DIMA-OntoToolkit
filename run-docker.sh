@@ -5,7 +5,7 @@ IMAGE_NAME="dima-otk"
 
 docker run --rm \
 	--env-file .env \
+    -v $(pwd)/ontologies:/app/ontologies \
     -v $(pwd)/output:/app/output \
-    -v $(pwd)/articles:/app/articles \ 
+    -v $(pwd)/articles:/app/articles \
     $IMAGE_NAME  "$@"
-
