@@ -63,40 +63,61 @@ After analyzing `ex1.txt`, the following JSON was produced:
 
 This file lives under: `output/articles_processed/article_processed_<article_id>.json`
 
-### 🧠 Create an Ontology from the Article
+### 🧠 Ontology-Based Semantic Representation
 
-Once the semantic content is extracted from an article, the tool maps this information to a formal **OWL ontology**, allowing structured reasoning and advanced query capabilities.
+To support formal reasoning and advanced queries, DIMA-OTK maps processed articles to a structured **OWL ontology**. This approach allows us to connect and infer semantic relationships beyond what is explicitly stated in the text — **without relying on black-box AI**.
 
-This is done in two stages:
+#### 1. 🧱 The Influence-Mini Ontology: Core Concepts
 
-1. **TBox loading (ontology structure)**
-   The Influence-mini ontology defines the key concepts (`Motif`, `Quote`, `NarratedAgent`, etc.) and their relationships — this is known as the **TBox**. It is imported and loaded into memory.
+The ontology used to structure the semantic content of articles is called **Influence-Mini**. It defines all key concepts — such as:
 
-2. **ABox generation (individual instances)**
-   For each article, instances of those classes are created — for example, `Quote_7` is declared as an instance of `ParaphrasedQuote`, which is a subclass of `Quote`.
+- `Motif`, `Argument`, `Quote`, `ParaphrasedQuote`, `NarratedAgent`, etc.
+- Semantic properties like `hasText`, `hasPremise`, `hasQuote`, `mentionsInQuote`, etc.
+- Class hierarchies (e.g., `ParaphrasedQuote` is a subclass of `Quote`)
+- Logical relations and restrictions
 
----
+This ontology is used to **semantically annotate and represent** each article’s content in a machine-readable form.
 
-### 🧠 Semantic Reasoning (Using HermiT)
+📄 The merged ontology file (TBox + individuals from articles), **without inference**, is saved to:
+```
 
-After the ABox is generated, we run the [HermiT OWL reasoner](http://www.hermit-reasoner.com/) to **infer additional knowledge** using formal logic.
+output/owl\_influence-mini/influence-mini\_full.owl
 
-This step does **not use black-box AI** — it uses strictly defined ontological rules. For instance:
-
-- If `ParaphrasedQuote` is defined as a subclass of `Quote`, and `X` is an instance of `ParaphrasedQuote`,
-  then HermiT infers that `X` is also a `Quote`.
-- If two concepts are marked as inverses, like `hasQuote` and `isMentionedIn`,
-  and one direction is asserted, the other is inferred automatically.
-
-These inferred facts are not always stored in the OWL file, but they are made available during query time.
+```
 
 ---
 
-### 🔎 Example: Query the Ontology with Inferences
+#### 2. 🧠 The DIMA Ontology: Annotating Bias
 
-Once reasoning is complete, you can run SPARQL queries to explore the structured knowledge.
+On top of the Influence-Mini ontology, the **DIMA ontology** is applied to identify and annotate **bias, rhetorical patterns, and manipulation techniques**.
 
-Here’s an example SPARQL query that retrieves all quotes (including subclass instances like `DirectQuote` or `ParaphrasedQuote`), their type, and optional text and ID:
+It builds upon the semantic structure from Influence-Mini to label concepts with rhetorical indicators, bias types, or stance — enabling deeper analysis of persuasion strategies.
+
+> ⚠️ Integration of the DIMA ontology and reasoning over it is under development and will be merged into:
+```
+
+output/owl\_dima/dima\_full.owl
+
+````
+
+---
+
+### 🔎 Logical Reasoning (HermiT Inference Engine)
+
+After the initial semantic annotations (called the ABox), the [HermiT OWL reasoner](http://www.hermit-reasoner.com/) is used to infer additional facts using **formal logic**:
+
+- If `ParaphrasedQuote ⊆ Quote` and `X a ParaphrasedQuote`, then → `X a Quote`
+- If `hasQuote ≡ inverse(isMentionedIn)` and `A hasQuote B`, then → `B isMentionedIn A`
+
+These inferred facts are **not always written to disk**, but they are available **in memory** during SPARQL querying.
+
+---
+
+### 📊 Querying the Inferred Knowledge
+
+With the ontology loaded and reasoning applied, users can issue SPARQL queries to retrieve and analyze structured information.
+
+Here's a query that finds all quote instances (including subclassed types), their type, text, and ID:
 
 ```sparql
 PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
@@ -110,7 +131,9 @@ WHERE {
 }
 ````
 
-This query leverages OWL subclass relationships to include all forms of quotes — even if their types differ — and returns human-readable information in a terminal-friendly table:
+This query retrieves every instance of `Quote` and its subclasses (e.g. `DirectQuote`, `ParaphrasedQuote`, `IndirectQuote`) along with any available text and identifier.
+
+🖥️ Sample output:
 
 ```
 +----------------------+-----------------------+----------------------------------------+----------------------+
@@ -122,40 +145,7 @@ This query leverages OWL subclass relationships to include all forms of quotes �
 +----------------------+-----------------------+----------------------------------------+----------------------+
 ```
 
-> ⚠️ You don’t need to manually declare every fact — the reasoner infers and exposes new facts based on ontology logic, enabling richer queries and insights.
-
-### 📦 Final Output
-
-After all features are extracted, the structured data is mapped to OWL individuals and serialized as an RDF/OWL file in:
-
-```
-output/result.owl
-```
-
-This file conforms to the **DIMA ontology** and can be opened in Protégé or used in downstream reasoning tasks.
-
----
-
-## The DIMA Ontology
-
-The **DIMA ontology** formalizes a taxonomy of narrative manipulation strategies and cognitive bias techniques, originally defined in the [M82-project/DIMA](https://github.com/M82-project/DIMA) framework.
-
-It models:
-
-- **Bias categories** (e.g., `Information préexistante`, `Information clivante`)
-- **Cognitive techniques** associated with each category (e.g., `Effet de contraste`, `Biais de négativité`)
-- **Semantic relationships** between them, using OWL classes and object properties
-- Metadata such as UUIDs and standardized IDs (e.g., `TA0013`, `TE0142`)
-
-This ontology serves as the **TBox** (terminological box) used to generate structured **ABox assertions** (individuals) based on detected patterns in unstructured text.
-
-You can find the ontology file here:
-
-```text
-ontology/dima-bias.ttl
-```
-
-It is OWL 2-compliant and can be opened in tools such as [Protégé](https://protege.stanford.edu/).
+🧠 This logic-driven querying enables structured discovery of persuasive narratives, agent references, and potential bias — all without requiring opaque machine learning models.
 
 ---
 
