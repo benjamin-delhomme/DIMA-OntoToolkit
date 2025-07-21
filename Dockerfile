@@ -35,9 +35,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/dima_otk ./dima_otk
 COPY ontologies ./ontologies
 
-# Copy HermiT reasoner JAR and related files
-COPY third_party/hermit/ ./third_party/hermit/
-
 # copy all licences into the image
 COPY LICENSE ./licenses/
 COPY licenses/ ./licenses/

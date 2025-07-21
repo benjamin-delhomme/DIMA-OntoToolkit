@@ -55,7 +55,7 @@ def main():
 
     # Instantiate the class
     # rebuild cache not implemented extractor = DimaOTK(rebuild_cache=args.rebuild_cache)
-    extractor = DimaOTK()
+    dimaotk = DimaOTK()
 
     if args.text:
         input_text = args.text.strip()
@@ -84,7 +84,7 @@ def main():
                 text = f.read().strip()
             if text:
                 print(f"[FILE] Processing: {path}")
-                extractor.run(text)
+                dimaotk.run(text)
             else:
                 print(f"Warning: File '{path}' is empty, skipping.")
 
