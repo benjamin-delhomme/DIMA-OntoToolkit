@@ -15,7 +15,7 @@
 
 ## 🧠 Feature Extraction Pipeline
 
-Once input text is provided, **DIMA-OntoToolkit** extracts key semantic structures before generating the final OWL file. These intermediary outputs are useful for debugging, visualization, or integration with other systems.
+Once input text is provided, **DIMA-OntoToolkit** extracts key semantic structures before generating the final OWL files. These intermediary outputs are useful for debugging, visualization, or integration with other systems.
 
 ### 🔍 Steps in the Feature Extraction Process
 
@@ -80,7 +80,9 @@ The ontology used to structure the semantic content of articles is called **Infl
 
 This ontology is used to **semantically annotate and represent** each article’s content in a machine-readable form.
 
-📄 The merged ontology file (TBox + individuals from articles) is saved to: `output/owl_influence-mini/influence-mini_full.owl`. Please note that reasoning is applied in-memory using the HermiT reasoner, but inferred facts may not be written to disk.
+📄 The Influence-Mini and DIMA ontologies are each saved separately (with their respective individuals) to:
+`output/owl_influence-mini/influence-mini_full.owl` and `output/owl_dima/dima_full.owl`.
+These are then merged in memory during the query and reasoning phase for SPARQL evaluation. Please note that reasoning is applied in-memory using the HermiT reasoner, inferred facts are not written on the disk.
 
 ---
 
