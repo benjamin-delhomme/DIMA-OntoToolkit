@@ -41,7 +41,7 @@ from pathlib import Path
 from tabulate import tabulate
 
 from dima_otk import DimaOTK
-from dima_otk.owl.owl_influencemini_query import query_flat_ontology
+from dima_otk.owl.owl_query import query_flat_ontology
 
 MERGED_OWL_PATH = Path("output/owl_influence-mini/influence-mini_full.owl")
 

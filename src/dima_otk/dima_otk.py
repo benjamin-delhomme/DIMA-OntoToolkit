@@ -29,6 +29,20 @@ from dima_otk.owl.owl_influencemini_converter import influencemini_initialize_tb
 
 from dima_otk.owl.owl_dima_converter import dima_initialize_tbox, convert_dima_analysis_article
 
+def clean_flat_ontology_files():
+    """
+    Delete the contents of the flat merged OWL files to prevent
+    duplication across runs.
+    """
+    paths = [
+        Path("output/owl_dima/dima_full.owl"),
+        Path("output/owl_influence-mini/influence-mini_full.owl"),
+    ]
+
+    for path in paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("")  # clears file content
+
 def save_json(data, output_dir, filename_prefix, article_id, step_description):
     output_path = Path(output_dir) / f"{filename_prefix}_{article_id}.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -43,6 +57,7 @@ class DimaOTK:
     def __init__(self, rebuild_cache: bool = False):
         self.rebuild_cache = rebuild_cache
         print(f"[INIT] DimaOTK initialized (rebuild_cache={self.rebuild_cache})")
+        clean_flat_ontology_files()
         influencemini_initialize_tbox()
         dima_initialize_tbox()
 
@@ -115,5 +130,4 @@ class DimaOTK:
 
         # Step 8  :  Convert dima JSON ➜ OWL Dima ABox + OWL Influence Mini ABox
         print("[STEP 8] Converting semantic analysis to OWL ABox and merging with the InfluenceMini OWL…")
-        dima_abox_file = convert_dima_analysis_article(article_id)
-        print("[STEP 8] Article {article_id} ABox written to {dima_abox_file}")
+        convert_dima_analysis_article(article_id)

@@ -16,6 +16,6 @@ from typing import List, Dict
 
 def get_inform_techniques(processed_article: dict) -> dict:
     return {
-        #"te0132": get_technique_te0132(processed_article),
+        #"BackfireEffect: get_technique_xxxx(processed_article),
         # Add more techniques as needed
     }
