@@ -18,6 +18,11 @@ from pathlib import Path
 from owlready2 import PREDEFINED_ONTOLOGIES, get_ontology, World
 
 def influencemini_initialize_tbox():
+    """
+    Initialize the TBox by loading the Influence-Mini ontology from the turtle file,
+    serializing it to both a temporary XML file and a full owl file.
+    Also updates the PREDEFINED_ONTOLOGIES dictionary with the IRI of the ontology.
+    """
     g = Graph()
     g.parse("ontologies/influence-mini.ttl", format="turtle")
     xml_out_file = Path("output/owl_influence-mini/tbox.owl")
@@ -26,36 +31,46 @@ def influencemini_initialize_tbox():
     full_file.parent.mkdir(parents=True, exist_ok=True)
     g.serialize(destination=str(xml_out_file), format="xml")
     g.serialize(destination=str(full_file), format="xml")
+
+    # Set the IRI for Influence-Mini ontology in the PREDEFINED_ONTOLOGIES dictionary
+    # More detail at: https://owlready2.readthedocs.io/en/v0.48/onto.html#loading-an-ontology-from-owl-files
     IRI = "https://stratcomcoe.org/influence-mini/ontology"
     PREDEFINED_ONTOLOGIES[IRI] = str(xml_out_file.resolve())
 
-def append_to_rdf_file(rdf_fragment_path: Path,
-                       output_file: Path,
-                       format: str = "xml"):
+def append_to_rdf_file(rdf_fragment_path: Path, output_file: Path, format: str = "xml"):
     """
-    Merge `rdf_fragment_path` into `output_file`, then strip any owl:imports
-    so the resulting file is self‑contained.
+    Merges a fragment of RDF data into an output file and removes owl:imports to ensure
+    the resulting file is self-contained.
+
+    Parameters:
+    rdf_fragment_path: Path to the RDF fragment to be appended.
+    output_file: Path to the file where the fragment should be added.
+    format: The format in which the RDF is serialized, default is 'xml'.
     """
     from rdflib import Graph
 
     g_main = Graph()
     if output_file.exists():
-        g_main.parse(output_file, format=format)
+        g_main.parse(output_file, format=format) # Parse the existing output file if it exists
 
     g_new = Graph()
-    g_new.parse(rdf_fragment_path, format=format)
+    g_new.parse(rdf_fragment_path, format=format)  # Parse the new RDF fragment
 
-    g_main += g_new
+    g_main += g_new  # Merge the new fragment into the main graph
 
-    #remove *all* owl:imports triples
+    # Remove all owl:imports triples to ensure the file is self-contained
+    # Key element to avoid ontology loading issue, notably on protege (https://protege.stanford.edu/)
     g_main.remove((None, OWL.imports, None))
 
+    # Serialize the updated graph to the output file
     g_main.serialize(destination=str(output_file), format=format)
 
 
 def convert_semantic_analysis_article(article_id: str) -> Path:
-    """Create ABox individuals for one article and merge them into the
-    flat ontology file `output/owl_influence-mini/influence-mini_full.owl`."""
+    """
+    Converts the semantic analysis data of an article into ABox individuals and merges
+    them into the flat ontology file (influence-mini_full.owl).
+    """
     IRI = "https://stratcomcoe.org/influence-mini/ontology"
 
     # Load the TBox once; we will add individuals directly to it
@@ -65,24 +80,24 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
     # Read the JSON produced by your semantic analysis
     data = json.loads(
         Path(f"output/semantic_analysis/article_processed_{article_id}.json")
-        .read_text()
+        .read_text() # Load the article's processed semantic analysis data
     )
     art_id = data["article_id"]
-    pref   = f"{art_id}_"
+    pref   = f"{art_id}_" # Prefix used for generating unique IDs for individuals (when merging everything together)
 
-    # Create individuals *inside the TBox ontology*  ← NEW
+    # Create individuals inside the TBox ontology, TBOX for Terminology Box
     with tbox:
         # ARTICLE
         article = tbox.Article(f"{art_id}_article")
         article.hasId.append(f"{art_id}_article")
         article.hasHeadline.append(data["headline"])
 
-        comp_index  = {}
+        comp_index  = {} # Index to store components like premises, developments, conclusions
         motif_index = {}
         agent_index = {}
         quote_index = {}
 
-        # MOTIFS + ARGUMENTS
+        # Process the motifs and their associated arguments
         for m in data["motifs"]:
             m_ind = tbox.Motif(pref + m["motif_id"])
             m_ind.hasId.append(pref + m["motif_id"])
@@ -116,7 +131,7 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
                     a_ind.hasConclusion.append(c_ind)
                     comp_index[c["id"]] = c_ind
 
-        # QUOTES
+        # Process the quotes and link them to components and agents
         for q in data["quotes"]:
             q_cls = getattr(tbox, q["type"], tbox.Quote)
             q_ind = q_cls(pref + q["quote_id"])
@@ -124,27 +139,32 @@ def convert_semantic_analysis_article(article_id: str) -> Path:
             q_ind.hasId.append(pref + q["quote_id"])
             quote_index[q["quote_id"]] = q_ind
 
+            # Set the quote's status if applicable
             status_ind = tbox.__dict__.get(q["status"])
             if status_ind:
                 q_ind.hasQuoteStatus.append(status_ind)
 
+            # Link quote to components if applicable
             for cid in q["maps_to_arg_components"]:
                 if cid in comp_index:
                     comp_index[cid].hasQuote.append(q_ind)
 
+            # Link quote to agents if applicable
             for aid in q["attributed_to"]:
                 if aid in agent_index:
                     q_ind.isAttributedTo.append(agent_index[aid])
+
+            # Link quote to agents that mention it
             for mid in q["mentions"]:
                 if mid in agent_index:
                     q_ind.mentionsInQuote.append(agent_index[mid])
 
-    # Save *only* the new triples to a temporary file  ← NEW
+    # Save *only* the new triples to a temporary file
     temp_abox_file = Path(f"output/owl_influence-mini/tmp/{art_id}_abox_temp.owl")
     temp_abox_file.parent.mkdir(parents=True, exist_ok=True)
     tbox.save(file=str(temp_abox_file))          # includes TBox + new individuals
 
-    # Merge into the master flat file and wipe owl:imports
+    # Merge the temporary ABox file into the master flat file and strip owl:imports
     append_to_rdf_file(
         rdf_fragment_path=temp_abox_file,
         output_file     = Path("output/owl_influence-mini/influence-mini_full.owl"),
