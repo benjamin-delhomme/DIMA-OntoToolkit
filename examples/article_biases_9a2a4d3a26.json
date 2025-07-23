@@ -1,5 +1,6 @@
 {
   "Detect": {
+    "BizarrenessEffect": [],
     "NegativityBias": [
       {
         "argument_id": "argument_1",
@@ -15,9 +16,10 @@
         ],
         "excerpts": [
           "unauthorized military exercises",
-          "deliberate attempt to destabilize the region"
+          "deliberate attempt to destabilize the region",
+          "aggressive posturing"
         ],
-        "explanation": "The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing, emphasizing threat and negative intent without balancing neutral or positive aspects.",
+        "explanation": "The argument repeatedly frames Zarnia's actions as threatening and destabilizing, emphasizing negative interpretations without neutral or positive balance.",
         "motif_id": "motif_1"
       },
       {
@@ -36,6 +38,53 @@
           "perceived threatening behavior"
         ],
         "explanation": "This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "VonRestorffEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0"
+        ],
+        "development_ids": [
+          "development_0"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
+        ],
+        "excerpts": [
+          "unwavering commitment to peace and regional stability",
+          "Analysts praise Norlund's government for exercising restraint",
+          "bold leadership by maintaining peace and stability"
+        ],
+        "explanation": "The argument repeatedly isolates Norlund's peacefulness and restraint as distinct and memorable qualities, contrasting them with Zarnia's provocations to make Norlund's actions stand out.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_3"
+        ],
+        "excerpts": [
+          "Last week's unauthorized military exercises",
+          "marked the third such incident this month"
+        ],
+        "explanation": "The argument singles out the most recent incident as distinct ('last week's unauthorized...'), making it stand out from the pattern and thus more memorable, exploiting the Von Restorff Effect.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_7"
+        ],
+        "excerpts": [
+          "\"We trust our leaders to protect us without fueling unnecessary conflict,\" said Lira Vanholm"
+        ],
+        "explanation": "The direct quote from a named local resident is isolated within the argument, making it stand out and be more memorable compared to the general statement, thus exploiting the Von Restorff Effect.",
         "motif_id": "motif_2"
       }
     ]

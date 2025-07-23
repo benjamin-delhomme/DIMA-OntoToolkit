@@ -1,5 +1,6 @@
 {
   "Detect": {
+    "BizarrenessEffect": [],
     "NegativityBias": [
       {
         "argument_id": "argument_1",
@@ -45,6 +46,98 @@
         ],
         "explanation": "Both premises frame the situation in negative terms (disruption, tension) without neutral or positive balance, emphasizing threat and instability to exploit negativity bias.",
         "motif_id": "motif_4"
+      }
+    ],
+    "VonRestorffEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0"
+        ],
+        "development_ids": [
+          "development_1"
+        ],
+        "excerpts": [
+          "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
+          "Caldria has earned international commendation for its steadfast commitment to peace."
+        ],
+        "explanation": "The argument isolates Caldria as uniquely stabilizing and commendable amid volatility and inflammatory actions, making its role stand out and be more memorable by contrast with its environment.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "development_ids": [
+          "development_3"
+        ],
+        "excerpts": [
+          "Independent experts warn",
+          "calculated effort to provoke confrontation"
+        ],
+        "explanation": "The argument isolates the warning from 'independent experts' as a distinct and memorable element, contrasting it with the official Velmoran stance and drawing special attention to this perspective.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "chosen the high road",
+          "textbook case of strategic patience"
+        ],
+        "explanation": "The argument isolates Caldria's restraint by contrasting it with its right to defend itself and by labeling its behavior as a 'textbook case,' making these elements stand out and more memorable through conceptual distinction.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_5"
+        ],
+        "excerpts": [
+          "\"We're proud of how our leaders are handling this,\" said Tomas Erel",
+          "\"Velmora wants a reaction, but we won't give them the satisfaction.\""
+        ],
+        "explanation": "The use of direct quotations from a named individual, set apart from the general narrative, isolates these statements and makes them stand out, exploiting the Von Restorff Effect to make the support and defiance more memorable.",
+        "motif_id": "motif_3"
+      },
+      {
+        "argument_id": "argument_4",
+        "bias": true,
+        "development_ids": [
+          "development_6"
+        ],
+        "excerpts": [
+          "The international community has begun taking notice",
+          "begun taking notice"
+        ],
+        "explanation": "The development isolates the action of the 'international community' as a distinct, memorable shift, setting it apart from the more routine actions of regional powers and the Security Council, thus exploiting the Von Restorff Effect.",
+        "motif_id": "motif_4"
+      },
+      {
+        "argument_id": "argument_5",
+        "bias": true,
+        "development_ids": [
+          "development_7"
+        ],
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "emphasize dialogue and de-escalation",
+          "standing firm without wavering"
+        ],
+        "explanation": "The argument isolates Caldria's approach by repeatedly highlighting its emphasis on dialogue and unwavering principles, making these features stand out in contrast to the unfolding situation and thus more memorable.",
+        "motif_id": "motif_5"
       }
     ]
   },
