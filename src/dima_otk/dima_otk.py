@@ -126,8 +126,10 @@ class DimaOTK:
         # Step 7  :  Convert semantic‑analysis JSON ➜ OWL Influence Mini ABox
         print("[STEP 7] Converting semantic analysis to OWL ABox…")
         influence_mini_abox_file = convert_semantic_analysis_article(article_id)
-        print(f"[STEP 7] Article {article_id} ABox written to {influence_mini_abox_file}")
+        print(f"[STEP 7] Article {article_id} ABox written to {influence_mini_full_file}")
 
         # Step 8  :  Convert dima JSON ➜ OWL Dima ABox + OWL Influence Mini ABox
         print("[STEP 8] Converting semantic analysis to OWL ABox and merging with the InfluenceMini OWL…")
-        convert_dima_analysis_article(article_id)
+        dima_abox_file = convert_dima_analysis_article(article_id)
+        print(f"[STEP 8] Article {article_id} ABox written to {dima_abox_file}")
+        print("You can now run a SPARQL query (-h for more info)")
