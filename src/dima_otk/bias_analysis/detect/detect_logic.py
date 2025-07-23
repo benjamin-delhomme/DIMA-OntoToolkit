@@ -19,11 +19,13 @@ from dima_otk.utils.cache import load_or_compute_cache
 
 from dima_otk.bias_analysis.detect.te0131_extractor import extract_technique_te0131
 from dima_otk.bias_analysis.detect.te0132_extractor import extract_technique_te0132
+from dima_otk.bias_analysis.detect.te0141_extractor import extract_technique_te0141
 
 def get_detect_techniques(processed_article: dict) -> dict:
     return {
         "BizarrenessEffect": get_detect_technique(processed_article,"te0131",extract_technique_te0131),
         "NegativityBias": get_detect_technique(processed_article,"te0132",extract_technique_te0132),
+        "VonRestorffEffect": get_detect_technique(processed_article,"te0141",extract_technique_te0141),
         # Add more techniques as needed
     }
 
