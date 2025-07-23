@@ -12,14 +12,53 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import List, Dict
+import json
+from typing import List, Dict, Callable
 
-from dima_otk.bias_analysis.detect.te0132_logic import get_technique_te0132
-from dima_otk.bias_analysis.detect.te0131_logic import get_technique_te0131
+from dima_otk.utils.cache import load_or_compute_cache
+
+from dima_otk.bias_analysis.detect.te0131_extractor import extract_technique_te0131
+from dima_otk.bias_analysis.detect.te0132_extractor import extract_technique_te0132
 
 def get_detect_techniques(processed_article: dict) -> dict:
     return {
-        "NegativityBias": get_technique_te0132(processed_article),
-        "BizarrenessEffect": get_technique_te0131(processed_article),
+        "BizarrenessEffect": get_detect_technique(processed_article,"te0131",extract_technique_te0131),
+        "NegativityBias": get_detect_technique(processed_article,"te0132",extract_technique_te0132),
         # Add more techniques as needed
     }
+
+def get_detect_technique(article: Dict, technique_code: str, extract_fn: Callable[[Dict], List[Dict]]) -> List[Dict]:
+    """
+    Scan every motif in an article for a given technique using caching to avoid repeated GPT calls.
+    Returns a flat list of argument-level verdicts with the motif_id attached.
+    """
+    results: List[Dict] = []
+
+    article_id = article["article_id"]
+
+    tech_code = technique_code.upper()
+
+    for motif in article.get("motifs", []):
+        motif_id = motif["motif_id"]
+
+        cache_key = f"article_{article_id}-motif_{motif_id}-{tech_code}"
+        verbose_label = f"Detect - {tech_code} Extraction in {motif_id}"
+
+        cache_result = load_or_compute_cache(
+            cache_key=cache_key,
+            cache_type="detect_cache",
+            compute_fn=lambda m=motif: {
+                "rows": extract_fn(m)
+            },
+            verbose_label=verbose_label
+        )
+
+        motif_rows = cache_result.get("rows", [])
+
+        for row in motif_rows:
+            # Only push results that are detected as bias
+            if row.get("bias") is True:
+                row["motif_id"] = motif_id
+                results.append(row)
+
+    return results
