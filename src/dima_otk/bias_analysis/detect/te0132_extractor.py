@@ -18,7 +18,7 @@ from dima_otk.utils.gpt_client import call_gpt
 def extract_technique_te0132(argument_text: str, model: str = "gpt-4.1") -> dict:
     """
     Detects TE0132 – Negativity Bias.
-    Returns a JSON verdict with bias_detected / confidence / excerpts / explanation.
+    Returns a JSON verdict with bias_detected / excerpts / explanation.
     """
 
     messages = [
