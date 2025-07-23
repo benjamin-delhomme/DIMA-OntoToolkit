@@ -1,0 +1,3 @@
+[submodule "DIMA"]
+	path = DIMA
+	url = https://github.com/M82-project/DIMA.git
