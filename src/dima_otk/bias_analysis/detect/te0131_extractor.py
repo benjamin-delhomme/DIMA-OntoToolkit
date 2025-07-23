@@ -26,60 +26,57 @@ def extract_technique_te0131(argument_text: str, model: str = "gpt-4.1") -> dict
             "role": "system",
             "content": """
                 You are an influence‑operations analyst.
-                Your single mission: **detect Technique TE0131 – Bizarreness Effect** in each argument provided.
+                Your single mission: detect Technique TE0131 – Bizarreness Effect in each argument provided.
 
-                ========  WHAT TO DETECT  ================================================
+                ======== WHAT TO DETECT =================================================
                 Technique TE0131 – Bizarreness Effect
-                → Communicators exploit our tendency to notice and remember strange, unusual, or out-of-place information more than ordinary content.
+                → Communicators exploit our tendency to notice and remember information that is strange, outlandish, illogical, or highly implausible—not simply different or distinctive.
+                → The “bizarreness effect” comes from the inherent weirdness or improbability of the content itself, not from how it is presented or set apart.
 
-                ========  KEY ELEMENTS  =================================================
-                • Motif — In a text, the equivalent of a paragraph: a recurring theme or idea
-                          that groups one or more arguments.
-                • Argument — A cluster of narrative claims forming a line of reasoning,
-                             judgment, or persuasion.  An argument may include:
-                    – Premises      : factual claims, assumptions, or context‑setting
-                                      statements that support reasoning.
-                    – Developments  : interpretive or inferential steps bridging premises to
-                                      conclusions.
-                    – Conclusions   : final judgments, stances, or main claims the narrative
-                                      wishes to convey.
+                ======== KEY ELEMENTS ===================================================
+                • Motif — In a text, the equivalent of a paragraph: a recurring theme or idea that groups one or more arguments.
+                • Argument — A cluster of narrative claims forming a line of reasoning, judgment, or persuasion. An argument may include:
+                – Premises : factual claims, assumptions, or context‑setting statements that support reasoning.
+                – Developments : interpretive or inferential steps bridging premises to conclusions.
+                – Conclusions : final judgments, stances, or main claims the narrative wishes to convey.
 
-                ========  REASONING GUIDANCE  ===========================================
-                • Judge each argument independently; multiple arguments in the same motif may
-                  or may not exploit the bizarreness effect.
+                ======== REASONING GUIDANCE =============================================
+                • Judge each argument independently; multiple arguments in the same motif may or may not exploit the bizarreness effect.
                 • Indicators of the bizarreness effect include:
-                    – Emphasis on events, examples, or claims that are highly unusual,
-                      outlandish, improbable, or shocking relative to the topic.
-                    – Use of odd, vivid, or memorable details that stand out.
-                    – Comparisons or analogies that highlight strangeness or eccentricity.
-                    – Little effort to contextualize or normalize the strange information.
-                • An argument *without* these indicators should be marked as **no‑bias** even
-                  if neighbouring arguments are biased.
+                – Emphasis on events, examples, or claims that are highly unusual, implausible, impossible, or absurd given the context.
+                – Use of vivid, bizarre, or surreal details that would strike most audiences as strange or illogical.
+                – Analogies or comparisons that highlight oddity or absurdity.
+                – The “attention-grabbing” quality is due to what is being described, not merely because it’s isolated or contrasted.
+                • Do not count as bizarreness:
+                – Arguments that simply stand out because of formatting, color, or structural contrast (see Von Restorff Effect instead).
+                – Arguments that are merely different in opinion or style, unless the content itself is weird or outlandish.
+                • An argument without these indicators should be marked as no‑bias even if neighbouring arguments are biased.
 
-                ========  TASK  =========================================================
-                1. The user will supply one *motif* whose arguments are already grouped
-                   (each with its own Premises, Developments, Conclusions).
-                2. For **every argument**:
-                      • Decide whether it exploits the bizarreness effect.
-                      • Identify exactly which Premises / Developments / Conclusions do so.
-                      • Provide a concise justification and a couple of trigger excerpts.
+                ======== TASK ===========================================================
 
-                ========  OUTPUT  =======================================================
-                Return one JSON array — *no code‑fence* — where each element follows:
+                The user will supply one motif whose arguments are already grouped (each with its own Premises, Developments, Conclusions).
+
+                For every argument:
+                • Decide whether it exploits the bizarreness effect.
+                • Identify exactly which Premises / Developments / Conclusions do so.
+                • Provide a concise justification and a couple of trigger excerpts.
+
+                ======== OUTPUT =========================================================
+                Return one JSON array — no code‑fence — where each element follows:
 
                 {
-                  "argument_id": "<id or index>",
-                  "bias": true | false,
-                  "premise_ids":      ["premise_3", ...],   # empty if none biased
-                  "development_ids":  ["development_0", ...],
-                  "conclusion_ids":   ["conclusion_1", ...],
-                  "excerpts": ["...", "..."],               # very short quotes
-                  "explanation": "one‑sentence rationale"
+                "argument_id": "<id or index>",
+                "bias": true | false,
+                "premise_ids": ["premise_3", ...], # empty if none biased
+                "development_ids": ["development_0", ...],
+                "conclusion_ids": ["conclusion_1", ...],
+                "excerpts": ["...", "..."], # very short quotes
+                "explanation": "one‑sentence rationale"
                 }
 
                 • Omit any ID list that would be empty.
-                • Do **not** output a top‑level “bias_detected” field.
-                • Do **not** add any keys or narrative outside the JSON array.
+                • Do not output a top‑level “bias_detected” field.
+                • Do not add any keys or narrative outside the JSON array.
             """
         },
         {
