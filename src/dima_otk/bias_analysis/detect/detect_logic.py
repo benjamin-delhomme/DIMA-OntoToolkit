@@ -15,9 +15,11 @@
 from typing import List, Dict
 
 from dima_otk.bias_analysis.detect.te0132_logic import get_technique_te0132
+from dima_otk.bias_analysis.detect.te0131_logic import get_technique_te0131
 
 def get_detect_techniques(processed_article: dict) -> dict:
     return {
         "NegativityBias": get_technique_te0132(processed_article),
+        "BizarrenessEffect": get_technique_te0131(processed_article),
         # Add more techniques as needed
     }
