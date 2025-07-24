@@ -268,5 +268,99 @@
       }
     ]
   },
-  "Act": {}
+  "Act": {
+    "OmissionBias": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "development_ids": [
+          "development_0",
+          "development_1"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
+        ],
+        "excerpts": [
+          "responded with composure and clarity",
+          "steadfast commitment to peace"
+        ],
+        "explanation": "The argument frames Caldria's inaction (restraint) as inherently virtuous and more commendable than any potential action, without considering possible harms of not responding, thus exploiting omission bias.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_4"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "chosen the high road",
+          "strategic patience in the face of deliberate intimidation"
+        ],
+        "explanation": "The argument frames Caldria's inaction as morally superior and praiseworthy despite ongoing harm, implicitly suggesting that acting (defending its interests) would be less acceptable than doing nothing.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "development_ids": [
+          "development_5"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "we won't give them the satisfaction",
+          "refuses to react to Velmora's provocations"
+        ],
+        "explanation": "The argument frames inaction (not reacting) as the morally superior and less blameworthy choice, implicitly minimizing any potential harm from inaction while portraying action as undesirable.",
+        "motif_id": "motif_3"
+      }
+    ],
+    "StatusQuoBias": [
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "chosen the high road",
+          "strategic patience in the face of deliberate intimidation"
+        ],
+        "explanation": "The argument valorizes Caldria's decision to maintain the current situation as 'strategic patience,' implicitly framing inaction as virtuous and preferable to change, without weighing the merits or risks of alternative responses.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_5",
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_5"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "firmly aligned with the government's response",
+          "we won't give them the satisfaction"
+        ],
+        "explanation": "The argument exploits status quo bias by framing continued support for the current government response as a point of pride and resistance to change, emphasizing inaction as the preferred and safer course without weighing alternatives.",
+        "motif_id": "motif_3"
+      }
+    ],
+    "InformationOverload": []
+  }
 }

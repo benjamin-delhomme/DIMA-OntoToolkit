@@ -212,5 +212,63 @@
       }
     ]
   },
-  "Act": {}
+  "Act": {
+    "OmissionBias": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_2"
+        ],
+        "development_ids": [
+          "development_0"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
+        ],
+        "excerpts": [
+          "refusing to be drawn into unnecessary escalation",
+          "praise Norlund's government for exercising restraint"
+        ],
+        "explanation": "The argument frames Norlund's inaction (restraint) as inherently virtuous and preferable, emphasizing the risks of action (escalation) without considering potential harms of inaction, thus exploiting omission bias.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_7"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "without fueling unnecessary conflict",
+          "supports the government's approach as responsible and protective"
+        ],
+        "explanation": "This argument frames government inaction or restraint as inherently more responsible and protective, implicitly suggesting that taking action (which could 'fuel conflict') would be more blameworthy, thus exploiting omission bias.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "StatusQuoBias": [
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_6",
+          "premise_7"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "strong support for their government's handling",
+          "trust our leaders to protect us without fueling unnecessary conflict"
+        ],
+        "explanation": "This argument frames the current government's approach as inherently responsible and preferable, appealing to trust in established leadership and cautioning against change or escalation, thus exploiting status quo bias.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "InformationOverload": []
+  }
 }
