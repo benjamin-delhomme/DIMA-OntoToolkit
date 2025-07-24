@@ -142,6 +142,37 @@
     ]
   },
   "Inform": {
+    "FalseConsensusEffect": [
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_5"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "Public sentiment within Caldria remains firmly aligned",
+          "Caldria's public supports the government's stance"
+        ],
+        "explanation": "The argument generalizes the entire public's support for the government, implying near-universal consensus without evidence, which exploits the false consensus effect.",
+        "motif_id": "motif_3"
+      },
+      {
+        "argument_id": "argument_4",
+        "bias": true,
+        "development_ids": [
+          "development_6"
+        ],
+        "excerpts": [
+          "The international community has begun taking notice",
+          "joint statements urging Velmora"
+        ],
+        "explanation": "The development exaggerates consensus by implying that the entire international community is aligned, despite only citing actions by several regional powers and a council.",
+        "motif_id": "motif_4"
+      }
+    ],
     "HindsightBias": []
   },
   "Memorise": {},

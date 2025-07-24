@@ -90,6 +90,24 @@
     ]
   },
   "Inform": {
+    "FalseConsensusEffect": [
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_6"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "Local communities in Norlund have voiced strong support",
+          "The local population supports the government's approach"
+        ],
+        "explanation": "The argument generalizes local support as widespread among the population, implying consensus without evidence, thus exploiting the false consensus effect.",
+        "motif_id": "motif_2"
+      }
+    ],
     "HindsightBias": [
       {
         "argument_id": "argument_2",
