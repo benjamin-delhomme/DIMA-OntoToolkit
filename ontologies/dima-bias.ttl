@@ -309,7 +309,7 @@ dima:PreExistingInformation
     dima:uuid "f7b94d9e-2e5b-4082-9f96-ab704e6e1d95" ;
     rdfs:comment "A tactic that uses pre-existing beliefs or knowledge to attract attention."@en ,
                  "Tactique qui utilise des informations préexistantes ou des croyances établies pour capter l’attention de la cible."@fr ;
-    dima:hasTechnique dima:AvailabilityHeuristic , dima:MereExposureEffect .
+    dima:hasTechnique dima:AvailabilityHeuristic , dima:MereExposureEffect_Detect .
 
 dima:RepeatedExposureInformation
     a owl:Class , owl:NamedIndividual , dima:Tactic , dima:DetectTactic ;
@@ -361,7 +361,7 @@ dima:AvailabilityHeuristic
     rdfs:comment "Using readily available examples or experiences as the basis for decisions, regardless of their representativeness."@en ,
                  "Décision fondée sur des exemples ou souvenirs facilement accessibles, même s’ils ne sont pas représentatifs."@fr .
 
-dima:MereExposureEffect
+dima:MereExposureEffect_Detect
     a owl:Class , owl:NamedIndividual , dima:Technique , dima:DetectTechnique ;
     rdfs:subClassOf dima:DetectTechnique ;
     rdfs:label "mere exposure effect"@en , "Effet de simple exposition"@fr ;
@@ -678,7 +678,7 @@ dima:ContentExposure a owl:Class ;
     dima:valueCode "TA0033" ;
     rdfs:comment "A tactic that promotes memorization through overexposure to information."@en ;
     rdfs:comment "Tactique qui favorise la surexposition à une information pour favoriser sa mémorisation."@fr ;
-    dima:hasTechnique dima:RecencyEffect, dima:MereExposureEffect_Memorise, dima:PrimacyEffect .
+    dima:hasTechnique dima:RecencyEffect, dima:MereExposureEffect, dima:PrimacyEffect .
 
 ##########  MEMORISE tactics  ##################################
 
@@ -712,7 +712,7 @@ dima:ContentExposure
     rdfs:comment "A tactic that promotes memorization through overexposure to information."@en ,
                  "Tactique qui favorise la surexposition à une information pour favoriser sa mémorisation."@fr ;
     dima:hasTechnique dima:RecencyEffect ,
-                      dima:MereExposureEffect_Memorise ,
+                      dima:MereExposureEffect ,
                       dima:PrimacyEffect .
 
 ##########  MEMORISE techniques  ###############################
@@ -773,7 +773,7 @@ dima:RecencyEffect
     rdfs:comment "Most recent information is remembered better."@en ,
                  "Les informations les plus récentes influencent davantage la mémoire et les décisions."@fr .
 
-dima:MereExposureEffect_Memorise
+dima:MereExposureEffect
     a owl:Class , owl:NamedIndividual , dima:Technique , dima:MemoriseTechnique ;
     rdfs:subClassOf dima:MemoriseTechnique ;
     rdfs:label "mere exposure effect"@en , "Effet de simple exposition"@fr ;
