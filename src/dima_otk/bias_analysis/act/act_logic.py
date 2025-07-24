@@ -17,9 +17,15 @@ from typing import List, Dict, Callable
 
 from dima_otk.utils.cache import load_or_compute_cache
 
+from .te0431_extractor import extract_technique_te0431
+from .te0432_extractor import extract_technique_te0432
+from .te0433_extractor import extract_technique_te0433
+
 def get_act_techniques(processed_article: dict) -> dict:
     return {
-        # "xxxxxxxxxx": get_act_technique(processed_article,"texxxx",extract_technique_texxxx),
+        "OmissionBias": get_act_technique(processed_article,"te0431",extract_technique_te0431),
+        "StatusQuoBias": get_act_technique(processed_article,"te0432",extract_technique_te0432),
+        "InformationOverload": get_act_technique(processed_article,"te0433",extract_technique_te0433),
         # Add more techniques as needed
     }
 
