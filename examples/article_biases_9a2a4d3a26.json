@@ -128,6 +128,89 @@
       }
     ]
   },
-  "Memorise": {},
+  "Memorise": {
+    "RecencyEffect": [
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_8",
+          "premise_9"
+        ],
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "have begun to echo concern",
+          "calling for sanctions if the pattern continues",
+          "growing international pressure"
+        ],
+        "explanation": "This argument highlights the most recent international reactions and presents them as decisive, exploiting the recency effect by focusing on current concerns and calls for sanctions as the main reason for pressure on Zarnia.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "MereExposureEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0"
+        ],
+        "excerpts": [
+          "once again demonstrated",
+          "unwavering commitment"
+        ],
+        "explanation": "The argument exploits the mere exposure effect by emphasizing Norlund's repeated demonstrations of commitment to peace, making the audience more likely to view Norlund positively due to familiarity with this recurring theme.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_3"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "third such incident this month",
+          "continued its pattern of aggressive posturing"
+        ],
+        "explanation": "The argument exploits the mere exposure effect by emphasizing repeated incidents and a continuing pattern, making Zarnia's aggression feel familiar and thus more credible or threatening through repetition.",
+        "motif_id": "motif_1"
+      }
+    ],
+    "PrimacyEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0"
+        ],
+        "excerpts": [
+          "Norlund has once again demonstrated its unwavering commitment to peace and regional stability.",
+          "In a bold display of leadership"
+        ],
+        "explanation": "The argument opens by strongly framing Norlund as committed to peace and stability, setting a positive lens that colors all subsequent information and judgments, thus exploiting the primacy effect.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_3"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "Last week's unauthorized military exercises near the Norlund border marked the third such incident this month.",
+          "Zarnia has continued its pattern of aggressive posturing."
+        ],
+        "explanation": "The argument opens by emphasizing Zarnia's aggressive actions, setting a negative frame that colors all subsequent information and leads the reader to interpret later claims through this initial lens.",
+        "motif_id": "motif_1"
+      }
+    ]
+  },
   "Act": {}
 }

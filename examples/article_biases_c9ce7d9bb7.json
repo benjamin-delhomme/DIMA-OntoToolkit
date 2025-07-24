@@ -175,6 +175,98 @@
     ],
     "HindsightBias": []
   },
-  "Memorise": {},
+  "Memorise": {
+    "RecencyEffect": [
+      {
+        "argument_id": "argument_4",
+        "bias": true,
+        "premise_ids": [
+          "premise_8"
+        ],
+        "development_ids": [
+          "development_6"
+        ],
+        "excerpts": [
+          "has called an emergency session",
+          "has begun taking notice"
+        ],
+        "explanation": "The argument emphasizes the most recent action (the emergency session) as decisive evidence that the international community is now paying attention, giving it disproportionate weight over earlier events.",
+        "motif_id": "motif_4"
+      }
+    ],
+    "MereExposureEffect": [
+      {
+        "argument_id": "argument_5",
+        "bias": true,
+        "development_ids": [
+          "development_7"
+        ],
+        "excerpts": [
+          "continues to emphasize",
+          "dialogue and de-escalation"
+        ],
+        "explanation": "The argument exploits the mere exposure effect by highlighting Caldria's repeated emphasis on dialogue and de-escalation, implying trustworthiness and positive value through ongoing familiarity.",
+        "motif_id": "motif_5"
+      }
+    ],
+    "PrimacyEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0"
+        ],
+        "excerpts": [
+          "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
+          "In a resolute affirmation of diplomatic integrity"
+        ],
+        "explanation": "The argument opens by framing Caldria as a stabilizing force and affirming its diplomatic integrity, setting a positive lens that colors all subsequent information and judgments about Caldria's actions.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_2",
+          "premise_3"
+        ],
+        "excerpts": [
+          "Velmora has escalated its antagonistic behavior over the past month",
+          "This escalation includes a string of cyber intrusions... and a surprise naval deployment"
+        ],
+        "explanation": "The argument opens by framing Velmora's actions as 'antagonistic escalation,' setting a negative lens that colors all subsequent information, including official justifications and expert warnings.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_4"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "excerpts": [
+          "Caldria has every right to defend its interests",
+          "Caldria has chosen the high road"
+        ],
+        "explanation": "The argument foregrounds Caldria's right to self-defense as the initial framing, which sets a positive lens for interpreting subsequent actions and judgments, thus exploiting the primacy effect.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_4",
+        "bias": true,
+        "development_ids": [
+          "development_6"
+        ],
+        "excerpts": [
+          "The international community has begun taking notice.",
+          "has begun taking notice"
+        ],
+        "explanation": "The argument leads with the claim that the international community is now paying attention, framing all subsequent details as evidence of this initial assertion and thus exploiting the primacy effect.",
+        "motif_id": "motif_4"
+      }
+    ]
+  },
   "Act": {}
 }
