@@ -141,7 +141,9 @@
       }
     ]
   },
-  "Inform": {},
+  "Inform": {
+    "HindsightBias": []
+  },
   "Memorise": {},
   "Act": {}
 }

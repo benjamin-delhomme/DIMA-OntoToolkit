@@ -89,7 +89,27 @@
       }
     ]
   },
-  "Inform": {},
+  "Inform": {
+    "HindsightBias": [
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_6",
+          "premise_7"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "In hindsight, many now say the signs of Zarnia's hostile intentions were clear",
+          "even if the threat seemed less obvious at the time"
+        ],
+        "explanation": "The argument retroactively claims that warning signs were clear from the start, presenting the outcome as predictable despite acknowledging it was not obvious before.",
+        "motif_id": "motif_2"
+      }
+    ]
+  },
   "Memorise": {},
   "Act": {}
 }
