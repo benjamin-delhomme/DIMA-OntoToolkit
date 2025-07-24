@@ -19,11 +19,28 @@ from dima_otk.bias_analysis.inform.inform_logic import get_inform_techniques
 from dima_otk.bias_analysis.memorise.memorise_logic import get_memorise_techniques
 from dima_otk.bias_analysis.act.act_logic import get_act_techniques
 
+def print_phase_result(phase_name, results_dict):
+        found = [k for k, v in results_dict.items() if v]  # Technique names with non-empty result
+        if found:
+            print(f"[INFO] {len(found)} {phase_name} technique(s) found: {', '.join(found)}")
+        else:
+            print(f"[INFO] No {phase_name} techniques found.")
+
 def get_biases_from_article(processed_article: dict) -> dict:
 
+    detect = get_detect_techniques(processed_article)
+    inform = get_inform_techniques(processed_article)
+    memorise = get_memorise_techniques(processed_article)
+    act = get_act_techniques(processed_article)
+
+    print_phase_result("Detect", detect)
+    print_phase_result("Inform", inform)
+    print_phase_result("Memorise", memorise)
+    print_phase_result("Act", act)
+
     return {
-        "Detect": get_detect_techniques(processed_article),
-        "Inform": get_inform_techniques(processed_article),
-        "Memorise": get_memorise_techniques(processed_article),
-        "Act": get_act_techniques(processed_article),
+        "Detect": detect,
+        "Inform": inform,
+        "Memorise": memorise,
+        "Act": act,
     }
