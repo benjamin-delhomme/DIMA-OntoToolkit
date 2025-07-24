@@ -17,10 +17,12 @@ from typing import List, Dict, Callable
 
 from dima_otk.utils.cache import load_or_compute_cache
 
+from .te0251_extractor import extract_technique_te0251
 from .te0261_extractor import extract_technique_te0261
 
 def get_inform_techniques(processed_article: dict) -> dict:
     return {
+        "FalseConsensusEffect": get_inform_technique(processed_article,"te0251",extract_technique_te0251),
         "HindsightBias": get_inform_technique(processed_article,"te0261",extract_technique_te0261),
         # Add more techniques as needed
     }
