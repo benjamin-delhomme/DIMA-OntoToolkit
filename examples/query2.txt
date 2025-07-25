@@ -1,94 +1,63 @@
-#This query retrieves each argument that uses a cognitive technique, along with the inferred tactic, the explanation for that technique usage, and a combined text from any associated premise, development, or conclusion components.
+#This query retrieves, for each article, the cognitive techniques it uses - grouped by DIMA phase (like Detect or Memorise) - along with how often each technique is applied, enabling structured comparison across narratives.
 
-'PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
-PREFIX dima: <https://m82-project.org/dima-bias/ontology#>
-
-SELECT DISTINCT ?argument ?tech_usage ?technique ?explanation ?tactic
-       (CONCAT(
-          COALESCE(?premise_text, ""), " ",
-          COALESCE(?dev_text, ""), " ",
-          COALESCE(?conc_text, "")
-        ) AS ?combined_text)
+SELECT ?article (CONCAT(SUBSTR(?headline, 1, 30), "...") AS ?shortHeadline) ?techniqueType ?technique (COUNT(DISTINCT ?techniqueUsage) AS ?numTechniqueUsage)
 WHERE {
-  ?argument a scim:Argument ;
-            dima:usesTechnique ?tech_usage ;
-            dima:usesTactic ?tactic .
-
-  ?tech_usage a dima:TechniqueUsage ;
-              dima:instantiatesTechnique ?technique ;
-              dima:hasExplanation ?explanation .
-
-  OPTIONAL {
-    ?premise a scim:Premise ;
-             dima:usesTechnique ?tech_usage ;
-             scim:hasText ?premise_text .
-  }
-  OPTIONAL {
-    ?dev a scim:Development ;
-         dima:usesTechnique ?tech_usage ;
-         scim:hasText ?dev_text .
-  }
-  OPTIONAL {
-    ?conc a scim:Conclusion ;
-          dima:usesTechnique ?tech_usage ;
-          scim:hasText ?conc_text .
-  }
+  ?article scim:hasMotif ?motif .
+  ?article scim:hasHeadline ?headline .
+  ?motif scim:hasArgument ?argument .
+  ?argument dima:usesTechnique ?techniqueUsage .
+  ?techniqueUsage dima:instantiatesTechnique ?technique .
+  ?technique rdfs:subClassOf ?techniqueType .
 }
-ORDER BY ?argument
-'
+GROUP BY ?article ?shortHeadline ?techniqueType ?technique
+ORDER BY ?article ?techniqueType ?technique'
 [DEBUG] GPT_API_KEY loaded
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| col0                       | col1                             | col2                | col3                                     | col4                     | col5                                     |
-+============================+==================================+=====================+==========================================+==========================+==========================================+
-| scim:9a2a4d3a26_argument_1 | dima:9a2a4d3a26_negativitybias_1 | dima:NegativityBias | The argument repeatedly frames Zarnia's  | dima:DivisiveInformation | Last week's unauthorized military        |
-|                            |                                  |                     | actions as aggressive, unauthorized, and |                          | exercises near the Norlund border marked |
-|                            |                                  |                     | destabilizing, emphasizing threat and    |                          | the third such incident this month.      |
-|                            |                                  |                     | negative intent without balancing        |                          | Observers argue that Zarnia's behavior   |
-|                            |                                  |                     | neutral or positive aspects.             |                          | reflects a deliberate attempt to         |
-|                            |                                  |                     |                                          |                          | destabilize the region. Zarnia has       |
-|                            |                                  |                     |                                          |                          | continued its pattern of aggressive      |
-|                            |                                  |                     |                                          |                          | posturing.                               |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:9a2a4d3a26_argument_3 | dima:9a2a4d3a26_negativitybias_3 | dima:NegativityBias | This argument highlights international   | dima:DivisiveInformation | International voices have begun to echo  |
-|                            |                                  |                     | anxiety and punitive measures,           |                          | concern over Zarnia's intentions.  There |
-|                            |                                  |                     | repeatedly framing Zarnia as a threat    |                          | is growing international pressure on     |
-|                            |                                  |                     | and focusing on negative consequences.   |                          | Zarnia due to perceived threatening      |
-|                            |                                  |                     |                                          |                          | behavior.                                |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:9a2a4d3a26_argument_3 | dima:9a2a4d3a26_negativitybias_3 | dima:NegativityBias | This argument highlights international   | dima:DivisiveInformation | Some diplomats are calling for sanctions |
-|                            |                                  |                     | anxiety and punitive measures,           |                          | if the pattern continues.  There is      |
-|                            |                                  |                     | repeatedly framing Zarnia as a threat    |                          | growing international pressure on Zarnia |
-|                            |                                  |                     | and focusing on negative consequences.   |                          | due to perceived threatening behavior.   |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:c9ce7d9bb7_argument_1 | dima:c9ce7d9bb7_negativitybias_1 | dima:NegativityBias | The argument repeatedly frames Velmora's | dima:DivisiveInformation | This escalation includes a string of     |
-|                            |                                  |                     | actions as threats and provocations,     |                          | cyber intrusions targeting Caldria's     |
-|                            |                                  |                     | emphasizing negative consequences and    |                          | infrastructure and a surprise naval      |
-|                            |                                  |                     | expert warnings without neutral or       |                          | deployment near disputed maritime zones. |
-|                            |                                  |                     | positive balance.                        |                          | Independent experts warn of a calculated |
-|                            |                                  |                     |                                          |                          | effort to provoke confrontation.         |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:c9ce7d9bb7_argument_1 | dima:c9ce7d9bb7_negativitybias_1 | dima:NegativityBias | The argument repeatedly frames Velmora's | dima:DivisiveInformation | Velmora has escalated its antagonistic   |
-|                            |                                  |                     | actions as threats and provocations,     |                          | behavior over the past month.            |
-|                            |                                  |                     | emphasizing negative consequences and    |                          | Independent experts warn of a calculated |
-|                            |                                  |                     | expert warnings without neutral or       |                          | effort to provoke confrontation.         |
-|                            |                                  |                     | positive balance.                        |                          |                                          |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:c9ce7d9bb7_argument_2 | dima:c9ce7d9bb7_negativitybias_2 | dima:NegativityBias | The conclusion frames the situation as   | dima:DivisiveInformation | This is a textbook case of strategic     |
-|                            |                                  |                     | one where Caldria is subjected to        |                          | patience in the face of deliberate       |
-|                            |                                  |                     | 'deliberate intimidation,' emphasizing   |                          | intimidation.                            |
-|                            |                                  |                     | threat and negative intent, thus         |                          |                                          |
-|                            |                                  |                     | exploiting negativity bias.              |                          |                                          |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:c9ce7d9bb7_argument_4 | dima:c9ce7d9bb7_negativitybias_4 | dima:NegativityBias | Both premises frame the situation in     | dima:DivisiveInformation | Several regional powers have issued      |
-|                            |                                  |                     | negative terms (disruption, tension)     |                          | joint statements urging Velmora to cease |
-|                            |                                  |                     | without neutral or positive balance,     |                          | its disruptive tactics.                  |
-|                            |                                  |                     | emphasizing threat and instability to    |                          |                                          |
-|                            |                                  |                     | exploit negativity bias.                 |                          |                                          |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-| scim:c9ce7d9bb7_argument_4 | dima:c9ce7d9bb7_negativitybias_4 | dima:NegativityBias | Both premises frame the situation in     | dima:DivisiveInformation | The Global Security Council has called   |
-|                            |                                  |                     | negative terms (disruption, tension)     |                          | an emergency session to address the      |
-|                            |                                  |                     | without neutral or positive balance,     |                          | mounting tensions.                       |
-|                            |                                  |                     | emphasizing threat and instability to    |                          |                                          |
-|                            |                                  |                     | exploit negativity bias.                 |                          |                                          |
-+----------------------------+----------------------------------+---------------------+------------------------------------------+--------------------------+------------------------------------------+
-benjamin@firefly:~/dev/DIMA-OntoToolkit$ ^C
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| col0                    | col1                              | col2                   | col3                      | col4              |
++=========================+===================================+========================+===========================+===================+
+| article                 | shortHeadline                     | techniqueType          | technique                 | numTechniqueUsage |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:ActTechnique      | dima:OmissionBias         | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:DetectTechnique   | dima:NegativityBias       | 4                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:DetectTechnique   | dima:VonRestorffEffect    | 6                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:InformTechnique   | dima:FalseConsensusEffect | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:MemoriseTechnique | dima:MereExposureEffect   | 2                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:MemoriseTechnique | dima:PrimacyEffect        | 2                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:378d39b197_article | Russia ready to take Nord Stre... | dima:MemoriseTechnique | dima:RecencyEffect        | 2                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:ActTechnique      | dima:OmissionBias         | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:DetectTechnique   | dima:NegativityBias       | 4                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:DetectTechnique   | dima:VonRestorffEffect    | 3                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:InformTechnique   | dima:FalseConsensusEffect | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:MemoriseTechnique | dima:MereExposureEffect   | 2                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:MemoriseTechnique | dima:PrimacyEffect        | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:6cac4933d9_article | Russia Blasts West's Silence o... | dima:MemoriseTechnique | dima:RecencyEffect        | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:ActTechnique      | dima:OmissionBias         | 4                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:ActTechnique      | dima:StatusQuoBias        | 5                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:DetectTechnique   | dima:BizarrenessEffect    | 1                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:DetectTechnique   | dima:NegativityBias       | 6                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:DetectTechnique   | dima:VonRestorffEffect    | 7                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:MemoriseTechnique | dima:MereExposureEffect   | 2                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:MemoriseTechnique | dima:PrimacyEffect        | 3                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
+| scim:be8a24dd3e_article | German Foreign Minister Signal... | dima:MemoriseTechnique | dima:RecencyEffect        | 4                 |
++-------------------------+-----------------------------------+------------------------+---------------------------+-------------------+
