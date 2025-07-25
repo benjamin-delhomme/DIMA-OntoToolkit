@@ -87,6 +87,49 @@
         "explanation": "The direct quote from a named local resident is isolated within the argument, making it stand out and be more memorable compared to the general statement, thus exploiting the Von Restorff Effect.",
         "motif_id": "motif_2"
       }
+    ],
+    "AnchoringBias": [
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_6",
+          "premise_7"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "strong support for their government's handling",
+          "We trust our leaders to protect us"
+        ],
+        "explanation": "The argument anchors the reader's judgment of the government's actions as responsible and protective by first presenting strong local support and trust, biasing subsequent evaluation toward this positive reference point.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "ContrastEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_1",
+          "premise_2"
+        ],
+        "development_ids": [
+          "development_0"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
+        ],
+        "excerpts": [
+          "repeated provocations from Zarnia",
+          "Norlund officials maintained a calm and measured stance",
+          "exercising restraint in the face of increasing hostility",
+          "despite provocations"
+        ],
+        "explanation": "The argument exploits the contrast effect by juxtaposing Norlund's restraint and commitment to peace against Zarnia's provocations, making Norlund appear more virtuous through direct comparison.",
+        "motif_id": "motif_0"
+      }
     ]
   },
   "Inform": {
