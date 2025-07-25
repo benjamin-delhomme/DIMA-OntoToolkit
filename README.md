@@ -1,10 +1,13 @@
 # DIMA-OntoToolkit
 
-**DIMA-OntoToolkit** is a research-oriented Python pipeline for extracting narrative biases, semantic structures, and arguments from text articles. It maps these features to individuals in a formal OWL ontology.
+**DIMA-OntoToolkit** is a research-oriented Python pipeline for extracting narrative biases, rhetorical techniques, and semantic structures from text articles. It applies the DIMA cognitive warfare framework along with a lightweight semantic model of narrative content called **Influence-Mini**, mapping all extracted features to individuals in a formal OWL ontology.
+
+Learn more about the DIMA cognitive framework here:  
+> [The DIMA Framework – An Attempt to Build a Tool for Cognitive Warfare](https://medium.com/@Cybart/the-dima-framework-an-attempt-to-build-a-tool-for-cognitive-warfare-e1ad3af76c48)
 
 ---
 
-## 🚀 What It Does
+## 📘 What It Does
 
 - Parses raw text or multiple articles from a folder
 - Identifies semantic motifs (e.g. paragraphs)
@@ -13,11 +16,11 @@
 - Use Hermit Reasoner and runs SPARQL queries on the extracted data.
 ---
 
-## 🧠 Feature Extraction Pipeline
+## 🔍 Feature Extraction Pipeline
 
-Once input text is provided, **DIMA-OntoToolkit** extracts key semantic structures before generating the final OWL files. These intermediary outputs are useful for debugging, visualization, or integration with other systems.
+Once input text is provided, **DIMA-OntoToolkit** extracts key semantic structures then DIMA techniques before generating the final OWL files. These intermediary outputs are useful for debugging, visualization, or integration with other systems.
 
-### 🔍 Steps in the Feature Extraction Process
+### 🪛 Steps in the Influence-Mini Feature Extraction Process
 
 1. **Headline Detection**
 
@@ -65,11 +68,37 @@ After analyzing `ex1.txt`, the following JSON was produced:
 
 This file lives under: `output/articles_processed/article_processed_<article_id>.json`
 
-### 🧠 Ontology-Based Semantic Representation
+### 🧩 DIMA Feature Extraction: Cognitive Bias Detection
 
-To support formal reasoning and advanced queries, DIMA-OTK maps processed articles to a structured **OWL ontology**. This approach allows us to connect and infer semantic relationships beyond what is explicitly stated in the text - **without relying on opaque machine learning models**.
+Once semantic features like arguments and motifs have been extracted, **DIMA-OntoToolkit** performs an additional **intermediary step**: identifying and annotating rhetorical strategies based on the **DIMA cognitive bias model**.
 
-#### 1. 🧱 The Influence-Mini Ontology: Core Concepts
+This step analyzes each `Argument` to detect the presence of rhetorical **techniques** (e.g., `NegativityBias`), associates them with **cognitive phases** (`Detect`, `Act`, `Inform`, `Memorise`), and generates explanatory notes and excerpts that justify the classification.
+
+These outputs are saved in intermediate JSON files and later transformed into OWL individuals during the ontology generation phase.
+
+#### 📄 Example: Intermediate Output
+
+After analyzing `ex1.txt`, the following structure is added to the JSON:
+
+```json
+"Detect": {
+  "NegativityBias": [
+    {
+      "argument_id": "argument_1",
+      "excerpts": ["cyber intrusions", "antagonistic behavior"],
+      "explanation": "Frames actions as hostile, emphasizing threat and escalation."
+    }
+  ]
+}
+```
+
+This file lives under: `output/bias_analysis/article_biases_<article_id>.json` and is later used to instantiate DIMA ontology individuals.
+
+## 🧩 Ontology-Based Semantic Representation
+
+To support formal reasoning and advanced queries, DIMA-OTK maps `article_processed_<article_id>.json` and `article_biases_<article_id>.json` to a structured **OWL ontology**. This approach allows us to connect and infer semantic relationships beyond what is explicitly stated in the text - **without relying on opaque machine learning models**.
+
+### 🏛️ The Influence-Mini Ontology: Core Concepts
 
 The ontology used to structure the semantic content of articles is called **Influence-Mini**. It defines all key concepts - such as:
 
@@ -80,90 +109,66 @@ The ontology used to structure the semantic content of articles is called **Infl
 
 This ontology is used to **semantically annotate and represent** each article’s content in a machine-readable form.
 
-📄 The Influence-Mini and DIMA ontologies are each saved separately (with their respective individuals) to:
-`output/owl_influence-mini/influence-mini_full.owl` and `output/owl_dima/dima_full.owl`.
-These are then merged in memory during the query and reasoning phase for SPARQL evaluation. Please note that reasoning is applied in-memory using the HermiT reasoner, inferred facts are not written on the disk.
-
----
-
-#### 2. 🧠 The DIMA Ontology: Annotating Bias
+### 🧭 The DIMA Ontology: Annotating Bias
 
 On top of the Influence-Mini ontology, the **DIMA ontology** is applied to identify and annotate **bias, rhetorical patterns, and manipulation techniques**.
 
 It builds upon the semantic structure from Influence-Mini to label concepts with rhetorical indicators, bias types, or stance - enabling deeper analysis of persuasion strategies.
 
-> ⚠️ Integration of the DIMA ontology and reasoning over it is under development and will be merged into:
-
-```
-output/owl_dima/dima_full.owl
-```
-
 Once integrated, this enables rich inferences - for example:
 
 > **If an argument uses the technique *Negativity Bias*, and that technique is known to be part of the *Divisive Information* tactic, the tool automatically infers that the argument promotes divisive narratives.**
 
-You can then issue SPARQL queries like the following to retrieve a full reasoning path:
+---
+
+### 🗃️ Ontology Storage and Reasoning Workflow
+
+📄 The Influence-Mini and DIMA ontologies are each saved separately (with their respective individuals) to:
+`output/owl_influence-mini/influence-mini_full.owl` and `output/owl_dima/dima_full.owl`.
+
+These are then merged in memory during the query and reasoning phase for SPARQL evaluation.
+Please note that reasoning is applied in-memory using the HermiT reasoner - inferred facts are not written to disk.
+
+### 📊 Query: Number of Techniques Used per Article by Cognitive Phase
+
+You can issue a SPARQL query like the following to get the number of times each cognitive **technique** was used in an article, grouped by the **DIMA cognitive phase** (Act, Detect, Inform, Memorise):
 
 ```sparql
 PREFIX scim: <https://stratcomcoe.org/influence-mini/ontology#>
 PREFIX dima: <https://m82-project.org/dima-bias/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?argument ?tech_usage ?technique ?explanation ?tactic
-       (CONCAT(
-          COALESCE(?premise_text, ""), " ",
-          COALESCE(?dev_text, ""), " ",
-          COALESCE(?conc_text, "")
-        ) AS ?combined_text)
+SELECT ?article ?techniqueType ?technique (COUNT(DISTINCT ?techniqueUsage) AS ?numTechniqueUsage)
 WHERE {
-  ?argument a scim:Argument ;
-            dima:usesTechnique ?tech_usage ;
-            dima:usesTactic ?tactic .
-
-  ?tech_usage a dima:TechniqueUsage ;
-              dima:instantiatesTechnique ?technique ;
-              dima:hasExplanation ?explanation .
-
-  OPTIONAL {
-    ?premise a scim:Premise ;
-             dima:usesTechnique ?tech_usage ;
-             scim:hasText ?premise_text .
-  }
-  OPTIONAL {
-    ?dev a scim:Development ;
-         dima:usesTechnique ?tech_usage ;
-         scim:hasText ?dev_text .
-  }
-  OPTIONAL {
-    ?conc a scim:Conclusion ;
-          dima:usesTechnique ?tech_usage ;
-          scim:hasText ?conc_text .
-  }
+  ?article scim:hasMotif ?motif .
+  ?motif scim:hasArgument ?argument .
+  ?argument dima:usesTechnique ?techniqueUsage .
+  ?techniqueUsage dima:instantiatesTechnique ?technique .
+  ?technique rdfs:subClassOf ?techniqueType .
 }
-ORDER BY ?argument
+GROUP BY ?article ?techniqueType ?technique
+ORDER BY ?article ?techniqueType ?technique
 ```
 
-### 📊 Query Result: Combined Text from Argument, Technique, and Explanation
+---
 
-| **Argument ID**             | **Technique Usage**               | **Technique**        | **Explanation**                                                                                             | **Tactic**              | **Combined Text (Premise + Development + Conclusion)**                                                                                                                                                                  |
-|-----------------------------|------------------------------------|----------------------|-------------------------------------------------------------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `scim:9a2a4d3a26_argument_1` | `dima:9a2a4d3a26_negativitybias_1` | `dima:NegativityBias` | The argument repeatedly frames Zarnia's actions as aggressive, unauthorized, and destabilizing...            | `dima:DivisiveInformation` | Last week's unauthorized military exercises near the Norlund border marked the third such incident...                                                                                                                  |
-| `scim:9a2a4d3a26_argument_3` | `dima:9a2a4d3a26_negativitybias_3` | `dima:NegativityBias` | This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat... | `dima:DivisiveInformation` | International voices have begun to echo concern over Zarnia's intentions. There is growing international pressure...                                                                 |
+#### 🧠 Explanation of Results
+
+| **Article**               | **Cognitive Phase**      | **Technique**               | **# of Usages** |
+| ------------------------- | ------------------------ | --------------------------- | --------------- |
+| `scim:378d39b197_article` | `dima:ActTechnique`      | `dima:OmissionBias`         | 1               |
+| `scim:378d39b197_article` | `dima:DetectTechnique`   | `dima:NegativityBias`       | 4               |
+| `scim:378d39b197_article` | `dima:DetectTechnique`   | `dima:VonRestorffEffect`    | 6               |
+| `scim:378d39b197_article` | `dima:InformTechnique`   | `dima:FalseConsensusEffect` | 1               |
+| `scim:378d39b197_article` | `dima:MemoriseTechnique` | `dima:MereExposureEffect`   | 2               |
 
 ---
 
-### 🧠 Explanation of Results
-
-- **Argument ID**: The unique identifier for each argument.
-- **Technique Usage**: The individual representing the specific use of a cognitive technique (e.g., `Negativity Bias`).
-- **Technique**: The actual technique used (e.g., `NegativityBias`).
-- **Explanation**: The natural language explanation associated with the technique usage (truncated for brevity).
-- **Tactic**: The inferred higher-level narrative tactic (e.g., `DivisiveInformation`).
-- **Combined Text**: A concatenation of the text from any premises, developments, or conclusions linked to the argument using the technique (truncated for brevity).
-
+This query shows how often each technique appears in an article and categorizes it under its DIMA **phase**. These phases reflect cognitive objectives such as action initiation, detection, information framing, or memorability enhancement. This is useful for analyzing patterns of influence or manipulation across content.
 
 ---
 
-## 🧠 How to Use DIMA-OntoToolkit
+## 🚀 How to Use DIMA-OntoToolkit
 
 ### API Key Configuration
 
