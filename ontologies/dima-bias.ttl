@@ -122,19 +122,35 @@ dima:hasExplanation  rdf:type  owl:DatatypeProperty ;
 dima:usesTechnique a owl:ObjectProperty ;
     rdfs:label "uses technique"@en ;
     rdfs:label "utilise une technique"@fr ;
-    rdfs:comment "Links an argument to a TechniqueUsage node that represents a concrete use of a technique."@en ;
-    rdfs:comment "Associe un argument à un nœud TechniqueUsage qui représente un usage concret d’une technique."@fr ;
-    rdfs:domain scim:Argument ;
+    rdfs:comment "Links an argument, premise, development, or conclusion to a TechniqueUsage node that represents a concrete use of a technique."@en ;
+    rdfs:comment "Associe un argument, une prémisse, un développement ou une conclusion à un nœud TechniqueUsage qui représente un usage concret d’une technique."@fr ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            scim:Argument
+            scim:Premise
+            scim:Development
+            scim:Conclusion
+        )
+    ] ;
     rdfs:range dima:TechniqueUsage ;
     owl:inverseOf dima:isTechniqueUsedBy .
-
+	
 dima:isTechniqueUsedBy a owl:ObjectProperty ;
     rdfs:label "is used in argument"@en ;
     rdfs:label "est utilisée dans un argument"@fr ;
     rdfs:comment "Inverse property linking a TechniqueUsage node to the argument that contains it."@en ;
     rdfs:comment "Propriété inverse reliant un nœud TechniqueUsage à l’argument qui le contient."@fr ;
     rdfs:domain dima:TechniqueUsage ;
-    rdfs:range scim:Argument .
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (
+            scim:Argument
+            scim:Premise
+            scim:Development
+            scim:Conclusion
+        )
+    ] .
 
 dima:instantiatesTechnique a owl:ObjectProperty ;
     rdfs:label "instantiates technique"@en ;
@@ -186,66 +202,66 @@ dima:isTechniqueOf a owl:ObjectProperty ;
     rdfs:range dima:Tactic ;
     rdfs:comment "Inverse property linking a technique to its associated tactic(s)."@en ;
     rdfs:comment "Propriété inverse reliant une technique aux tactiques auxquelles elle est associée."@fr .
+	
+# dima:usesTactic a owl:ObjectProperty ;
+#     rdfs:label "uses tactic"@en ;
+#     rdfs:label "utilise une tactique"@fr ;
+#     rdfs:domain scim:Argument ;
+#     rdfs:range dima:Tactic ;
+#     rdfs:comment "Inferred property: links an argument to a tactic via the technique it uses."@en ;
+#     rdfs:comment "Propriété inférée : associe un argument à une tactique via la technique utilisée."@fr .
 
-dima:usesTactic a owl:ObjectProperty ;
-    rdfs:label "uses tactic"@en ;
-    rdfs:label "utilise une tactique"@fr ;
-    rdfs:domain scim:Argument ;
-    rdfs:range dima:Tactic ;
-    rdfs:comment "Inferred property: links an argument to a tactic via the technique it uses."@en ;
-    rdfs:comment "Propriété inférée : associe un argument à une tactique via la technique utilisée."@fr .
+# dima:isTacticUsedBy a owl:ObjectProperty ;
+#     owl:inverseOf dima:usesTactic ;
+#     rdfs:label "is used in argument (tactic)"@en ;
+#     rdfs:label "est utilisée dans un argument (tactique)"@fr ;
+#     rdfs:domain dima:Tactic ;
+#     rdfs:range scim:Argument ;
+#     rdfs:comment "Inverse of inferred property linking a tactic to the arguments that imply it."@en ;
+#     rdfs:comment "Propriété inverse inférée reliant une tactique aux arguments qui l’impliquent."@fr .
 
-dima:isTacticUsedBy a owl:ObjectProperty ;
-    owl:inverseOf dima:usesTactic ;
-    rdfs:label "is used in argument (tactic)"@en ;
-    rdfs:label "est utilisée dans un argument (tactique)"@fr ;
-    rdfs:domain dima:Tactic ;
-    rdfs:range scim:Argument ;
-    rdfs:comment "Inverse of inferred property linking a tactic to the arguments that imply it."@en ;
-    rdfs:comment "Propriété inverse inférée reliant une tactique aux arguments qui l’impliquent."@fr .
+# dima:usesPhase a owl:ObjectProperty ;
+#     rdfs:label "uses phase"@en ;
+#     rdfs:label "utilise une phase"@fr ;
+#     rdfs:domain scim:Argument ;
+#     rdfs:range dima:Phase ;
+#     rdfs:comment "Inferred property: links an argument to a DIMA phase via technique and tactic."@en ;
+#     rdfs:comment "Propriété inférée : associe un argument à une phase DIMA via la technique et la tactique."@fr .
 
-dima:usesPhase a owl:ObjectProperty ;
-    rdfs:label "uses phase"@en ;
-    rdfs:label "utilise une phase"@fr ;
-    rdfs:domain scim:Argument ;
-    rdfs:range dima:Phase ;
-    rdfs:comment "Inferred property: links an argument to a DIMA phase via technique and tactic."@en ;
-    rdfs:comment "Propriété inférée : associe un argument à une phase DIMA via la technique et la tactique."@fr .
-
-dima:isPhaseUsedBy a owl:ObjectProperty ;
-    owl:inverseOf dima:usesPhase ;
-    rdfs:label "is used in argument (phase)"@en ;
-    rdfs:label "est utilisée dans un argument (phase)"@fr ;
-    rdfs:domain dima:Phase ;
-    rdfs:range scim:Argument ;
-    rdfs:comment "Inverse of inferred property linking a phase to the arguments that use it."@en ;
-    rdfs:comment "Propriété inverse inférée reliant une phase aux arguments qui l’utilisent."@fr .
-
+# dima:isPhaseUsedBy a owl:ObjectProperty ;
+#     owl:inverseOf dima:usesPhase ;
+#     rdfs:label "is used in argument (phase)"@en ;
+#     rdfs:label "est utilisée dans un argument (phase)"@fr ;
+#     rdfs:domain dima:Phase ;
+#     rdfs:range scim:Argument ;
+#     rdfs:comment "Inverse of inferred property linking a phase to the arguments that use it."@en ;
+#     rdfs:comment "Propriété inverse inférée reliant une phase aux arguments qui l’utilisent."@fr .
 
 ##############################
 ### Chain Axioms Properties ##
 ##############################
 
 # Chain for usesTactic:
-[ a owl:ObjectProperty ;
-  owl:propertyChainAxiom (
-    dima:usesTechnique
-    dima:instantiatesTechnique
-    dima:isTechniqueOf
-  ) ;
-  owl:equivalentProperty dima:usesTactic
-] .
+# [ a owl:ObjectProperty ;
+#   owl:propertyChainAxiom (
+#     dima:usesTechnique
+#     dima:instantiatesTechnique
+#     dima:isTechniqueOf
+#   ) ;
+#   owl:equivalentProperty dima:usesTactic
+# ] .
 
 # Chain for usesPhase:
-[ a owl:ObjectProperty ;
-  owl:propertyChainAxiom (
-    dima:usesTechnique
-    dima:instantiatesTechnique
-    dima:isTechniqueOf
-    dima:isTacticOf
-  ) ;
-  owl:equivalentProperty dima:usesPhase
-] .
+# [ a owl:ObjectProperty ;
+#   owl:propertyChainAxiom (
+#     dima:usesTechnique
+#     dima:instantiatesTechnique
+#     dima:isTechniqueOf
+#     dima:isTacticOf
+#   ) ;
+#   owl:equivalentProperty dima:usesPhase
+# ] .
+
 
 ############################
 ### Annotation Properties ##
@@ -285,18 +301,18 @@ dima:DetectTechnique  a owl:Class ;
     rdfs:label   "Detect technique"@en ;
     rdfs:comment "Techniques that belong to Detect‑phase tactics."@en .
 
-dima:DetectArgument a owl:Class ;
-  owl:equivalentClass [
-    a owl:Class ;
-    owl:intersectionOf (
-        scim:Argument
-        [ a owl:Restriction ;
-          owl:onProperty  dima:usesPhase ;
-          owl:hasValue    dima:Detect ]
-    )
-  ] ;
-  rdfs:label "Detect argument"@en ;
-  rdfs:comment "Arguments that use techniques from the Detect phase."@en .
+#dima:DetectArgument a owl:Class ;
+#  owl:equivalentClass [
+#    a owl:Class ;
+#    owl:intersectionOf (
+#        scim:Argument
+#        [ a owl:Restriction ;
+#          owl:onProperty  dima:usesPhase ;
+#          owl:hasValue    dima:Detect ]
+#    )
+#  ] ;
+#  rdfs:label "Detect argument"@en ;
+#  rdfs:comment "Arguments that use techniques from the Detect phase."@en .
 
 
 ############  DETECT tactics  ##################################
@@ -462,18 +478,18 @@ dima:InformTechnique  a owl:Class ;
     rdfs:label   "Inform technique"@en ;
     rdfs:comment "Techniques that belong to Inform‑phase tactics."@en .
 
-dima:InformArgument a owl:Class ;
-    owl:equivalentClass [
-        a owl:Class ;
-        owl:intersectionOf (
-            scim:Argument
-            [ a owl:Restriction ;
-              owl:onProperty dima:usesPhase ;
-              owl:hasValue    dima:Inform ]
-        )
-    ] ;
-    rdfs:label "Inform argument"@en ;
-    rdfs:comment "Arguments that use techniques from the Inform phase."@en .
+#dima:InformArgument a owl:Class ;
+#    owl:equivalentClass [
+#        a owl:Class ;
+#        owl:intersectionOf (
+#            scim:Argument
+#            [ a owl:Restriction ;
+#              owl:onProperty dima:usesPhase ;
+#              owl:hasValue    dima:Inform ]
+#        )
+#    ] ;
+#    rdfs:label "Inform argument"@en ;
+#    rdfs:comment "Arguments that use techniques from the Inform phase."@en .
 
 ##########  INFORM tactics  ####################################
 
@@ -638,18 +654,18 @@ dima:MemoriseTechnique  a owl:Class ;
     rdfs:label   "Memorise technique"@en ;
     rdfs:comment "Techniques that belong to Memorise‑phase tactics."@en .
 
-dima:MemoriseArgument a owl:Class ;
-    owl:equivalentClass [
-        a owl:Class ;
-        owl:intersectionOf (
-            scim:Argument
-            [ a owl:Restriction ;
-              owl:onProperty dima:usesPhase ;
-              owl:hasValue    dima:Memorise ]
-        )
-    ] ;
-    rdfs:label "Memorise argument"@en ;
-    rdfs:comment "Arguments that use techniques from the Memorise phase."@en .
+#dima:MemoriseArgument a owl:Class ;
+#    owl:equivalentClass [
+#        a owl:Class ;
+#        owl:intersectionOf (
+#            scim:Argument
+#            [ a owl:Restriction ;
+#              owl:onProperty dima:usesPhase ;
+#              owl:hasValue    dima:Memorise ]
+#        )
+#    ] ;
+#    rdfs:label "Memorise argument"@en ;
+#    rdfs:comment "Arguments that use techniques from the Memorise phase."@en .
 
 ### MEMORISE Tactics
 
@@ -810,18 +826,18 @@ dima:ActTechnique  a owl:Class ;
     rdfs:label   "Act technique"@en ;
     rdfs:comment "Techniques that belong to Act‑phase tactics."@en .
 
-dima:ActArgument a owl:Class ;
-    owl:equivalentClass [
-        a owl:Class ;
-        owl:intersectionOf (
-            scim:Argument
-            [ a owl:Restriction ;
-              owl:onProperty dima:usesPhase ;
-              owl:hasValue    dima:Act ]
-        )
-    ] ;
-    rdfs:label "Act argument"@en ;
-    rdfs:comment "Arguments that use techniques from the Act phase."@en .
+#dima:ActArgument a owl:Class ;
+#    owl:equivalentClass [
+#        a owl:Class ;
+#        owl:intersectionOf (
+#            scim:Argument
+#            [ a owl:Restriction ;
+#              owl:onProperty dima:usesPhase ;
+#              owl:hasValue    dima:Act ]
+#        )
+#    ] ;
+#    rdfs:label "Act argument"@en ;
+#    rdfs:comment "Arguments that use techniques from the Act phase."@en .
 
 ##########  ACT tactics  #######################################
 
