@@ -17,15 +17,20 @@ from typing import List, Dict, Callable
 
 from dima_otk.utils.cache import load_or_compute_cache
 
-from dima_otk.bias_analysis.detect.te0131_extractor import extract_technique_te0131
-from dima_otk.bias_analysis.detect.te0132_extractor import extract_technique_te0132
-from dima_otk.bias_analysis.detect.te0141_extractor import extract_technique_te0141
+from .te0131_extractor import extract_technique_te0131
+from .te0132_extractor import extract_technique_te0132
+
+from .te0141_extractor import extract_technique_te0141
+from .te0142_extractor import extract_technique_te0142
+from .te0143_extractor import extract_technique_te0143
 
 def get_detect_techniques(processed_article: dict) -> dict:
     return {
         "BizarrenessEffect": get_detect_technique(processed_article,"te0131",extract_technique_te0131),
         "NegativityBias": get_detect_technique(processed_article,"te0132",extract_technique_te0132),
         "VonRestorffEffect": get_detect_technique(processed_article,"te0141",extract_technique_te0141),
+        "AnchoringBias": get_detect_technique(processed_article,"te0142",extract_technique_te0142),
+        "ContrastEffect": get_detect_technique(processed_article,"te0143",extract_technique_te0143),
         # Add more techniques as needed
     }
 
