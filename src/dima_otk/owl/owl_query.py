@@ -29,6 +29,8 @@ DIMA_PREF = "dima"
 DIMA_FILE_DEFAULT = Path("output/owl_dima/dima_full.owl")   # merged flat file
 
 
+
+
 def query_flat_ontology(
     owl_file: Union[str, Path] = "output/owl_influence-mini/influence-mini_full.owl",
     sparql: str = "",
@@ -99,4 +101,9 @@ def query_flat_ontology(
                 return str(cell)
         return str(cell)
 
-    return [tuple(pretty(c) for c in row) for row in rows]
+    result = []
+    var_names = rows.vars  # rdflib gives the names of the result columns here
+    result.append(tuple(var_names))  # add headers
+    for row in rows:
+        result.append(tuple(pretty(c) for c in row))
+    return result
