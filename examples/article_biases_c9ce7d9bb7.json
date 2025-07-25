@@ -139,6 +139,50 @@
         "explanation": "The argument isolates Caldria's approach by repeatedly highlighting its emphasis on dialogue and unwavering principles, making these features stand out in contrast to the unfolding situation and thus more memorable.",
         "motif_id": "motif_5"
       }
+    ],
+    "AnchoringBias": [],
+    "ContrastEffect": [
+      {
+        "argument_id": "argument_0",
+        "bias": true,
+        "premise_ids": [
+          "premise_0",
+          "premise_1"
+        ],
+        "development_ids": [
+          "development_0"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
+        ],
+        "excerpts": [
+          "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
+          "inflammatory gestures from neighboring Velmora",
+          "Caldria's administration has responded with composure and clarity"
+        ],
+        "explanation": "The argument exploits the contrast effect by juxtaposing Caldria's calm, stabilizing actions with Velmora's inflammatory gestures, making Caldria appear more virtuous and composed by direct comparison.",
+        "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_4"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_1"
+        ],
+        "excerpts": [
+          "has every right to defend",
+          "chosen the high road",
+          "in the face of deliberate intimidation"
+        ],
+        "explanation": "The argument contrasts Caldria's restraint with its right to defend and the alleged intimidation, making Caldria's actions appear more virtuous by comparison.",
+        "motif_id": "motif_2"
+      }
     ]
   },
   "Inform": {
