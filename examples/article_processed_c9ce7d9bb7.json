@@ -48,8 +48,12 @@
               "id": "premise_2"
             },
             {
-              "text": "This escalation includes a string of cyber intrusions targeting Caldria's infrastructure and a surprise naval deployment near disputed maritime zones.",
+              "text": "This escalation includes a string of cyber intrusions targeting Caldria's infrastructure.",
               "id": "premise_3"
+            },
+            {
+              "text": "There was a surprise naval deployment near disputed maritime zones.",
+              "id": "premise_4"
             }
           ],
           "developments": [
@@ -75,21 +79,20 @@
           "premises": [
             {
               "text": "Caldria has every right to defend its interests.",
-              "id": "premise_4"
+              "id": "premise_5"
             }
           ],
           "developments": [
             {
               "text": "Caldria has chosen the high road.",
               "id": "development_4"
-            }
-          ],
-          "conclusions": [
+            },
             {
               "text": "This is a textbook case of strategic patience in the face of deliberate intimidation.",
-              "id": "conclusion_1"
+              "id": "development_5"
             }
           ],
+          "conclusions": [],
           "argument_id": "argument_2"
         }
       ]
@@ -102,23 +105,23 @@
           "premises": [
             {
               "text": "Public sentiment within Caldria remains firmly aligned with the government's response.",
-              "id": "premise_5"
+              "id": "premise_6"
             },
             {
               "text": "\"We're proud of how our leaders are handling this,\" said Tomas Erel, a teacher from the coastal town of Fenwick.",
-              "id": "premise_6"
+              "id": "premise_7"
             }
           ],
           "developments": [
             {
               "text": "\"Velmora wants a reaction, but we won't give them the satisfaction.\"",
-              "id": "development_5"
+              "id": "development_6"
             }
           ],
           "conclusions": [
             {
-              "text": "Caldria's public supports the government's stance and refuses to react to Velmora's provocations.",
-              "id": "conclusion_2"
+              "text": "The people of Caldria support their government's approach and refuse to react to Velmora's provocations.",
+              "id": "conclusion_1"
             }
           ],
           "argument_id": "argument_3"
@@ -133,17 +136,17 @@
           "premises": [
             {
               "text": "Several regional powers have issued joint statements urging Velmora to cease its disruptive tactics.",
-              "id": "premise_7"
+              "id": "premise_8"
             },
             {
               "text": "The Global Security Council has called an emergency session to address the mounting tensions.",
-              "id": "premise_8"
+              "id": "premise_9"
             }
           ],
           "developments": [
             {
               "text": "The international community has begun taking notice.",
-              "id": "development_6"
+              "id": "development_7"
             }
           ],
           "conclusions": [],
@@ -159,19 +162,19 @@
           "premises": [
             {
               "text": "The situation is unfolding.",
-              "id": "premise_9"
+              "id": "premise_10"
             }
           ],
           "developments": [
             {
               "text": "Caldria continues to emphasize dialogue and de-escalation.",
-              "id": "development_7"
+              "id": "development_8"
             }
           ],
           "conclusions": [
             {
               "text": "Caldria is standing firm without wavering from its principles.",
-              "id": "conclusion_3"
+              "id": "conclusion_2"
             }
           ],
           "argument_id": "argument_5"
@@ -192,28 +195,28 @@
     },
     {
       "agent_id": "agent_2",
-      "name": "Caldria's administration",
-      "type": "NarratedGovernment"
+      "name": "Velmoran officials",
+      "type": "NarratedAgentUndecided"
     },
     {
       "agent_id": "agent_3",
-      "name": "Velmoran officials",
-      "type": "NarratedGovernment"
-    },
-    {
-      "agent_id": "agent_4",
       "name": "Dr. Tenley Marris",
       "type": "NarratedAcademic"
     },
     {
-      "agent_id": "agent_5",
+      "agent_id": "agent_4",
       "name": "Central Alliance Institute",
       "type": "NarratedInstitution"
     },
     {
-      "agent_id": "agent_6",
+      "agent_id": "agent_5",
       "name": "Tomas Erel",
       "type": "NarratedGeneralPublic"
+    },
+    {
+      "agent_id": "agent_6",
+      "name": "the government",
+      "type": "NarratedGovernment"
     },
     {
       "agent_id": "agent_7",
@@ -223,7 +226,7 @@
     {
       "agent_id": "agent_8",
       "name": "several regional powers",
-      "type": "NarratedAgentUndecided"
+      "type": "NarratedState"
     },
     {
       "agent_id": "agent_9",
@@ -252,7 +255,7 @@
       "status": "InterpretiveStatement",
       "attributed_to": [],
       "mentions": [
-        "agent_2"
+        "agent_0"
       ],
       "maps_to_arg_components": [
         "development_0",
@@ -272,7 +275,8 @@
       ],
       "maps_to_arg_components": [
         "premise_2",
-        "premise_3"
+        "premise_3",
+        "premise_4"
       ],
       "quote_id": "quote_2",
       "motif_id": "motif_1"
@@ -282,7 +286,7 @@
       "type": "IndirectQuote",
       "status": "OfficialPosition",
       "attributed_to": [
-        "agent_3"
+        "agent_2"
       ],
       "mentions": [],
       "maps_to_arg_components": [
@@ -308,13 +312,13 @@
       "type": "DirectQuote",
       "status": "PersonalOpinion",
       "attributed_to": [
-        "agent_4"
+        "agent_3"
       ],
       "mentions": [
         "agent_0"
       ],
       "maps_to_arg_components": [
-        "premise_4",
+        "premise_5",
         "development_4"
       ],
       "quote_id": "quote_5",
@@ -325,11 +329,11 @@
       "type": "DirectQuote",
       "status": "InterpretiveStatement",
       "attributed_to": [
-        "agent_4"
+        "agent_3"
       ],
       "mentions": [],
       "maps_to_arg_components": [
-        "conclusion_1"
+        "development_5"
       ],
       "quote_id": "quote_6",
       "motif_id": "motif_2"
@@ -341,10 +345,10 @@
       "attributed_to": [],
       "mentions": [
         "agent_0",
-        "agent_2"
+        "agent_6"
       ],
       "maps_to_arg_components": [
-        "premise_5"
+        "premise_6"
       ],
       "quote_id": "quote_7",
       "motif_id": "motif_3"
@@ -354,13 +358,13 @@
       "type": "DirectQuote",
       "status": "PersonalOpinion",
       "attributed_to": [
-        "agent_6"
+        "agent_5"
       ],
       "mentions": [
-        "agent_2"
+        "agent_6"
       ],
       "maps_to_arg_components": [
-        "premise_6"
+        "premise_7"
       ],
       "quote_id": "quote_8",
       "motif_id": "motif_3"
@@ -370,13 +374,13 @@
       "type": "DirectQuote",
       "status": "PersonalOpinion",
       "attributed_to": [
-        "agent_6"
+        "agent_5"
       ],
       "mentions": [
         "agent_1"
       ],
       "maps_to_arg_components": [
-        "development_5"
+        "development_6"
       ],
       "quote_id": "quote_9",
       "motif_id": "motif_3"
@@ -392,7 +396,7 @@
         "agent_1"
       ],
       "maps_to_arg_components": [
-        "premise_7"
+        "premise_8"
       ],
       "quote_id": "quote_10",
       "motif_id": "motif_4"
@@ -406,13 +410,13 @@
       ],
       "mentions": [],
       "maps_to_arg_components": [
-        "premise_8"
+        "premise_9"
       ],
       "quote_id": "quote_11",
       "motif_id": "motif_4"
     },
     {
-      "text": "Caldria continues to emphasize dialogue and de-escalation.",
+      "text": "Caldria continues to emphasize dialogue and de-escalation — standing firm without wavering from its principles.",
       "type": "ParaphrasedQuote",
       "status": "OfficialPosition",
       "attributed_to": [],
@@ -420,23 +424,10 @@
         "agent_0"
       ],
       "maps_to_arg_components": [
-        "development_7"
+        "development_8",
+        "conclusion_2"
       ],
       "quote_id": "quote_12",
-      "motif_id": "motif_5"
-    },
-    {
-      "text": "Caldria is standing firm without wavering from its principles.",
-      "type": "ParaphrasedQuote",
-      "status": "OfficialPosition",
-      "attributed_to": [],
-      "mentions": [
-        "agent_0"
-      ],
-      "maps_to_arg_components": [
-        "conclusion_3"
-      ],
-      "quote_id": "quote_13",
       "motif_id": "motif_5"
     }
   ]

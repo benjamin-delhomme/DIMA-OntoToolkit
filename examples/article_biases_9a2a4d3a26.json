@@ -16,29 +16,65 @@
         ],
         "excerpts": [
           "unauthorized military exercises",
-          "deliberate attempt to destabilize the region",
           "aggressive posturing"
         ],
-        "explanation": "The argument repeatedly frames Zarnia's actions as threatening and destabilizing, emphasizing negative interpretations without neutral or positive balance.",
+        "explanation": "The argument repeatedly frames Zarnia's actions as threatening and aggressive, emphasizing unauthorized incidents and dismissing neutral explanations, thus exploiting negativity bias.",
         "motif_id": "motif_1"
       },
       {
-        "argument_id": "argument_3",
+        "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_8",
-          "premise_9"
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_2"
         ],
         "conclusion_ids": [
-          "conclusion_3"
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "deliberate attempt to destabilize the region",
+          "aggressive posturing"
+        ],
+        "explanation": "This argument amplifies negative interpretations by asserting Zarnia's intent to destabilize, using strong negative language without balancing perspectives, which exploits negativity bias.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_12"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "signs of Zarnia's hostile intentions",
+          "initial signs indicated Zarnia's hostile intentions"
+        ],
+        "explanation": "This argument frames Zarnia's actions as clearly hostile from the start, emphasizing threat and danger in both premise and conclusion.",
+        "motif_id": "motif_3"
+      },
+      {
+        "argument_id": "argument_7",
+        "bias": true,
+        "premise_ids": [
+          "premise_14"
+        ],
+        "development_ids": [
+          "development_5"
+        ],
+        "conclusion_ids": [
+          "conclusion_7"
         ],
         "excerpts": [
           "echo concern over Zarnia's intentions",
           "calling for sanctions",
-          "perceived threatening behavior"
+          "growing international pressure"
         ],
-        "explanation": "This argument highlights international anxiety and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences.",
-        "motif_id": "motif_2"
+        "explanation": "This argument highlights international alarm and punitive measures, repeatedly framing Zarnia as a threat and focusing on negative consequences.",
+        "motif_id": "motif_3"
       }
     ],
     "VonRestorffEffect": [
@@ -46,7 +82,7 @@
         "argument_id": "argument_0",
         "bias": true,
         "premise_ids": [
-          "premise_0"
+          "premise_2"
         ],
         "development_ids": [
           "development_0"
@@ -55,37 +91,48 @@
           "conclusion_0"
         ],
         "excerpts": [
-          "unwavering commitment to peace and regional stability",
-          "Analysts praise Norlund's government for exercising restraint",
-          "bold leadership by maintaining peace and stability"
+          "maintained a calm and measured stance, refusing to be drawn into unnecessary escalation",
+          "exercising restraint in the face of increasing hostility",
+          "displayed bold leadership"
         ],
-        "explanation": "The argument repeatedly isolates Norlund's peacefulness and restraint as distinct and memorable qualities, contrasting them with Zarnia's provocations to make Norlund's actions stand out.",
+        "explanation": "The argument isolates Norlund's behavior as distinct and praiseworthy by contrasting its restraint and calmness with Zarnia's provocations, making Norlund's actions stand out and be more memorable through conceptual isolation.",
         "motif_id": "motif_0"
       },
       {
-        "argument_id": "argument_1",
-        "bias": true,
-        "premise_ids": [
-          "premise_3"
-        ],
-        "excerpts": [
-          "Last week's unauthorized military exercises",
-          "marked the third such incident this month"
-        ],
-        "explanation": "The argument singles out the most recent incident as distinct ('last week's unauthorized...'), making it stand out from the pattern and thus more memorable, exploiting the Von Restorff Effect.",
-        "motif_id": "motif_1"
-      },
-      {
-        "argument_id": "argument_2",
+        "argument_id": "argument_3",
         "bias": true,
         "premise_ids": [
           "premise_7"
         ],
-        "excerpts": [
-          "\"We trust our leaders to protect us without fueling unnecessary conflict,\" said Lira Vanholm"
+        "development_ids": [
+          "development_3"
         ],
-        "explanation": "The direct quote from a named local resident is isolated within the argument, making it stand out and be more memorable compared to the general statement, thus exploiting the Von Restorff Effect.",
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "highlighted minor differences",
+          "Even subtle changes in wording show a decisive evolution",
+          "This distinction is key"
+        ],
+        "explanation": "The argument exploits the Von Restorff Effect by emphasizing that minor, otherwise ordinary differences in statements are made distinctive and memorable, suggesting their isolation is crucial to understanding Norlund's resilience.",
         "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_12"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "the signs of Zarnia's hostile intentions were clear from the very first border drills",
+          "the initial signs indicated Zarnia's hostile intentions despite earlier underestimation"
+        ],
+        "explanation": "The argument isolates the 'very first border drills' as a distinct, now-memorable warning sign, making it stand out from subsequent events.",
+        "motif_id": "motif_3"
       }
     ],
     "AnchoringBias": [
@@ -93,18 +140,56 @@
         "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_6",
-          "premise_7"
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_2"
         ],
         "conclusion_ids": [
           "conclusion_2"
         ],
         "excerpts": [
-          "strong support for their government's handling",
-          "We trust our leaders to protect us"
+          "Zarnia has continued its pattern of aggressive posturing",
+          "Observers argue that Zarnia's behavior reflects a deliberate attempt",
+          "Zarnia's behavior is a deliberate attempt to destabilize the region"
         ],
-        "explanation": "The argument anchors the reader's judgment of the government's actions as responsible and protective by first presenting strong local support and trust, biasing subsequent evaluation toward this positive reference point.",
-        "motif_id": "motif_2"
+        "explanation": "The argument uses the initial claim of a 'pattern of aggressive posturing' as an anchor, biasing the interpretation of current actions and leading to the conclusion that Zarnia's behavior is deliberately destabilizing.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_5",
+        "bias": true,
+        "premise_ids": [
+          "premise_11"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_5"
+        ],
+        "excerpts": [
+          "provoke less alarm among the public than similar events did at the outset",
+          "repeated exposure has made each additional escalation feel less dramatic in comparison"
+        ],
+        "explanation": "The argument uses the initial public alarm as an anchor, showing that subsequent reactions are biased downward relative to that first response, illustrating anchoring bias.",
+        "motif_id": "motif_3"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_12"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "signs of Zarnia's hostile intentions were clear from the very first border drills",
+          "initial signs indicated Zarnia's hostile intentions despite earlier underestimation"
+        ],
+        "explanation": "This argument treats the first border drills as an anchor for interpreting all subsequent events, suggesting that initial impressions persistently influence later judgments.",
+        "motif_id": "motif_3"
       }
     ],
     "ContrastEffect": [
@@ -118,37 +203,127 @@
         "development_ids": [
           "development_0"
         ],
-        "conclusion_ids": [
-          "conclusion_0"
-        ],
         "excerpts": [
           "repeated provocations from Zarnia",
           "Norlund officials maintained a calm and measured stance",
-          "exercising restraint in the face of increasing hostility",
-          "despite provocations"
+          "exercising restraint in the face of increasing hostility"
         ],
-        "explanation": "The argument exploits the contrast effect by juxtaposing Norlund's restraint and commitment to peace against Zarnia's provocations, making Norlund appear more virtuous through direct comparison.",
+        "explanation": "The argument exploits the contrast effect by juxtaposing Norlund's calm restraint with Zarnia's provocations, making Norlund's actions appear more commendable through direct comparison.",
         "motif_id": "motif_0"
+      },
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_7"
+        ],
+        "development_ids": [
+          "development_3"
+        ],
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "minor differences in Norlund's diplomatic statements after each incident",
+          "subtle changes in wording show a decisive evolution"
+        ],
+        "explanation": "The argument exploits the contrast effect by encouraging comparison between Norlund's statements after each incident, suggesting that perceived improvements or changes are significant due to their contrast with previous statements.",
+        "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_5",
+        "bias": true,
+        "premise_ids": [
+          "premise_11"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "excerpts": [
+          "provoke less alarm among the public than similar events did at the outset",
+          "each additional escalation feel less dramatic in comparison"
+        ],
+        "explanation": "This argument explicitly compares current public reactions to earlier ones, highlighting that new incidents seem less dramatic due to contrast with previous events.",
+        "motif_id": "motif_3"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_13"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "The threat seemed less obvious at the time",
+          "despite earlier underestimation"
+        ],
+        "explanation": "This argument contrasts past and present perceptions of threat, suggesting the initial signs are now seen as more significant when compared to how they were viewed before.",
+        "motif_id": "motif_3"
+      }
+    ],
+    "DistinctionBias": [
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "premise_ids": [
+          "premise_7"
+        ],
+        "development_ids": [
+          "development_3"
+        ],
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "minor differences in Norlund's diplomatic statements after each incident",
+          "Even subtle changes in wording show a decisive evolution",
+          "This distinction is key to Norlund's resilience"
+        ],
+        "explanation": "The argument exploits distinction bias by emphasizing minor differences between statements as crucial, exaggerating their importance through direct comparison that would likely seem less significant if each statement were considered alone.",
+        "motif_id": "motif_2"
+      }
+    ],
+    "WeberFechnerLaw": [
+      {
+        "argument_id": "argument_5",
+        "bias": true,
+        "premise_ids": [
+          "premise_11"
+        ],
+        "development_ids": [
+          "development_4"
+        ],
+        "conclusion_ids": [
+          "conclusion_5"
+        ],
+        "excerpts": [
+          "provoke less alarm among the public",
+          "repeated exposure has made each additional escalation feel less dramatic"
+        ],
+        "explanation": "This argument explicitly describes how increased frequency of provocations leads to each new incident feeling less significant, directly invoking the Weber-Fechner law by highlighting reduced perceptual sensitivity as intensity increases.",
+        "motif_id": "motif_3"
       }
     ]
   },
   "Inform": {
     "FalseConsensusEffect": [
       {
-        "argument_id": "argument_2",
+        "argument_id": "argument_6",
         "bias": true,
         "premise_ids": [
-          "premise_6"
+          "premise_12"
         ],
         "conclusion_ids": [
-          "conclusion_2"
+          "conclusion_6"
         ],
         "excerpts": [
-          "Local communities in Norlund have voiced strong support",
-          "The local population supports the government's approach"
+          "Many now say",
+          "the initial signs indicated Zarnia's hostile intentions despite earlier underestimation"
         ],
-        "explanation": "The argument generalizes local support as widespread among the population, implying consensus without evidence, thus exploiting the false consensus effect.",
-        "motif_id": "motif_2"
+        "explanation": "The argument uses 'many now say' to suggest a widespread retrospective consensus, implying that most people now agree the threat was always clear, which exaggerates agreement and marginalizes earlier dissent.",
+        "motif_id": "motif_3"
       }
     ],
     "HindsightBias": [
@@ -156,39 +331,89 @@
         "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_6",
-          "premise_7"
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_2"
         ],
         "conclusion_ids": [
           "conclusion_2"
         ],
         "excerpts": [
-          "In hindsight, many now say the signs of Zarnia's hostile intentions were clear",
-          "even if the threat seemed less obvious at the time"
+          "continued its pattern",
+          "deliberate attempt",
+          "reflects a deliberate attempt"
         ],
-        "explanation": "The argument retroactively claims that warning signs were clear from the start, presenting the outcome as predictable despite acknowledging it was not obvious before.",
+        "explanation": "The argument frames Zarnia's actions as part of an ongoing, predictable pattern and asserts the destabilization was deliberate, implying the outcome was foreseeable after the fact.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_3",
+        "bias": true,
+        "development_ids": [
+          "development_3"
+        ],
+        "conclusion_ids": [
+          "conclusion_3"
+        ],
+        "excerpts": [
+          "show a decisive evolution",
+          "key to Norlund's resilience"
+        ],
+        "explanation": "The argument retroactively interprets subtle changes as clear indicators of successful crisis management, implying the outcome was predictable from these signs.",
         "motif_id": "motif_2"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_12"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "Many now say the signs of Zarnia's hostile intentions were clear from the very first border drills",
+          "In hindsight, the initial signs indicated Zarnia's hostile intentions"
+        ],
+        "explanation": "This argument explicitly claims that warning signs were clear in retrospect, presenting the outcome as predictable after the fact.",
+        "motif_id": "motif_3"
       }
     ]
   },
   "Memorise": {
     "RecencyEffect": [
       {
+        "argument_id": "argument_1",
+        "bias": true,
+        "premise_ids": [
+          "premise_3"
+        ],
+        "excerpts": [
+          "Last week's unauthorized military exercises",
+          "third such incident this month"
+        ],
+        "explanation": "The argument foregrounds the most recent incident as especially significant, leveraging the recency of last week's exercises to shape judgment about Zarnia's intentions.",
+        "motif_id": "motif_1"
+      },
+      {
         "argument_id": "argument_3",
         "bias": true,
         "premise_ids": [
-          "premise_8",
-          "premise_9"
+          "premise_7"
+        ],
+        "development_ids": [
+          "development_3"
         ],
         "conclusion_ids": [
           "conclusion_3"
         ],
         "excerpts": [
-          "have begun to echo concern",
-          "calling for sanctions if the pattern continues",
-          "growing international pressure"
+          "differences in Norlund's diplomatic statements after each incident",
+          "subtle changes in wording show a decisive evolution",
+          "distinction ... key to Norlund's resilience"
         ],
-        "explanation": "This argument highlights the most recent international reactions and presents them as decisive, exploiting the recency effect by focusing on current concerns and calls for sanctions as the main reason for pressure on Zarnia.",
+        "explanation": "The argument emphasizes the most recent changes in Norlund's statements as decisive and key, suggesting that the latest information should outweigh earlier content in judging resilience.",
         "motif_id": "motif_2"
       }
     ],
@@ -203,24 +428,27 @@
           "once again demonstrated",
           "unwavering commitment"
         ],
-        "explanation": "The argument exploits the mere exposure effect by emphasizing Norlund's repeated demonstrations of commitment to peace, making the audience more likely to view Norlund positively due to familiarity with this recurring theme.",
+        "explanation": "The argument exploits the mere exposure effect by emphasizing Norlund's repeated demonstrations of commitment, making their peaceful stance feel familiar and trustworthy through repetition rather than unique merit.",
         "motif_id": "motif_0"
       },
       {
-        "argument_id": "argument_1",
+        "argument_id": "argument_5",
         "bias": true,
         "premise_ids": [
-          "premise_3"
+          "premise_11"
+        ],
+        "development_ids": [
+          "development_4"
         ],
         "conclusion_ids": [
-          "conclusion_1"
+          "conclusion_5"
         ],
         "excerpts": [
-          "third such incident this month",
-          "continued its pattern of aggressive posturing"
+          "provoke less alarm among the public than similar events did at the outset",
+          "repeated exposure has made each additional escalation feel less dramatic"
         ],
-        "explanation": "The argument exploits the mere exposure effect by emphasizing repeated incidents and a continuing pattern, making Zarnia's aggression feel familiar and thus more credible or threatening through repetition.",
-        "motif_id": "motif_1"
+        "explanation": "This argument explicitly attributes the public's diminished alarm to repeated exposure, illustrating the mere exposure effect by suggesting familiarity reduces emotional response.",
+        "motif_id": "motif_3"
       }
     ],
     "PrimacyEffect": [
@@ -250,8 +478,43 @@
           "Last week's unauthorized military exercises near the Norlund border marked the third such incident this month.",
           "Zarnia has continued its pattern of aggressive posturing."
         ],
-        "explanation": "The argument opens by emphasizing Zarnia's aggressive actions, setting a negative frame that colors all subsequent information and leads the reader to interpret later claims through this initial lens.",
+        "explanation": "The argument opens by highlighting Zarnia's aggressive actions, setting a negative frame that colors all subsequent information and leads to a conclusion anchored in this initial impression.",
         "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_2",
+        "bias": true,
+        "premise_ids": [
+          "premise_6"
+        ],
+        "development_ids": [
+          "development_2"
+        ],
+        "conclusion_ids": [
+          "conclusion_2"
+        ],
+        "excerpts": [
+          "Zarnia has continued its pattern of aggressive posturing.",
+          "Observers argue that Zarnia's behavior reflects a deliberate attempt to destabilize the region."
+        ],
+        "explanation": "The argument relies on the initial claim of 'aggressive posturing' as the premise, which frames the interpretation and conclusion about Zarnia's intentions, exemplifying the primacy effect.",
+        "motif_id": "motif_1"
+      },
+      {
+        "argument_id": "argument_6",
+        "bias": true,
+        "premise_ids": [
+          "premise_12"
+        ],
+        "conclusion_ids": [
+          "conclusion_6"
+        ],
+        "excerpts": [
+          "signs of Zarnia's hostile intentions were clear from the very first border drills",
+          "initial signs indicated Zarnia's hostile intentions"
+        ],
+        "explanation": "This argument explicitly claims that the very first signs (initial information) were decisive in revealing Zarnia's intentions, framing all subsequent perception through the primacy effect.",
+        "motif_id": "motif_3"
       }
     ]
   },
@@ -266,50 +529,49 @@
         "development_ids": [
           "development_0"
         ],
-        "conclusion_ids": [
-          "conclusion_0"
-        ],
         "excerpts": [
           "refusing to be drawn into unnecessary escalation",
           "praise Norlund's government for exercising restraint"
         ],
-        "explanation": "The argument frames Norlund's inaction (restraint) as inherently virtuous and preferable, emphasizing the risks of action (escalation) without considering potential harms of inaction, thus exploiting omission bias.",
+        "explanation": "The argument frames Norlund's inaction (restraint) as inherently praiseworthy without considering potential harms of not responding, thus exploiting omission bias.",
         "motif_id": "motif_0"
       },
       {
-        "argument_id": "argument_2",
+        "argument_id": "argument_4",
         "bias": true,
         "premise_ids": [
-          "premise_7"
+          "premise_9"
         ],
         "conclusion_ids": [
-          "conclusion_2"
+          "conclusion_4"
         ],
         "excerpts": [
-          "without fueling unnecessary conflict",
-          "supports the government's approach as responsible and protective"
+          "protect us without fueling unnecessary conflict",
+          "handling of the crisis"
         ],
-        "explanation": "This argument frames government inaction or restraint as inherently more responsible and protective, implicitly suggesting that taking action (which could 'fuel conflict') would be more blameworthy, thus exploiting omission bias.",
-        "motif_id": "motif_2"
+        "explanation": "This argument frames government inaction or restraint as inherently more responsible than action, implying that taking action (which could 'fuel conflict') is more blameworthy than the potential harms of inaction.",
+        "motif_id": "motif_3"
       }
     ],
     "StatusQuoBias": [
       {
-        "argument_id": "argument_2",
+        "argument_id": "argument_5",
         "bias": true,
         "premise_ids": [
-          "premise_6",
-          "premise_7"
+          "premise_11"
+        ],
+        "development_ids": [
+          "development_4"
         ],
         "conclusion_ids": [
-          "conclusion_2"
+          "conclusion_5"
         ],
         "excerpts": [
-          "strong support for their government's handling",
-          "trust our leaders to protect us without fueling unnecessary conflict"
+          "provoke less alarm among the public",
+          "repeated exposure has made each additional escalation feel less dramatic"
         ],
-        "explanation": "This argument frames the current government's approach as inherently responsible and preferable, appealing to trust in established leadership and cautioning against change or escalation, thus exploiting status quo bias.",
-        "motif_id": "motif_2"
+        "explanation": "This argument normalizes inaction and diminished concern in response to repeated provocations, reinforcing inertia and resistance to change by framing the status quo as less alarming.",
+        "motif_id": "motif_3"
       }
     ],
     "InformationOverload": []
