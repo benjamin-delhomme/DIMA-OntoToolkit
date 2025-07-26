@@ -7,7 +7,8 @@
         "bias": true,
         "premise_ids": [
           "premise_2",
-          "premise_3"
+          "premise_3",
+          "premise_4"
         ],
         "development_ids": [
           "development_3"
@@ -15,36 +16,37 @@
         "excerpts": [
           "escalated its antagonistic behavior",
           "cyber intrusions targeting Caldria's infrastructure",
+          "surprise naval deployment",
           "warn of a calculated effort to provoke confrontation"
         ],
-        "explanation": "The argument repeatedly frames Velmora's actions as threats and provocations, emphasizing negative consequences and expert warnings without neutral or positive balance.",
+        "explanation": "The argument repeatedly frames Velmora's actions as threats and provocations, emphasizing negative actions and expert warnings without balancing with neutral or positive aspects.",
         "motif_id": "motif_1"
       },
       {
         "argument_id": "argument_2",
         "bias": true,
-        "conclusion_ids": [
-          "conclusion_1"
+        "development_ids": [
+          "development_5"
         ],
         "excerpts": [
           "deliberate intimidation",
           "in the face of"
         ],
-        "explanation": "The conclusion frames the situation as one where Caldria is subjected to 'deliberate intimidation,' emphasizing threat and negative intent, thus exploiting negativity bias.",
+        "explanation": "The development frames the situation in negative terms by emphasizing 'deliberate intimidation,' focusing attention on threat and hostility without balancing with neutral or positive aspects.",
         "motif_id": "motif_2"
       },
       {
         "argument_id": "argument_4",
         "bias": true,
         "premise_ids": [
-          "premise_7",
-          "premise_8"
+          "premise_8",
+          "premise_9"
         ],
         "excerpts": [
           "disruptive tactics",
           "mounting tensions"
         ],
-        "explanation": "Both premises frame the situation in negative terms (disruption, tension) without neutral or positive balance, emphasizing threat and instability to exploit negativity bias.",
+        "explanation": "Both premises frame Velmora's actions and the situation in negative terms, emphasizing disruption and escalating conflict without any neutral or positive balance.",
         "motif_id": "motif_4"
       }
     ],
@@ -56,26 +58,30 @@
           "premise_0"
         ],
         "development_ids": [
-          "development_1"
+          "development_0"
+        ],
+        "conclusion_ids": [
+          "conclusion_0"
         ],
         "excerpts": [
           "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
-          "Caldria has earned international commendation for its steadfast commitment to peace."
+          "Caldria's administration has responded with composure and clarity.",
+          "Caldria is affirming its diplomatic integrity."
         ],
-        "explanation": "The argument isolates Caldria as uniquely stabilizing and commendable amid volatility and inflammatory actions, making its role stand out and be more memorable by contrast with its environment.",
+        "explanation": "The argument isolates Caldria as uniquely stable and composed amid volatility, making it stand out conceptually from its surroundings to draw attention to its diplomatic integrity.",
         "motif_id": "motif_0"
       },
       {
         "argument_id": "argument_1",
         "bias": true,
-        "development_ids": [
-          "development_3"
+        "premise_ids": [
+          "premise_4"
         ],
         "excerpts": [
-          "Independent experts warn",
-          "calculated effort to provoke confrontation"
+          "surprise naval deployment",
+          "most notably"
         ],
-        "explanation": "The argument isolates the warning from 'independent experts' as a distinct and memorable element, contrasting it with the official Velmoran stance and drawing special attention to this perspective.",
+        "explanation": "The argument singles out the 'surprise naval deployment' as a standout event ('most notably'), making it more memorable and drawing extra attention to it by isolating it from the other escalatory actions, thus exploiting the Von Restorff Effect.",
         "motif_id": "motif_1"
       },
       {
@@ -84,63 +90,34 @@
         "development_ids": [
           "development_4"
         ],
-        "conclusion_ids": [
-          "conclusion_1"
-        ],
         "excerpts": [
           "chosen the high road",
-          "textbook case of strategic patience"
+          "textbook case"
         ],
-        "explanation": "The argument isolates Caldria's restraint by contrasting it with its right to defend itself and by labeling its behavior as a 'textbook case,' making these elements stand out and more memorable through conceptual distinction.",
+        "explanation": "The phrase 'chosen the high road' isolates Caldria's behavior as distinct and exemplary among possible responses, making it stand out and more memorable through conceptual contrast with expected reactions.",
         "motif_id": "motif_2"
-      },
+      }
+    ],
+    "AnchoringBias": [
       {
-        "argument_id": "argument_3",
+        "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_6"
+          "premise_5"
         ],
         "development_ids": [
+          "development_4",
           "development_5"
         ],
         "excerpts": [
-          "\"We're proud of how our leaders are handling this,\" said Tomas Erel",
-          "\"Velmora wants a reaction, but we won't give them the satisfaction.\""
+          "Caldria has every right to defend its interests.",
+          "has chosen the high road",
+          "textbook case of strategic patience"
         ],
-        "explanation": "The use of direct quotations from a named individual, set apart from the general narrative, isolates these statements and makes them stand out, exploiting the Von Restorff Effect to make the support and defiance more memorable.",
-        "motif_id": "motif_3"
-      },
-      {
-        "argument_id": "argument_4",
-        "bias": true,
-        "development_ids": [
-          "development_6"
-        ],
-        "excerpts": [
-          "The international community has begun taking notice",
-          "begun taking notice"
-        ],
-        "explanation": "The development isolates the action of the 'international community' as a distinct, memorable shift, setting it apart from the more routine actions of regional powers and the Security Council, thus exploiting the Von Restorff Effect.",
-        "motif_id": "motif_4"
-      },
-      {
-        "argument_id": "argument_5",
-        "bias": true,
-        "development_ids": [
-          "development_7"
-        ],
-        "conclusion_ids": [
-          "conclusion_3"
-        ],
-        "excerpts": [
-          "emphasize dialogue and de-escalation",
-          "standing firm without wavering"
-        ],
-        "explanation": "The argument isolates Caldria's approach by repeatedly highlighting its emphasis on dialogue and unwavering principles, making these features stand out in contrast to the unfolding situation and thus more memorable.",
-        "motif_id": "motif_5"
+        "explanation": "The argument establishes an initial anchor by asserting Caldria's right to defend itself, framing subsequent actions as exceptionally restrained and virtuous relative to this reference point, thus biasing judgment toward viewing Caldria's behavior as above reproach.",
+        "motif_id": "motif_2"
       }
     ],
-    "AnchoringBias": [],
     "ContrastEffect": [
       {
         "argument_id": "argument_0",
@@ -157,33 +134,32 @@
         ],
         "excerpts": [
           "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
-          "inflammatory gestures from neighboring Velmora",
-          "Caldria's administration has responded with composure and clarity"
+          "inflammatory gestures from neighboring Velmora"
         ],
-        "explanation": "The argument exploits the contrast effect by juxtaposing Caldria's calm, stabilizing actions with Velmora's inflammatory gestures, making Caldria appear more virtuous and composed by direct comparison.",
+        "explanation": "The argument contrasts Caldria's calm, stabilizing actions with Velmora's inflammatory gestures, making Caldria appear more virtuous by direct comparison.",
         "motif_id": "motif_0"
       },
       {
         "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_4"
+          "premise_5"
         ],
         "development_ids": [
-          "development_4"
-        ],
-        "conclusion_ids": [
-          "conclusion_1"
+          "development_4",
+          "development_5"
         ],
         "excerpts": [
           "has every right to defend",
           "chosen the high road",
           "in the face of deliberate intimidation"
         ],
-        "explanation": "The argument contrasts Caldria's restraint with its right to defend and the alleged intimidation, making Caldria's actions appear more virtuous by comparison.",
+        "explanation": "The argument contrasts Caldria's restraint with its justified right to defend and with the 'deliberate intimidation' it faces, making Caldria's actions appear especially virtuous by comparison.",
         "motif_id": "motif_2"
       }
-    ]
+    ],
+    "DistinctionBias": [],
+    "WeberFechnerLaw": []
   },
   "Inform": {
     "FalseConsensusEffect": [
@@ -191,29 +167,29 @@
         "argument_id": "argument_3",
         "bias": true,
         "premise_ids": [
-          "premise_5"
+          "premise_6"
         ],
         "conclusion_ids": [
-          "conclusion_2"
+          "conclusion_1"
         ],
         "excerpts": [
           "Public sentiment within Caldria remains firmly aligned",
-          "Caldria's public supports the government's stance"
+          "The people of Caldria support their government's approach"
         ],
-        "explanation": "The argument generalizes the entire public's support for the government, implying near-universal consensus without evidence, which exploits the false consensus effect.",
+        "explanation": "The argument asserts that the entire population supports the government's response, exaggerating consensus without evidence and marginalizing dissent.",
         "motif_id": "motif_3"
       },
       {
         "argument_id": "argument_4",
         "bias": true,
         "development_ids": [
-          "development_6"
+          "development_7"
         ],
         "excerpts": [
           "The international community has begun taking notice",
           "joint statements urging Velmora"
         ],
-        "explanation": "The development exaggerates consensus by implying that the entire international community is aligned, despite only citing actions by several regional powers and a council.",
+        "explanation": "The development exaggerates consensus by implying that the entire international community is aligned, though only several regional powers and a council are cited.",
         "motif_id": "motif_4"
       }
     ],
@@ -225,16 +201,16 @@
         "argument_id": "argument_4",
         "bias": true,
         "premise_ids": [
-          "premise_8"
+          "premise_9"
         ],
         "development_ids": [
-          "development_6"
+          "development_7"
         ],
         "excerpts": [
           "has called an emergency session",
           "has begun taking notice"
         ],
-        "explanation": "The argument emphasizes the most recent action (the emergency session) as decisive evidence that the international community is now paying attention, giving it disproportionate weight over earlier events.",
+        "explanation": "The argument emphasizes the most recent action (the emergency session) as decisive, suggesting that this latest development is what finally prompts the international community to take notice, thus exploiting the recency effect.",
         "motif_id": "motif_4"
       }
     ],
@@ -243,13 +219,13 @@
         "argument_id": "argument_5",
         "bias": true,
         "development_ids": [
-          "development_7"
+          "development_8"
         ],
         "excerpts": [
           "continues to emphasize",
           "dialogue and de-escalation"
         ],
-        "explanation": "The argument exploits the mere exposure effect by highlighting Caldria's repeated emphasis on dialogue and de-escalation, implying trustworthiness and positive value through ongoing familiarity.",
+        "explanation": "The argument exploits the mere exposure effect by highlighting Caldria's repeated emphasis on dialogue and de-escalation, implying trustworthiness and steadfastness through ongoing, familiar messaging.",
         "motif_id": "motif_5"
       }
     ],
@@ -261,54 +237,41 @@
           "premise_0"
         ],
         "excerpts": [
-          "Caldria has reinforced its position as a stabilizing force in a volatile geopolitical climate.",
+          "Caldria has reinforced its position as a stabilizing force",
           "In a resolute affirmation of diplomatic integrity"
         ],
-        "explanation": "The argument opens by framing Caldria as a stabilizing force and affirming its diplomatic integrity, setting a positive lens that colors all subsequent information and judgments about Caldria's actions.",
+        "explanation": "The argument opens by framing Caldria as a stabilizing force and affirming its diplomatic integrity, setting a positive lens that colors all subsequent information and judgments, thus exploiting the primacy effect.",
         "motif_id": "motif_0"
       },
       {
         "argument_id": "argument_1",
         "bias": true,
         "premise_ids": [
-          "premise_2",
-          "premise_3"
+          "premise_2"
         ],
         "excerpts": [
           "Velmora has escalated its antagonistic behavior over the past month",
-          "This escalation includes a string of cyber intrusions... and a surprise naval deployment"
+          "most notably through a string of cyber intrusions"
         ],
-        "explanation": "The argument opens by framing Velmora's actions as 'antagonistic escalation,' setting a negative lens that colors all subsequent information, including official justifications and expert warnings.",
+        "explanation": "The argument opens by framing Velmora as antagonistic, setting a negative lens that colors all subsequent details and interpretations, thus exploiting the primacy effect.",
         "motif_id": "motif_1"
       },
       {
         "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_4"
+          "premise_5"
         ],
         "development_ids": [
-          "development_4"
+          "development_4",
+          "development_5"
         ],
         "excerpts": [
           "Caldria has every right to defend its interests",
-          "Caldria has chosen the high road"
+          "has chosen the high road"
         ],
-        "explanation": "The argument foregrounds Caldria's right to self-defense as the initial framing, which sets a positive lens for interpreting subsequent actions and judgments, thus exploiting the primacy effect.",
+        "explanation": "The argument opens by establishing Caldria's moral right to act, framing all subsequent developments as virtuous restraint, thus exploiting the primacy effect by anchoring interpretation in this initial positive framing.",
         "motif_id": "motif_2"
-      },
-      {
-        "argument_id": "argument_4",
-        "bias": true,
-        "development_ids": [
-          "development_6"
-        ],
-        "excerpts": [
-          "The international community has begun taking notice.",
-          "has begun taking notice"
-        ],
-        "explanation": "The argument leads with the claim that the international community is now paying attention, framing all subsequent details as evidence of this initial assertion and thus exploiting the primacy effect.",
-        "motif_id": "motif_4"
       }
     ]
   },
@@ -335,13 +298,11 @@
         "argument_id": "argument_2",
         "bias": true,
         "premise_ids": [
-          "premise_4"
+          "premise_5"
         ],
         "development_ids": [
-          "development_4"
-        ],
-        "conclusion_ids": [
-          "conclusion_1"
+          "development_4",
+          "development_5"
         ],
         "excerpts": [
           "chosen the high road",
@@ -354,54 +315,38 @@
         "argument_id": "argument_3",
         "bias": true,
         "development_ids": [
-          "development_5"
-        ],
-        "conclusion_ids": [
-          "conclusion_2"
-        ],
-        "excerpts": [
-          "we won't give them the satisfaction",
-          "refuses to react to Velmora's provocations"
-        ],
-        "explanation": "The argument frames inaction (not reacting) as the morally superior and less blameworthy choice, implicitly minimizing any potential harm from inaction while portraying action as undesirable.",
-        "motif_id": "motif_3"
-      }
-    ],
-    "StatusQuoBias": [
-      {
-        "argument_id": "argument_2",
-        "bias": true,
-        "development_ids": [
-          "development_4"
+          "development_6"
         ],
         "conclusion_ids": [
           "conclusion_1"
         ],
         "excerpts": [
-          "chosen the high road",
-          "strategic patience in the face of deliberate intimidation"
+          "we won't give them the satisfaction",
+          "refuse to react to Velmora's provocations"
         ],
-        "explanation": "The argument valorizes Caldria's decision to maintain the current situation as 'strategic patience,' implicitly framing inaction as virtuous and preferable to change, without weighing the merits or risks of alternative responses.",
-        "motif_id": "motif_2"
-      },
+        "explanation": "The argument frames inaction (not reacting) as the morally superior and supported choice, implicitly portraying action as less acceptable without considering potential harms of inaction.",
+        "motif_id": "motif_3"
+      }
+    ],
+    "StatusQuoBias": [
       {
         "argument_id": "argument_3",
         "bias": true,
         "premise_ids": [
-          "premise_5",
-          "premise_6"
+          "premise_6",
+          "premise_7"
         ],
         "development_ids": [
-          "development_5"
+          "development_6"
         ],
         "conclusion_ids": [
-          "conclusion_2"
+          "conclusion_1"
         ],
         "excerpts": [
           "firmly aligned with the government's response",
           "we won't give them the satisfaction"
         ],
-        "explanation": "The argument exploits status quo bias by framing continued support for the current government response as a point of pride and resistance to change, emphasizing inaction as the preferred and safer course without weighing alternatives.",
+        "explanation": "The argument valorizes sticking with the current government response and frames any change (a reaction) as undesirable, exploiting status quo bias by presenting inaction as a point of pride and safety without weighing alternatives.",
         "motif_id": "motif_3"
       }
     ],
