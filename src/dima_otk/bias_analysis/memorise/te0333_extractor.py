@@ -49,6 +49,7 @@ def extract_technique_te0333(argument_text: str, model: str = "gpt-4.1") -> dict
                   – Arguments that suggest it is difficult to overcome or correct initial information, even after subsequent facts are presented.
                 • Do **not** count as primacy effect:
                   – Arguments that build preference or trust through repeated mention or familiarity over time, regardless of when the information first appears (this is the Mere Exposure Effect).
+                  – Claims about emotional fading or diminished negativity of past experiences over time (that is Fading Affect Bias).
                   – Arguments that focus on the impact of the last or most recent information as especially important or memorable (this is the Recency Effect).
                   – Claims that rely on the logical progression or evidence presented throughout, not just the initial information.
                 • An argument without these indicators should be marked as no‑bias even if neighbouring arguments are biased.

@@ -49,9 +49,11 @@ def extract_technique_te0331(argument_text: str, model: str = "gpt-4.1") -> dict
                   – Suggesting that what comes last should guide decisions or impressions, regardless of prior content.
                 • Do **not** count as recency effect:
                   – Arguments that build preference for an idea, brand, or concept because the audience has seen or heard it frequently over time, creating a sense of familiarity or trust through repeated exposure (this is known as the Mere Exposure Effect).
+                  – Arguments about the fading or disappearance of negative emotions or memories over time (that is Fading Affect Bias, not recency).
                   – Cases where all information is summarized or compared fairly, or where a chronological sequence is presented without giving special importance to the latest item.
                   – Arguments where the *first* information presented is described as having a lasting or disproportionate impact on perception or memory, shaping the audience’s view because it came first (this is known as the Primacy Effect).
                 • An argument without these indicators should be marked as no‑bias even if neighbouring arguments are biased.
+
 
                 ======== TASK ===========================================================
 
