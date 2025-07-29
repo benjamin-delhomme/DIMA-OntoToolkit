@@ -26,8 +26,8 @@ from .te0333_extractor import extract_technique_te0333
 
 def get_memorise_techniques(processed_article: dict) -> dict:
     return {
-        "RecencyEffect": get_memorise_technique(processed_article,"te0321",extract_technique_te0321),
-        "RecencyEffect": get_memorise_technique(processed_article,"te0322",extract_technique_te0322),
+        "ImplicitStereotype": get_memorise_technique(processed_article,"te0321",extract_technique_te0321),
+        "FadingAffectBias": get_memorise_technique(processed_article,"te0322",extract_technique_te0322),
         "RecencyEffect": get_memorise_technique(processed_article,"te0331",extract_technique_te0331),
         "MereExposureEffect": get_memorise_technique(processed_article,"te0332",extract_technique_te0332),
         "PrimacyEffect": get_memorise_technique(processed_article,"te0333",extract_technique_te0333),
