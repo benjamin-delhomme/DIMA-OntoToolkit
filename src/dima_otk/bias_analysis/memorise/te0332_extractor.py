@@ -49,6 +49,7 @@ def extract_technique_te0332(argument_text: str, model: str = "gpt-4.1") -> dict
                   – Slogans, brands, people, or messages presented many times, or highlighted as “always present” or “regularly seen.”
                 • Do **not** count as mere exposure effect:
                   – Arguments that make the most recent or last-presented information seem especially important or decisive, regardless of how often it was mentioned (this is the Recency Effect).
+                  – Statements about emotional fading, forgetting, or reinterpreting negative memories with time (that is Fading Affect Bias).
                   – Arguments that claim the first or initial information received has a lasting or anchoring effect on perception or judgment (this is the Primacy Effect).
                   – Preference for something because of evidence, novelty, uniqueness, or a rational comparison, not because of growing familiarity.
                 • An argument without these indicators should be marked as no‑bias even if neighbouring arguments are biased.
