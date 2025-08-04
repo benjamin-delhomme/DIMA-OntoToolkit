@@ -1,19 +1,29 @@
 # DIMA-OntoToolkit
 
-**DIMA-OntoToolkit** is a research-oriented Python pipeline for extracting narrative biases, rhetorical techniques, and semantic structures from text articles. It applies the DIMA cognitive warfare framework along with a lightweight semantic model of narrative content called **Influence-Mini**, mapping all extracted features to individuals in a formal OWL ontology.
+## 🧭 Understanding Influence, Without Black-Box AI
 
-Learn more about the DIMA cognitive framework here:  
+**DIMA-OntoToolkit** is a tool that helps you see how news articles and public messages use narrative biases to influence readers. It scans texts and breaks them down into a logical structure, one designed and validated by experts in communication, rhetoric, psychology, and related fields. It then detects biases and persuasive techniques at play using a framework called DIMA.
+
+Unlike typical generative AI systems, DIMA-OntoToolkit puts transparency and accountability first. You get clear, structured explanations for every detected bias, showing exactly how and where influence is applied in the text. All analysis is fully traceable and based on open, understandable rules, not hidden guesswork.
+
+Unlike typical generative AI, DIMA-OntoToolkit relies on a formal ontology and structured reasoning. Every analysis step is based on transparent rules and shared definitions, ensuring that bias detection is consistent, explainable, and open for review, never left to a black-box algorithm.
+
+Learn more about the DIMA cognitive framework here:
 > [The DIMA Framework – An Attempt to Build a Tool for Cognitive Warfare](https://medium.com/@Cybart/the-dima-framework-an-attempt-to-build-a-tool-for-cognitive-warfare-e1ad3af76c48)
 
 ---
 
 ## 📘 What It Does
 
+DIMA-OntoToolkit is a research-oriented Python pipeline for extracting narrative biases, rhetorical techniques, and semantic structures from text articles. It applies the **DIMA framework** along with a lightweight semantic model of narrative content called **Influence-Mini**, mapping all extracted features to individuals in a formal OWL ontology.
+
+The toolkit performs the following key functions:
 - Parses raw text or multiple articles from a folder
 - Identifies semantic motifs (e.g. paragraphs)
 - Extracts arguments, narrative agents, and quotes
 - Generates an OWL file structured according to the DIMA ontology
 - Use Hermit Reasoner and runs SPARQL queries on the extracted data.
+
 ---
 
 ## 🔍 Feature Extraction Pipeline
