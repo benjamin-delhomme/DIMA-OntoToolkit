@@ -6,8 +6,6 @@
 
 Unlike typical generative AI systems, DIMA-OntoToolkit puts transparency and accountability first. You get clear, structured explanations for every detected bias, showing exactly how and where influence is applied in the text. All analysis is fully traceable and based on open, understandable rules, not hidden guesswork.
 
-Unlike typical generative AI, DIMA-OntoToolkit relies on a formal ontology and structured reasoning. Every analysis step is based on transparent rules and shared definitions, ensuring that bias detection is consistent, explainable, and open for review, never left to a black-box algorithm.
-
 Learn more about the DIMA cognitive framework here:
 > [The DIMA Framework – An Attempt to Build a Tool for Cognitive Warfare](https://medium.com/@Cybart/the-dima-framework-an-attempt-to-build-a-tool-for-cognitive-warfare-e1ad3af76c48)
 
