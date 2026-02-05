@@ -1,0 +1,2 @@
+stat,obs_cv,ci95_low,ci95_high,boot_mean,boot_std,n_boot,alpha,seed,n_splits,n_total,domains,n_per_domain,n_features,perm_n,perm_mean,perm_std,perm_pvalue_ge_obs
+accuracy,0.6223776223776224,0.5454545454545454,0.7062937062937062,0.6219195804195804,0.040953211477161876,2000,0.05,42,5,143,"[""bbc.co.uk"", ""kyivpost.com"", ""sputnikglobe.com""]","{""bbc.co.uk"": 32, ""kyivpost.com"": 58, ""sputnikglobe.com"": 53}",156,500,0.3481678321678321,0.04608062628175971,0.001996007984031936
