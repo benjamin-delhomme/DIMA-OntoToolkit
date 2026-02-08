@@ -41,7 +41,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedKFold, cross_val_predict, cross_val_score, permutation_test_score
 from sklearn.utils import resample
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix,accuracy_score, f1_score, precision_recall_fscore_support
 
 # ---------------------------------------------------------------------------
 # Data Loading & Preprocessing
@@ -435,21 +435,7 @@ def run_statistical_analysis(pipeline: Pipeline, X: np.ndarray, y: np.ndarray,
         seed (int): Random seed for reproducibility.
 
     Returns:
-        Dict: A dictionary containing all computed artifacts, specifically:
-            - "classes": List of unique domain labels.
-            - "feature_names": Input list of feature names.
-            - "cv_mean": Mean cross-validation score.
-            - "cv_scores": Array of raw CV scores (fold-wise).
-            - "cv_preds": Array of OOF predictions.
-            - "boot_scores": Array of bootstrapped OOF scores (N=n_boot).
-            - "ci_low": Lower bound of 95% CI.
-            - "ci_high": Upper bound of 95% CI.
-            - "confusion_matrix": List of lists (JSON-serializable).
-            - "coef_mean": Array of mean coefficients from bootstrap.
-            - "coef_error": Array of 95% CI error margins for coefficients.
-            - "perm_pvalue": Empirical p-value.
-            - "perm_mean": Mean score of null distribution.
-            - "perm_scores": Array of permutation scores.
+        Dict: A dictionary containing all computed artifacts.
     """
     results = {}
     classes = np.unique(y)
@@ -464,40 +450,51 @@ def run_statistical_analysis(pipeline: Pipeline, X: np.ndarray, y: np.ndarray,
     # 1. Cross-Validation (Observed)
     print(f"   > Running {n_splits}-Fold CV...")
     
-    # Unpack 3 values (Mean, Preds, Scores)
     cv_mean, cv_preds, cv_scores = evaluate_model_cv(pipeline, X, y, n_splits, seed, metric)
     
     results["cv_mean"] = cv_mean
     results["cv_scores"] = cv_scores.tolist() 
-    results["cv_preds"] = cv_preds.tolist() # Stored for OOF export
+    results["cv_preds"] = cv_preds.tolist() 
     
-    print(f"     CV {metric.capitalize()}: {cv_mean:.3f}")
+    # Calculate Comprehensive Metrics
+    acc = accuracy_score(y, cv_preds)
+    p_macro, r_macro, f1_macro, _ = precision_recall_fscore_support(y, cv_preds, average='macro', zero_division=0)
+    p_weighted, r_weighted, f1_weighted, _ = precision_recall_fscore_support(y, cv_preds, average='weighted', zero_division=0)
+    
+    results["metrics"] = {
+        "accuracy": acc,
+        "f1_macro": f1_macro,
+        "f1_weighted": f1_weighted,
+        "precision_macro": p_macro,
+        "recall_macro": r_macro,
+        "precision_weighted": p_weighted,
+        "recall_weighted": r_weighted
+    }
+    
+    print(f"     CV Accuracy: {acc:.3f} | F1 Macro: {f1_macro:.3f}")
 
-    # Bootstrap the OOF Predictions (for dense Histogram & CI) ---
+    # Bootstrap the OOF Predictions
     print(f"   > Bootstrapping OOF predictions ({n_boot} iter)...")
     rng = np.random.default_rng(seed)
     boot_scores = np.empty(n_boot, dtype=float)
     
-    # Select scorer dynamically based on argument
-    from sklearn.metrics import accuracy_score, f1_score
     if metric == "accuracy":
         scorer = accuracy_score
     else:
         scorer = lambda yt, yp: f1_score(yt, yp, average="macro")
 
     for b in range(n_boot):
-        # Resample the PREDICTIONS/LABELS indices, not the model weights
         idx = stratified_resample_indices(y, rng)
         boot_scores[b] = scorer(y[idx], cv_preds[idx])
         
-    results["boot_scores"] = boot_scores.tolist() # DENSE ARRAY (N=n_boot)
+    results["boot_scores"] = boot_scores.tolist()
 
     # Calculate 95% Confidence Intervals
     alpha = 0.05
     results["ci_low"] = float(np.percentile(boot_scores, 100.0 * alpha / 2.0))
     results["ci_high"] = float(np.percentile(boot_scores, 100.0 * (1.0 - alpha / 2.0)))
 
-    # Compute Confusion Matrix using OOF predictions
+    # Compute Confusion Matrix
     cm = confusion_matrix(y, cv_preds, labels=classes)
     results["confusion_matrix"] = cm.tolist() 
 
@@ -510,19 +507,17 @@ def run_statistical_analysis(pipeline: Pipeline, X: np.ndarray, y: np.ndarray,
 
     # 3. Permutation (Significance Testing)
     if n_perm <= 0:
-        # Enforce valid n_perm if mandatory, or warn if user passed 0
         print(f"[WARN] n_perm is {n_perm}. Skipping Permutation Test.")
         results["perm_mean"] = None
         results["perm_pvalue"] = None
         results["perm_scores"] = []
     else:
         print(f"   > Running {n_perm} Permutation Tests...")
-        # Unpack 3 values (Mean, P-value, Scores)
         perm_mean, p_value, perm_scores = run_permutation_test(pipeline, X, y, n_perm, n_splits, seed, metric)
         
         results["perm_mean"] = perm_mean
         results["perm_pvalue"] = p_value
-        results["perm_scores"] = perm_scores.tolist() # CRITICAL: Save raw scores for distribution plot
+        results["perm_scores"] = perm_scores.tolist()
         
         print(f"     Permutation P-value: {p_value:.4f} (Null Baseline: {perm_mean:.3f})")
 
@@ -682,7 +677,7 @@ def load_model_artifacts(artifact_path: Path) -> Dict:
     with open(artifact_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     
-    # Critical: Convert lists back to Numpy arrays for the plotting functions
+    # Convert lists back to Numpy arrays for the plotting functions
     # (Plotting functions expect arrays for math operations)
     keys_to_numpy = ["cv_scores", "perm_scores", "coef_mean", "coef_error", "confusion_matrix", "classes"]
     
@@ -695,19 +690,39 @@ def load_model_artifacts(artifact_path: Path) -> Dict:
 
 def save_results_csv(results: Dict, out_path: Path, args: argparse.Namespace) -> None:
     """
-    Saves a summary CSV (Accuracy, P-value) for easy reporting.
+    Saves a comprehensive summary CSV containing all key performance metrics.
     """
+    # Extract the nested metrics dict we created in run_statistical_analysis
+    m = results.get("metrics", {})
+    
     summary = {
         "domains": " ".join(args.domains),
-        "cv_mean": results["cv_mean"],
-        "perm_pvalue": results["perm_pvalue"] if results["perm_pvalue"] is not None else "N/A",
+        
+        # Main Performance Metrics
+        "accuracy": m.get("accuracy", results.get("cv_mean")),
+        "f1_macro": m.get("f1_macro"),
+        "f1_weighted": m.get("f1_weighted"),
+        "precision_macro": m.get("precision_macro"),
+        "recall_macro": m.get("recall_macro"),
+        
+        # Confidence Intervals (for the main metric chosen)
+        "ci_low": results.get("ci_low"),
+        "ci_high": results.get("ci_high"),
+        
+        # Statistical Significance & Baselines
+        "perm_pvalue": results.get("perm_pvalue") if results.get("perm_pvalue") is not None else "N/A",
+        "majority_baseline": results.get("majority_baseline"),
+        "chance_baseline": 1.0 / len(results.get("classes", [])),
+        
+        # Experiment Metadata
         "n_boot": args.n_boot,
         "n_perm": args.n_perm,
         "seed": args.seed
     }
     
+    # Save to CSV
     pd.DataFrame([summary]).to_csv(out_path, index=False)
-    print(f"   > Summary CSV saved to: {out_path}")
+    print(f"   > Detailed Summary CSV saved to: {out_path}")
 
 # ---------------------------------------------------------------------------
 # Visualization (Decoupled)
