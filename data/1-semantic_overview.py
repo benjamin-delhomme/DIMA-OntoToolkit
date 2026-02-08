@@ -1,6 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Basic semantic overview for exploitable articles.
+
+Per-article metrics:
+  - totals: arguments, premises, developments, conclusions
+  - averages per argument: premises/arg, developments/arg, conclusions/arg, (p+d+c)/arg
+  - composition ratios: premise_ratio, development_ratio, conclusion_ratio (over p+d+c)
+  - per-100-word densities for all the above (where word_count > 0)
+
+Aggregates (dataset-wide):
+  - mean, median, std, min, max, count for every metric above
+
+Inputs:
+  - analysis/data/articles/*_<id>.json
+  - analysis/data/semantic_analysis/article_processed_<id>.json
+
+Outputs (overwrite):
+  - analysis/output/semantic/semantic_overview_per_article.csv
+  - analysis/output/semantic/semantic_overview_aggregates.csv
+"""
+
 from __future__ import annotations
 
 import csv

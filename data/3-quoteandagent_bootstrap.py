@@ -25,7 +25,7 @@ def bootstrap_mean_ci(values, n_boot=5000, alpha=0.05, random_state=42):
     if n == 0:
         return {"n": 0, "mean": np.nan, "ci_lower": np.nan, "ci_upper": np.nan}
 
-    # Vectorized resampling (Much faster than the loop)
+    # Vectorized resampling
     samples = rng.choice(data, size=(n_boot, n), replace=True)
     means = samples.mean(axis=1)
     

@@ -1,6 +1,33 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Bias overview per article (NO category totals) + aggregates per domain.
+
+What it does:
+- Reads all ../output/bias_analysis/article_biases_<id>.json
+  (dynamic set of bias types; structure can be either:
+    A) { "BiasType": [instances...], ... }
+    B) { "AnyGroup": { "BiasType": [instances...], ... }, ... }  (older/category-like)
+- Joins with output/semantic/semantic_overview_per_article.csv to get:
+  headline, viewpoint_country, domain, word_count
+- Outputs per-article:
+  - counts per bias type
+  - overall_total (sum of bias type counts)
+  - per-100-word versions for overall + each bias type
+-outputs per-domain aggregates:
+  - mean, median, std, min, max, count for:
+      overall_total, each bias type count, overall_per_100, each <bias>_per_100
+
+Inputs:
+  - output/bias_analysis/article_biases_<id>.json
+  - output/semantic/semantic_overview_per_article.csv
+
+Outputs (overwrite):
+  - output/bias/bias_overview_per_article.csv
+  - output/bias/bias_overview_aggregates_per_domain.csv
+"""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -11,7 +38,7 @@ from typing import Dict, Any, Optional, Tuple, List
 import pandas as pd
 
 
-# paths
+# -------- paths --------
 BASE_DIR = Path(__file__).resolve().parent
 
 SEM_OUT_DIR = BASE_DIR / "output" / "semantic"
@@ -24,6 +51,7 @@ BIAS_GLOB = "article_biases_*.json"
 ID_RE = re.compile(r"article_biases_(?P<id>[A-Za-z0-9]+)\.json$", re.IGNORECASE)
 
 
+# -------- helpers --------
 def read_overview() -> pd.DataFrame:
     if not OVERVIEW_CSV.exists():
         raise SystemExit(f"[ERR] Missing overview file: {OVERVIEW_CSV}")
@@ -114,6 +142,8 @@ def safe_stats(series: pd.Series) -> Dict[str, Any]:
         "count": int(s.shape[0]),
     }
 
+
+# -------- main --------
 def main() -> None:
     meta = read_overview()
     print(f"[READ] {OVERVIEW_CSV} (rows={len(meta):,})")

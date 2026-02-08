@@ -1,6 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Bootstrap 95% confidence intervals for selected *_per_100 columns
+in bias_overview_per_article.csv, COMPARING THREE DOMAINS (e.g. bbc vs kyivpost vs sputnikglobe).
+
+This version matches your updated bias overview:
+- No Detect/Inform/Memorise/Act category columns
+- Uses: domain, overall_per_100, and <BiasType>_per_100 columns
+
+Input:
+  output/bias/bias_overview_per_article.csv
+
+Outputs (in same folder as input):
+  - <output-prefix>.csv  (long table: domain + variable + mean + 95% CI)
+  - <output-prefix>.png  (comparative errorbar plot)
+
+Usage:
+  ./3-bias_bootstrap.py \
+    --input output/bias/bias_overview_per_article.csv \
+    --domains bbc.co.uk kyivpost.com sputnikglobe.com \
+    --output-prefix bootstrap_ci_domains_selected \
+    --n-boot 5000
+"""
+
 import argparse
 from pathlib import Path
 
@@ -9,7 +32,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+# ---------------------------
 # BOOTSTRAP FUNCTION
+# ---------------------------
 def bootstrap_mean_ci(values, n_boot=5000, alpha=0.05, random_state=42):
     """
     Nonparametric bootstrap CI for the mean (NaNs dropped).
@@ -31,7 +56,9 @@ def bootstrap_mean_ci(values, n_boot=5000, alpha=0.05, random_state=42):
     return {"mean": data.mean(), "ci_lower": lower, "ci_upper": upper, "n": n}
 
 
+# ---------------------------
 # PLOT FUNCTION
+# ---------------------------
 def make_comparison_plot(results_df, output_png, domains, title_prefix="Bootstrap 95% CI by domain"):
     """
     Horizontal error-bar plot with two domains per variable.
@@ -92,7 +119,7 @@ def make_comparison_plot(results_df, output_png, domains, title_prefix="Bootstra
     ax.set_yticks(y_base)
     ax.set_yticklabels([v.replace("_per_100", "") for v in variables])
     ax.invert_yaxis()
-    ax.set_xlabel("Mean value (per 100)")
+    ax.set_xlabel("Mean value (per 100 words)")
     ax.set_title(f"{title_prefix}\n(Mean ± 95% Confidence Interval)")
     ax.legend(loc="best")
 
@@ -101,7 +128,9 @@ def make_comparison_plot(results_df, output_png, domains, title_prefix="Bootstra
     plt.close(fig)
 
 
+# ---------------------------
 # MAIN
+# ---------------------------
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=str, required=True, help="Path to bias_overview_per_article.csv")
@@ -187,7 +216,7 @@ def main():
 
     # Save plot
     output_png = input_path.parent / f"{args.output_prefix}.png"
-    make_comparison_plot(results_df, output_png, domains=domains, title_prefix="Bias (per 100) — Kyivpost vs Sputnik")
+    make_comparison_plot(results_df, output_png, domains=domains, title_prefix="Bias (per 100) — BBC vs Kyivpost vs Sputnik")
 
     print(f"Saved results to: {output_csv}")
     print(f"Saved plot to:    {output_png}")

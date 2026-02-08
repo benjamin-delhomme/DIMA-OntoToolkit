@@ -1,6 +1,48 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Quote + Agent overview for exploitable articles (semantic-style),
+extended with PER-ARGUMENT and PER-QUOTE normalizations.
+
+Per-article metrics include:
+- arguments:
+  - total_arguments  (counted from sem["motifs"][*]["arguments"])
+
+- quotes:
+  - quotes_total
+  - quote_type counts (e.g., DirectQuote, IndirectQuote, ParaphrasedQuote, etc.)
+  - quote_status counts (e.g., OfficialPosition, ReportedStatement, PersonalOpinion, etc.)
+  - per-100-word densities for all quote metrics
+  - per-argument densities for all quote metrics:
+      quotes_per_argument, quote_type__X_per_argument, quote_status__X_per_argument
+
+- agents:
+  - unique_agents (len(narrated_agents))
+  - unique_agent_types (count of distinct narrated agent types present)
+  - per-100-word and per-argument versions for unique_agents and unique_agent_types
+  - mentions_total (sum of len(mentions) across quotes)
+  - attributions_total (sum of len(attributed_to) across quotes)
+  - per-100-word and per-argument versions for mentions_total and attributions_total
+  - mentions_by_agent_type (counted via mentioned agent_id -> narrated_agents.type)
+  - attributions_by_agent_type (counted via attributed_to agent_id -> narrated_agents.type)
+  - per-100-word + per-argument densities for type-specific mention/attribution counts
+  - per-QUOTE normalization (your request):
+      mentions_per_quote, attributions_per_quote
+      mentions_agent_type__T_per_quote, attributions_agent_type__T_per_quote
+
+Aggregates (dataset-wide):
+- mean, median, std, min, max, count for every numeric metric column.
+
+Inputs:
+- ../articles/*_<id>.json
+- ../output/semantic_analysis/article_processed_<id>.json
+
+Outputs (overwrite):
+- output/semantic/quote_agent_overview_per_article.csv
+- output/semantic/quote_agent_overview_aggregates.csv
+"""
+
 from __future__ import annotations
 
 import csv

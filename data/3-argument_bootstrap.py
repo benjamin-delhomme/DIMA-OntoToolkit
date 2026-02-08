@@ -1,6 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Bootstrap 95% confidence intervals for semantic per-argument metrics:
+- avg_premises_per_argument
+- avg_developments_per_argument
+- avg_conclusions_per_argument
+(optionally avg_pdc_per_argument)
+
+Compares THREE domains (e.g., kyivpost.com vs sputnikglobe.com vs bbc.co.yk) using:
+  output/semantic/semantic_overview_per_article.csv
+
+Outputs (in same folder as input):
+  - <output-prefix>.csv  (long table: domain + variable + mean + 95% CI)
+  - <output-prefix>.png  (comparative horizontal errorbar plot; n shown in title)
+
+Usage:
+  ./3-argument_bootstrap.py \
+    --input output/semantic/semantic_overview_per_article.csv \
+    --domains kyivpost.com sputnikglobe.com bbc.co.uk \
+    --n-boot 5000 \
+    --output-prefix semantic_bootstrap_pdc_per_argument
+"""
+
 import argparse
 import re
 from pathlib import Path
@@ -87,7 +109,7 @@ def main():
     ap.add_argument(
         "--domains",
         nargs='+',
-        default=["kyivpost", "sputnikglobe", "bbc.co.uk"],
+        default=["kyivpost.com", "sputnikglobe.com", "bbc.co.uk"],
         help="Domains to compare (default: kyivpost sputnikglobe bbc.co.uk)",
     )
     ap.add_argument("--n-boot", type=int, default=5000)
